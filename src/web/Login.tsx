@@ -4,36 +4,63 @@ import { api, cache, Unauthorized } from "./api";
 const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export function Login({ onDone }: { onDone: (origin: { x: number; y: number }) => void }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [show, setShow] = useState(false);
+  const [email, setEmail] = useState(() => cache.get<string>("lastEmail") ?? "");
+  const [code, setCode] = useState("");
+  const [step, setStep] = useState<"email" | "code">("email");
   const [state, setState] = useState<"idle" | "busy" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
+  const [devCode, setDevCode] = useState<string | null>(null);
   // Bumped on every failed try, so the shake replays even when the message stays the same.
   const [shake, setShake] = useState(0);
   const button = useRef<HTMLButtonElement>(null);
+  const codeInput = useRef<HTMLInputElement>(null);
 
-  async function submit(e: FormEvent) {
-    e.preventDefault();
-    if (state !== "idle" || !username || !password) return;
+  const fail = (msg: string) => {
+    setState("idle");
+    setShake((n) => n + 1);
+    setError(msg);
+  };
+
+  async function sendCode(e?: FormEvent) {
+    e?.preventDefault();
+    if (state !== "idle" || !email) return;
     setState("busy");
     setError(null);
     try {
-      await api.login(username.trim(), password);
+      const r = await api.authStart(email.trim());
+      cache.set("lastEmail", email.trim());
+      setDevCode(r.dev ?? null);
+      setStep("code");
+      setState("idle");
+      setTimeout(() => codeInput.current?.focus(), 50);
+    } catch (err) {
+      const m = (err as Error).message;
+      fail(
+        m === "bad_email"
+          ? "Tohle nevypadá jako e-mail."
+          : m === "too_soon" || m === "rate_limited"
+            ? "Kód už jsme poslali. Další půjde za chvilku."
+            : m === "mail_failed"
+              ? "E-mail se nepodařilo odeslat. Zkus to za chvíli."
+              : "Server teď neodpovídá. Zkus to za chvíli.",
+      );
+    }
+  }
+
+  async function verify(e: FormEvent) {
+    e.preventDefault();
+    if (state !== "idle" || code.length !== 6) return;
+    setState("busy");
+    setError(null);
+    try {
+      await api.authVerify(email.trim(), code);
       setState("done");
-      // The tick shows for a beat, then the welcome grows out of the button.
       const r = button.current!.getBoundingClientRect();
       setTimeout(() => onDone({ x: r.left + r.width / 2, y: r.top + r.height / 2 }), reduced() ? 0 : 320);
     } catch (err) {
-      setState("idle");
-      setShake((n) => n + 1);
-      setError(
-        err instanceof Unauthorized
-          ? "Špatné jméno nebo heslo."
-          : (err as Error).message === "rate_limited"
-            ? "Moc pokusů o přihlášení. Zkus to za minutu."
-            : "SIS teď neodpovídá. Zkus to za chvíli.",
-      );
+      const m = (err as Error).message;
+      setCode("");
+      fail(m === "code_expired" ? "Kód vypršel nebo už neplatí. Pošli si nový." : "Kód nesedí. Zkontroluj ho v e-mailu.");
     }
   }
 
@@ -51,69 +78,105 @@ export function Login({ onDone }: { onDone: (origin: { x: number; y: number }) =
               <span>Open</span>
             </span>
           </span>
-          <span className="lw-sis">SISAKHK</span>
+          <span className="lw-sis">Študent</span>
         </h1>
-        <p className="login-sub">Rozvrh, známky, absence a obědy. Přihlas se stejně jako do školního SIS.</p>
-        <form onSubmit={submit} className="login-form" key={shake} data-shake={shake > 0}>
-          <label className="field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4.5 20.5a7.5 7.5 0 0 1 15 0" />
-            </svg>
-            <input
-              autoComplete="username"
-              placeholder="Uživatelské jméno"
-              aria-label="Uživatelské jméno"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              aria-describedby="username-hint"
-            />
-          </label>
-          <p className="field-hint" id="username-hint">
-            Je to část školního e-mailu před zavináčem. Z <b>novak.adam</b>@ssakhk.cz je to <b>novak.adam</b>.
-          </p>
-          <label className="field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
-              <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
-            </svg>
-            <input
-              type={show ? "text" : "password"}
-              autoComplete="current-password"
-              placeholder="Heslo"
-              aria-label="Heslo"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button type="button" className="field-eye" aria-label={show ? "Skrýt heslo" : "Zobrazit heslo"} aria-pressed={show} onClick={() => setShow(!show)}>
+        <p className="login-sub">
+          {step === "email"
+            ? "Rozvrh, obědy, volné učebny a cesty po Hradci. Pro všechny školy v Hradci Králové."
+            : `Poslali jsme ti 6místný kód na ${email.trim()}.`}
+        </p>
+        {step === "email" ? (
+          <form onSubmit={sendCode} className="login-form" key={`e${shake}`} data-shake={shake > 0}>
+            <label className="field">
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" />
-                <circle cx="12" cy="12" r="3" />
-                {!show && <path d="M4 20L20 4" />}
+                <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" />
+                <path d="M4 7l8 6 8-6" />
               </svg>
-            </button>
-          </label>
-          {error && (
-            <p className="error" role="alert">
-              {error}
+              <input
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                placeholder="E-mail"
+                aria-label="E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                aria-describedby="email-hint"
+              />
+            </label>
+            <p className="field-hint" id="email-hint">
+              Jakýkoli tvůj e-mail, nemusí být školní. Žádné heslo: pokaždé ti přijde kód.
             </p>
-          )}
-          <button ref={button} className={`primary login-button ${state}`} disabled={state === "idle" && (!username || !password)}>
-            <span className="lb-label">Přihlásit se</span>
-            <span className="lb-spinner" aria-hidden="true" />
-            <svg className="lb-tick" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 12.5l4.5 4.5L19 7.5" />
-            </svg>
-            <span className="sr-only" aria-live="polite">
-              {state === "busy" ? "Přihlašuji" : state === "done" ? "Přihlášeno" : ""}
-            </span>
-          </button>
-        </form>
+            {error && (
+              <p className="error" role="alert">
+                {error}
+              </p>
+            )}
+            <button ref={button} className={`primary login-button ${state}`} disabled={state === "idle" && !email}>
+              <span className="lb-label">Poslat kód</span>
+              <span className="lb-spinner" aria-hidden="true" />
+              <span className="sr-only" aria-live="polite">
+                {state === "busy" ? "Posílám kód" : ""}
+              </span>
+            </button>
+          </form>
+        ) : (
+          <form onSubmit={verify} className="login-form" key={`c${shake}`} data-shake={shake > 0}>
+            <label className="field">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
+                <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+              </svg>
+              <input
+                ref={codeInput}
+                inputMode="numeric"
+                autoComplete="one-time-code"
+                pattern="[0-9]*"
+                maxLength={6}
+                placeholder="Kód z e-mailu"
+                aria-label="Kód z e-mailu"
+                className="code-input"
+                value={code}
+                onChange={(e) => setCode(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                required
+              />
+            </label>
+            {devCode && (
+              <p className="field-hint">
+                Vývojový režim (e-maily se neposílají): kód je <b>{devCode}</b>
+              </p>
+            )}
+            {error && (
+              <p className="error" role="alert">
+                {error}
+              </p>
+            )}
+            <button ref={button} className={`primary login-button ${state}`} disabled={state === "idle" && code.length !== 6}>
+              <span className="lb-label">Přihlásit se</span>
+              <span className="lb-spinner" aria-hidden="true" />
+              <svg className="lb-tick" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12.5l4.5 4.5L19 7.5" />
+              </svg>
+              <span className="sr-only" aria-live="polite">
+                {state === "busy" ? "Přihlašuji" : state === "done" ? "Přihlášeno" : ""}
+              </span>
+            </button>
+            <button
+              type="button"
+              className="sheet-later"
+              onClick={() => {
+                setStep("email");
+                setCode("");
+                setError(null);
+              }}
+            >
+              Jiný e-mail nebo poslat znovu
+            </button>
+          </form>
+        )}
         <p className="fineprint">
-          Heslo zůstává zašifrované v tomhle zařízení. Na server se uloží jen se zapnutými notifikacemi. Neoficiální
-          aplikace, není spojená se školou.
+          E-mail slouží jen k přihlášení. Rozvrhy bereme z veřejných rozvrhů škol. Neoficiální aplikace, není spojená se
+          žádnou školou.
         </p>
       </div>
     </main>

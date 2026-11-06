@@ -1,4 +1,4 @@
-import type { Absence, Day, Finance, Project, ProjectChoice, Subject } from "../worker/parse";
+import type { Cell, Day, SchoolInfo } from "../shared/types";
 import type { LunchDay, Menu } from "../worker/strava";
 import type { Crowd } from "../worker/menza";
 import type { TestItem, TestKind } from "../shared/tests";
@@ -7,9 +7,18 @@ export type TimetableDay = Day;
 export interface TimetableResponse {
   week: string;
   days: TimetableDay[];
+  /** "no_class": school or class not chosen yet; "no_data": the school's timetable isn't uploaded yet */
+  error?: "no_class" | "no_data";
+  /** when the pipeline last read the school's timetable */
+  fetched?: string;
+  /** Mondays the server has (this and next week) */
+  weeks?: string[];
 }
-export interface GradesResponse {
-  subjects: Subject[];
+export interface SchoolWeekResponse {
+  week: string;
+  periods: [string, string][];
+  /** Monday … Friday, every lesson of the whole school */
+  days: Cell[][];
 }
 
 export interface LunchResponse {
@@ -38,16 +47,19 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
-  login: (username: string, password: string) =>
-    call<{ ok: true }>("/login", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    }),
+  /** Sends a 6-digit code to the e-mail. `dev` = the code itself, only in local development. */
+  authStart: (email: string) =>
+    call<{ ok: true; dev?: string }>("/auth/start", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email }) }),
+  authVerify: (email: string, code: string) =>
+    call<{ ok: true }>("/auth/verify", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, code }) }),
   logout: () => call<{ ok: true }>("/logout", { method: "POST" }),
+  deleteAccount: () => call<{ ok: true }>("/me/delete", { method: "POST" }),
+  schools: () => call<{ schools: SchoolInfo[] }>("/schools"),
+  classGroups: (school: string, cls: string) => call<{ groups: string[] }>(`/schools/${encodeURIComponent(school)}/groups?class=${encodeURIComponent(cls)}`),
+  setProfile: (p: { school?: string; cls?: string | null; groups?: string[]; name?: string }) => post("/me/profile", p),
   timetable: (week?: string) => call<TimetableResponse>(`/timetable${week ? `?week=${week}` : ""}`),
-  /** Permanent timetable (no substitutions or cancellations) of the week starting `week`. */
-  permanentTimetable: (week: string) => call<TimetableResponse>(`/timetable?week=${week}&static=1`),
+  /** The whole school's week (free rooms, teachers). */
+  schoolWeek: (week?: string) => call<SchoolWeekResponse>(`/school/week${week ? `?week=${week}` : ""}`),
   tests: (week: string) => call<TestsResponse>(`/tests?week=${week}`),
   upcomingTests: () => call<UpcomingTests>("/tests/upcoming"),
   addTest: (t: { date: string; start: string; subject: string; group: string; kind: TestKind; note: string }) =>
@@ -55,52 +67,37 @@ export const api = {
   deleteTest: (id: number) => call<UpcomingTests>(`/tests/${id}/delete`, { method: "POST" }),
   flagTest: (id: number, on: boolean) =>
     call<UpcomingTests>(`/tests/${id}/flag`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ on }) }),
-  grades: () => call<GradesResponse>("/grades"),
   /** SideQuesty: delays (minutes) of the regional buses and trains running now, by IREDO id. */
   liveIredo: () => call<{ delays: Record<string, number> }>("/live/iredo"),
   /** SideQuesty: live departures from the city transport stop at a place (delay in seconds). */
   liveMhd: (lat: number, lon: number) => call<{ departures: { line: string; plan: number; delay: number }[] }>(`/live/mhd?lat=${lat.toFixed(5)}&lon=${lon.toFixed(5)}`),
-  absence: () => call<Absence>("/absence"),
   me: () => call<Me>("/me"),
-  setClass: (cls: string) => post("/me/class", { cls }),
   lunch: () => call<LunchResponse>("/lunch"),
   canteen: () => call<CanteenResponse>("/canteen"),
-  /** Canteen crowd forecast from OpenŠtudent (from timetables, not a live count). */
+  /** Canteen crowd forecast (from timetables, not a live count). */
   canteenCrowd: () => call<Crowd>("/canteen/crowd"),
-  /** Orders `veta` for the day (switching from the ordered meal), or cancels the day with null. */
   order: (date: string, veta: string | null) =>
     call<CanteenResponse>("/canteen/order", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ date, veta }) }),
-  finance: () => call<Finance>("/finance", { cache: "no-store" }),
-  projects: (election?: string) => call<ProjectsResponse>(`/projects${election ? `?election=${election}` : ""}`),
   stravaConnect: (jmeno: string, heslo: string) => post("/strava", { jmeno, heslo }),
   stravaDisconnect: () => post("/strava/disconnect", {}),
-  watch: (on: boolean) => post("/watch", { on }),
-  schoolWeeks: () => call<{ weeks: { start: string; end: string; week: 1 | 2 }[] }>("/school/weeks"),
   pushKey: () => call<{ key: string }>("/push/key"),
   pushSubscribe: (subscription: PushSubscriptionJSON) => post("/push/subscribe", { subscription }),
   pushUnsubscribe: (endpoint: string) => post("/push/unsubscribe", { endpoint }),
   pushTest: () => call<{ sent: number }>("/push/test", { method: "POST" }),
-  /** Bug report or idea, sent to the developer's Telegram. */
   report: (kind: "bug" | "idea", text: string, meta: Record<string, string>) => post("/report", { kind, text, meta }),
 };
 
-export interface ProjectsResponse {
-  elections: { id: string; label: string }[];
-  election: { id: string; label: string } | null;
-  mine: ProjectChoice[];
-  projects: Project[];
-  profile: { class: string | null; email: string | null; groups: string[]; blocks: { subject: string; block: string }[] };
-}
-
-export type CanteenResponse = Menu & { connected: boolean; error?: string };
+export type CanteenResponse = Menu & { connected: boolean; canteen: SchoolInfo["canteen"]; error?: string };
 
 export interface Me {
+  email: string;
+  /** optional nickname, shown next to tests the student adds */
   name: string | null;
-  hasPhoto: boolean;
-  /** null = not confirmed yet (SIS doesn't show the class, ClassPrompt asks) */
+  school: SchoolInfo | null;
+  /** null = not chosen yet (SchoolPrompt asks) */
   class: string | null;
+  groups: string[];
   pushDevices: number;
-  watching: boolean;
   strava: boolean;
 }
 
@@ -112,7 +109,7 @@ function post(path: string, body: unknown) {
 export const cache = {
   get<T>(key: string): T | null {
     try {
-      const raw = localStorage.getItem(`osis:${key}`);
+      const raw = localStorage.getItem(`ost:${key}`);
       return raw ? (JSON.parse(raw) as T) : null;
     } catch {
       return null;
@@ -122,8 +119,8 @@ export const cache = {
   set(key: string, value: unknown) {
     try {
       const raw = JSON.stringify(value);
-      if (localStorage.getItem(`osis:${key}`) === raw) return false;
-      localStorage.setItem(`osis:${key}`, raw);
+      if (localStorage.getItem(`ost:${key}`) === raw) return false;
+      localStorage.setItem(`ost:${key}`, raw);
     } catch {
       /* storage full or blocked */
     }
@@ -132,7 +129,7 @@ export const cache = {
   clear() {
     try {
       Object.keys(localStorage)
-        .filter((k) => k.startsWith("osis:"))
+        .filter((k) => k.startsWith("ost:"))
         .forEach((k) => localStorage.removeItem(k));
     } catch {
       /* ignore */

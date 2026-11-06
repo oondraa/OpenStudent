@@ -225,7 +225,7 @@ p { margin: 0; }
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 12px color-mix(in srgb, var(--tint, #000) 28%, transparent);
 }
 .tile-icon .icon { width: 24px; height: 24px; stroke-width: 2; }
-.tile-gym, .tint-gym { --tint: var(--green); }
+.tile-ends, .tint-ends { --tint: var(--green); }
 .tile-grades, .tint-grades { --tint: var(--indigo); }
 .tile-absence, .tint-absence { --tint: var(--orange); }
 .tile-projects, .tint-projects { --tint: var(--teal); }

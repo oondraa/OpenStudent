@@ -167,18 +167,21 @@ export const AlertIcon = ({ size }: { size?: number }) => (
   </Icon>
 );
 
+/** A door with an arrow out: "Kdo kdy končí". */
+export const DoorOutIcon = ({ size }: { size?: number }) => (
+  <Icon size={size}>
+    <path d="M13 4.5H6.5a1.5 1.5 0 0 0-1.5 1.5v12a1.5 1.5 0 0 0 1.5 1.5H13M10 12h10M16.5 8.5 20 12l-3.5 3.5" />
+  </Icon>
+);
+
 /** One icon per part of the app, for the tab bar, the Více list and the order editor in Settings. */
 export const TAB_ICONS: Record<Tab, ReactNode> = {
   timetable: <CalendarIcon />,
   lunch: <UtensilsIcon />,
-  gym: <DumbbellIcon />,
   rooms: <DoorIcon />,
   teachers: <TeacherIcon />,
   tests: <TestIcon />,
-  grades: <GradesIcon />,
-  absence: <AbsenceIcon />,
-  projects: <ProjectIcon />,
-  finance: <WalletIcon />,
+  ends: <DoorOutIcon />,
   trips: <RouteIcon />,
   settings: <GearIcon />,
   more: <MoreIcon />,
