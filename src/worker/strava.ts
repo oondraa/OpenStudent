@@ -2,8 +2,7 @@
 // read off its web app. Shape captured with scripts/strava-probe.ts.
 
 const STRAVA = "https://app.strava.cz/api";
-/** Jídelna SŠ a VOŠ aplikované kybernetiky. */
-export const CANTEEN = "0288";
+// Each school has its own canteen number (the pipeline's catalog, `canteen.strava`); OpenSISAKHK had one fixed.
 
 export interface StravaCred {
   cislo: string;
@@ -63,6 +62,7 @@ async function call<T>(path: string, body: unknown): Promise<T> {
 
 interface Item {
   datum: string; // "12.10.2026"
+  druh_chod?: string; // "Oběd", "Snídaně", … (public menu only)
   druh: string; // "PO" soup, "O1", "O2", …
   druh_popis: string; // "Oběd 2"
   nazev: string;
@@ -207,4 +207,22 @@ export async function changeOrder(cred: StravaCred, date: string, veta: string |
     if (now !== (target?.veta ?? null)) throw new StravaOrderRefused("not_applied");
     return { balance, days };
   });
+}
+
+/**
+ * The canteen's public menu (what app.strava.cz shows without logging in): no orders, no prices. Lunch only:
+ * breakfasts, snacks and drinks are left out. Cached by the caller.
+ */
+export async function fetchPublicMenu(cislo: string): Promise<MenuDay[]> {
+  const res = await call<{ meals?: Record<string, Item[]> }>("jidelnickyPage", { cislo, lang: "CZ" });
+  const lunch: Record<string, Item[]> = {};
+  for (const [k, items] of Object.entries(res.meals ?? {})) {
+    if (!Array.isArray(items)) continue;
+    const kept = items
+      .filter((i) => (i.druh_chod ? i.druh_chod === "Oběd" : /^(PO|O\d)/.test(i.druh)))
+      .filter((i) => !/sn[ií]dan|p[rř]esn|sva[cč]|n[aá]poj|dopl/i.test(i.druh_popis ?? ""))
+      .map((i) => ({ ...i, pocet: 0, veta: "", cena: "0", druh: /pol[eé]vk/i.test(i.druh_popis ?? "") ? "PO" : i.druh }));
+    if (kept.length) lunch[k] = kept;
+  }
+  return parseMenu(lunch).map((d) => ({ ...d, deadline: null, meals: d.meals.map((m) => ({ ...m, editable: false })) }));
 }

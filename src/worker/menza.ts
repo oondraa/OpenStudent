@@ -1,9 +1,6 @@
-// How busy the canteen will be: a forecast from OpenŠtudent (a sibling project), computed once a day from the public
-// timetables of the Hradec schools that eat at Jídelna Hradecká, followed by a queue simulation. Not a live count:
-// nobody publishes one. The menu in that file is ignored, the Obědy screen reads it from Strava itself.
-//
-// The file changes once a day, so the Worker keeps it in the edge cache for CROWD_TTL and a failure for FAIL_TTL:
-// OpenŠtudent sees a couple dozen requests a day however many students open the screen.
+// How busy a canteen will be: a forecast computed once a day by the pipeline (pipeline/openstudent/menza.py) from the
+// public timetables of the schools that eat there, followed by a queue simulation. Not a live count: nobody publishes
+// one. The same file feeds the public /api/menza/<id>.json that OpenSISAKHK reads.
 
 const CROWD_TTL = 3600;
 const FAIL_TTL = 600;
@@ -73,11 +70,11 @@ export function parseCrowdDay(raw: unknown): CrowdDay | null {
 }
 
 /** The OpenŠtudent answer → Crowd. `today` is the Prague date: a file from another day isn't shown as today's. */
-export function parseCrowd(raw: unknown, today: string): Crowd {
+export function parseCrowd(raw: unknown, today: string, canteenId = "jidelna-hradecka"): Crowd {
   if (!raw || typeof raw !== "object") return NONE;
   const r = raw as Record<string, unknown>;
   // The agreed single-canteen object; the whole multi-canteen file works too.
-  const canteen = Array.isArray(r.canteens) ? (r.canteens as Record<string, unknown>[]).find((c) => c?.strava === "0288") : r;
+  const canteen = Array.isArray(r.canteens) ? (r.canteens as Record<string, unknown>[]).find((c) => c?.id === canteenId) : r;
   if (!canteen) return NONE;
   const dated = r.date === today && !canteen.closed;
   const typical: Record<number, CrowdDay> = {};

@@ -1,6 +1,6 @@
 {
-  "name": "opensisakhk",
-  "version": "1.22.1",
+  "name": "openstudent",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,12 +10,12 @@
     "deploy": "vite build && wrangler deploy",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "data": "tsx scripts/transit.ts && tsx scripts/places.ts && tsx scripts/walk.ts"
+    "data": "tsx scripts/transit.ts && tsx scripts/places.ts && tsx scripts/walk.ts",
+    "pipeline": "cd pipeline && python -m openstudent run && python ../scripts/ingest.py"
   },
   "dependencies": {
     "hono": "^4.13.13",
     "leaflet": "^1.9.4",
-    "node-html-parser": "^9.0.4",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
@@ -40,10 +40,10 @@
     "web-push": "^3.6.7",
     "wrangler": "^4.149.0"
   },
-  "description": "Neoficiální aplikace (PWA) pro SIS SSAKHK: rozvrh, gym, známky, absence, obědy",
+  "description": "OpenŠtudent: rozvrh, obědy, volné učebny a SideQuesty pro studenty všech škol v Hradci Králové",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oondraa/OpenSISAKHK"
+    "url": "https://github.com/oondraa/OpenStudent"
   }
 }

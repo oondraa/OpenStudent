@@ -2,5 +2,10 @@ SESSION_SECRET=change-me-to-a-long-random-string
 VAPID_PUBLIC_KEY=
 VAPID_PRIVATE_JWK=
 INGEST_TOKEN=
+# Gmail that sends login codes: the address + an app password (Google účet → Zabezpečení → Hesla aplikací).
+# Leave empty locally: the code is printed in the wrangler log and, with DEV_LOGIN=1, shown on the login screen.
+SMTP_USER=
+SMTP_PASS=
+DEV_LOGIN=1
 TELEGRAM_BOT_TOKEN=
 TELEGRAM_CHAT_ID=

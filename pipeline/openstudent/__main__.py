@@ -8,7 +8,7 @@ import sys
 import time
 from pathlib import Path
 
-from . import catalog, http, menza, model, sources
+from . import catalog, export, http, menza, model, sources
 
 ROOT = Path(__file__).resolve().parents[1]
 TT_DIR = ROOT / "data" / "timetables"
@@ -22,28 +22,35 @@ def cmd_catalog(_):
 
 
 def cmd_fetch(a):
+    """Stáhne tento i příští týden (Bakaláři vč. suplování). Ukládá detail pro appku a sloty pro model."""
     schools = json.loads(catalog.CATALOG.read_text(encoding="utf-8"))
     TT_DIR.mkdir(parents=True, exist_ok=True)
-    week = a.week or ("Actual" if dt.date.today().weekday() < 5 else "Next")
+    weeks = [a.week] if a.week else ["Actual", "Next"]
+    model_week = "Actual" if dt.date.today().weekday() < 5 else "Next"
     only = set(a.only.split(",")) if a.only else None
-    status = {}
+    st_path = TT_DIR / "_status.json"
+    status = json.loads(st_path.read_text(encoding="utf-8")) if st_path.exists() else {}
     for s in schools:
         if not s["public"] or (only and s["id"] not in only):
             continue
         t = time.time()
         try:
-            lessons = sources.fetch(s, week)
+            got = {}
+            for w in weeks:
+                monday = (dt.date.today() - dt.timedelta(days=dt.date.today().weekday())
+                          + dt.timedelta(days=7 if w == "Next" else 0)).isoformat()
+                got[monday] = (w, sources.fetch(s, w))
+            cur = next((d for w, d in got.values() if w == model_week), next(iter(got.values()))[1])
             (TT_DIR / f"{s['id']}.json").write_text(json.dumps(
-                {"school": s["id"], "fetched": dt.datetime.now().isoformat(timespec="seconds"), "week": week,
-                 "monday": (dt.date.today() - dt.timedelta(days=dt.date.today().weekday())
-                            + dt.timedelta(days=7 if week == "Next" else 0)).isoformat(),
-                 "lessons": lessons}, ensure_ascii=False), encoding="utf-8")
-            status[s["id"]] = {"ok": True, "classes": len(lessons)}
-            print(f"  ✓ {s['id']:16} {len(lessons):3} tříd  ({time.time() - t:.0f} s)")
+                {"school": s["id"], "fetched": dt.datetime.now().isoformat(timespec="seconds"),
+                 "weeks": {m: d for m, (_, d) in got.items()},
+                 "lessons": sources.slots_from_detail(cur)}, ensure_ascii=False), encoding="utf-8")
+            status[s["id"]] = {"ok": True, "classes": len(cur), "at": dt.datetime.now().isoformat(timespec="seconds")}
+            print(f"  ✓ {s['id']:16} {len(cur):3} tříd · {len(got)} týdny  ({time.time() - t:.0f} s)")
         except Exception as e:  # jedna rozbitá škola nesmí zastavit ostatní
-            status[s["id"]] = {"ok": False, "error": str(e)[:200]}
+            status[s["id"]] = {**status.get(s["id"], {}), "ok": False, "error": str(e)[:200]}
             print(f"  ✗ {s['id']:16} {e}", file=sys.stderr)
-    (TT_DIR / "_status.json").write_text(json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
+    st_path.write_text(json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 def _second_stage_only(schools, tts):
@@ -137,6 +144,7 @@ def main():
     f.add_argument("--only", help="čárkou oddělená id škol")
     fc = sub.add_parser("forecast")
     fc.add_argument("--date", help="YYYY-MM-DD (výchozí dnes)")
+    sub.add_parser("export")
     r = sub.add_parser("run")
     r.add_argument("--date")
     a = ap.parse_args()
@@ -146,10 +154,13 @@ def main():
         cmd_fetch(a)
     elif a.cmd == "forecast":
         cmd_forecast(a)
+    elif a.cmd == "export":
+        export.run()
     else:
         cmd_catalog(a)
         cmd_fetch(argparse.Namespace(week=None, only=None))
         cmd_forecast(a)
+        export.run()
 
 
 if __name__ == "__main__":

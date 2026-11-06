@@ -2,5 +2,15 @@
  "zs-horakove": {
   "ok": false,
   "error": "https://bakalari.zsmhhk.cz/Timetable/Public: timed out"
+ },
+ "gbn": {
+  "ok": true,
+  "classes": 18,
+  "at": "2026-11-06T10:45:14"
+ },
+ "zs-comenius": {
+  "ok": true,
+  "classes": 9,
+  "at": "2026-11-06T10:45:14"
  }
 }
