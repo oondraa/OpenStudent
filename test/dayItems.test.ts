@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { dayItems, periodOf } from "../src/web/Timetable";
+import { setPeriods } from "../src/shared/periods";
+import { PERIODS as KYBERNA } from "../src/shared/schoolOcr";
+
+// These cases were written against Kyberna's bell schedule (it has a period 0 at 7:00).
+setPeriods(KYBERNA as unknown as [string, string][]);
 
 const lesson = (subject: string, start: string, end: string, cancelled = false) =>
   ({ subject, start, end, room: "211", group: "", teacher: "HU", changed: false, cancelled, added: false, meet: null });

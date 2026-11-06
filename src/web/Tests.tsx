@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { api, cache, Unauthorized, type TimetableResponse, type UpcomingTests } from "./api";
 import { TEST_KINDS, TEST_NOTE_MAX, sameLesson, type TestItem, type TestKind } from "../shared/tests";
-import type { Day, Lesson } from "../worker/parse";
+import type { Day, Lesson } from "../shared/types";
 import { held, periodOf } from "./Timetable";
 import { DayStrip, Empty, LargeHeader, Section, SkeletonList } from "./ui";
 import { WEEKDAYS, addDays, longDate, minutes, mondayOf, nextSchoolDay, todayPrague, weekdayIndex } from "./time";
 import { useCachedFetch } from "./useFetch";
-import { PERIODS } from "../shared/schoolOcr";
+import { PERIODS } from "../shared/periods";
 import { AlertIcon, CalendarOffIcon, TestIcon } from "./icons";
 
 /** "Dnes", "Zítra", else the weekday and date, with how far off it is. */
@@ -55,7 +55,7 @@ const lessonKey = (l: Lesson) => `${l.start}-${l.subject}-${l.group}`;
 function testError(e: unknown) {
   const code = e instanceof Error ? e.message : "";
   const known: Record<string, string> = {
-    no_lesson: "Tuhle hodinu v rozvrhu ze SIS nemáš.",
+    no_lesson: "Tuhle hodinu tvoje třída v rozvrhu nemá.",
     no_class: "Nejdřív si v Nastavení vyber třídu.",
     bad_date: "Test jde přidat jen na dnešek a dál.",
     rate_limited: "Na dnešek už je testů dost, zkus to zítra.",

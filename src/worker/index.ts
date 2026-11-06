@@ -214,6 +214,13 @@ app.get("/menza/:file{[a-z0-9:-]+\\.json}", async (c) => {
   return c.json({ ...head, ...rest });
 });
 
+/** When every class in the city finishes on a day (Kdo kdy končí). Public timetables only, so public too. */
+app.get("/ends", async (c) => {
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(c.req.query("date") ?? "") ? c.req.query("date")! : pragueToday();
+  const all = (await dataset<Record<string, { school: string; size: number; classes: Record<string, string> }[]>>(c.env.DB, "ends")) ?? {};
+  return c.json({ date, dates: Object.keys(all), schools: all[date] ?? [] }, 200, { "cache-control": "public, max-age=600" });
+});
+
 // ---------- internal: the pipeline (GitHub Action) uploads its data ----------
 
 const internal = new Hono<Env>();

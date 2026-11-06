@@ -4,8 +4,18 @@ import type { Place, PlacesData } from "../shared/places";
 import { cache } from "./api";
 import { WalkGraph, straightWalker, type WalkData, type Walker } from "../shared/walkgraph";
 
-/** SSAKHK, Hradecká 1151/9: where breaks and "po škole" start and where "zpátky" leads. */
-export const SCHOOL: Point = { name: "Škola", lat: 50.203777, lon: 15.834439 };
+/**
+ * The student's school: where breaks and "po škole" start and where "zpátky" leads. A live binding set from the
+ * profile (setSchoolPoint), starting from the last known one; the city centre before any is known.
+ */
+export let SCHOOL: Point = (() => {
+  const s = cache.get<{ school?: { nick?: string; lat?: number | null; lon?: number | null } | null }>("me")?.school;
+  return s?.lat && s?.lon ? { name: "Škola", lat: s.lat, lon: s.lon } : { name: "Škola", lat: 50.2092, lon: 15.8328 };
+})();
+
+export function setSchoolPoint(s: { lat: number | null; lon: number | null } | null | undefined) {
+  if (s?.lat && s?.lon) SCHOOL = { name: "Škola", lat: s.lat, lon: s.lon };
+}
 
 // The static files are fetched once per app run; the browser's HTTP cache keeps them between runs.
 let transit: Promise<TransitData> | null = null;
@@ -138,13 +148,13 @@ export function useShortcuts() {
   const [saved, setSaved] = useState<Shortcut[] | null>(() => cache.get<Shortcut[]>(SHORTCUTS));
   useEffect(() => {
     const sync = () => setSaved(cache.get<Shortcut[]>(SHORTCUTS));
-    window.addEventListener("osis:shortcuts", sync);
-    return () => window.removeEventListener("osis:shortcuts", sync);
+    window.addEventListener("ost:shortcuts", sync);
+    return () => window.removeEventListener("ost:shortcuts", sync);
   }, []);
   const save = (list: Shortcut[]) => {
     cache.set(SHORTCUTS, list);
     setSaved(list);
-    window.dispatchEvent(new Event("osis:shortcuts"));
+    window.dispatchEvent(new Event("ost:shortcuts"));
   };
   const list = (all: Place[]) => saved ?? defaultShortcuts(all);
   const find = (p: Place, all: Place[]) => list(all).find((s) => placeKey(s.place) === placeKey(p));
@@ -162,7 +172,7 @@ export function useShortcuts() {
     reset: () => {
       cache.set(SHORTCUTS, null);
       setSaved(null);
-      window.dispatchEvent(new Event("osis:shortcuts"));
+      window.dispatchEvent(new Event("ost:shortcuts"));
     },
   };
 }

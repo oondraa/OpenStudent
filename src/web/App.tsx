@@ -2,16 +2,12 @@ import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRe
 import { api, cache, Unauthorized } from "./api";
 import { Login, Welcome } from "./Login";
 import { Timetable } from "./Timetable";
-import { Gym } from "./Gym";
 import { Rooms } from "./Rooms";
 import { Teachers } from "./Teachers";
 import { Tests } from "./Tests";
-import { Grades } from "./Grades";
 import { Settings } from "./Settings";
-import { Absence } from "./Absence";
-import { Projects } from "./Projects";
 import { Lunch } from "./Lunch";
-import { Finance } from "./Finance";
+import { Ends } from "./Ends";
 import { More } from "./More";
 // SideQuesty carry a map library and the bus timetables: loaded only when opened.
 const Trips = lazy(() => import("./Trips").then((m) => ({ default: m.Trips })));
@@ -29,7 +25,7 @@ import { useUi } from "./theme";
 export type Layout = "home" | "tabs";
 
 /** Shorter names where the tab bar is narrow. */
-const BAR_LABELS: Partial<Record<Tab, string>> = { gym: "Gym", rooms: "Učebny" };
+const BAR_LABELS: Partial<Record<Tab, string>> = { rooms: "Učebny", ends: "Konce" };
 
 export function App() {
   // The session cookie is HttpOnly, so "logged in" is remembered locally and corrected by the first 401.
@@ -153,15 +149,11 @@ export function App() {
   const content = (t: Tab) => (
     <>
       {t === "timetable" && <Timetable onError={onError} />}
-      {t === "gym" && <Gym onError={onError} />}
       {t === "rooms" && <Rooms onError={onError} />}
       {t === "teachers" && <Teachers onError={onError} />}
       {t === "tests" && <Tests onError={onError} />}
-      {t === "grades" && <Grades onError={onError} />}
-      {t === "absence" && <Absence onError={onError} />}
-      {t === "projects" && <Projects onError={onError} />}
+      {t === "ends" && <Ends onError={onError} />}
       {t === "lunch" && <Lunch onError={onError} />}
-      {t === "finance" && <Finance onError={onError} />}
       {t === "trips" && (
         <Suspense fallback={<div className="screen" />}>
           <Trips onError={onError} />
@@ -193,7 +185,7 @@ export function App() {
         <div className="desk">
           <nav className="sidebar" aria-label="Hlavní navigace">
             <p className="sidebar-brand">
-              Open<b>SISAKHK</b>
+              Open<b>Študent</b>
             </p>
             {[...tabOrder(), "settings" as const].map((t) => (
               <button

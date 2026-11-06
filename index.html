@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="google-site-verification" content="4raGqpOeJTb8aMl00P_4J94hDLzErMn5hDGFZcOV5uI" />
     <meta name="theme-color" content="#0e0e10" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- Not black-translucent: iOS 26 home-screen apps then make the viewport status-bar-height short at the bottom
@@ -12,15 +11,15 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>OpenSISAKHK</title>
+    <title>OpenŠtudent</title>
     <script>
       // Splash in the app's style and theme from the first frame: the saved choices (Settings), else "Nový" and the system's.
       (function () {
         var t = "system";
         var ui = "new";
         try {
-          t = JSON.parse(localStorage.getItem("osis:theme")) || "system";
-          ui = JSON.parse(localStorage.getItem("osis:ui")) || "new";
+          t = JSON.parse(localStorage.getItem("ost:theme")) || "system";
+          ui = JSON.parse(localStorage.getItem("ost:ui")) || "new";
         } catch (e) {}
         var light = t === "light" || (t === "system" && !matchMedia("(prefers-color-scheme: dark)").matches);
         var root = document.documentElement;
@@ -57,7 +56,7 @@
       .sp-version { bottom: calc(env(safe-area-inset-bottom) + 24px); font-size: 0.75rem; color: rgba(246, 243, 238, 0.35); }
       .sp-mark { display: flex; align-items: baseline; font: 800 clamp(2.4rem, 11vw, 3.4rem) / 1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; letter-spacing: -0.03em; }
       .sp-sis { color: #ff5a1f; opacity: 0; transform: scale(0.9); animation: sp-in 520ms cubic-bezier(0.32, 0.72, 0, 1) 80ms forwards; }
-      /* "Open" makes room by growing its column from 0 while sliding in from the left: SISAKHK glides right to stay centred. */
+      /* "Open" makes room by growing its column from 0 while sliding in from the left: Študent glides right to stay centred. */
       .sp-open { display: grid; grid-template-columns: 0fr; animation: sp-grow 720ms cubic-bezier(0.32, 0.72, 0, 1) 520ms forwards; }
       .sp-open > span { overflow: hidden; min-width: 0; }
       .sp-open-text { display: inline-block; font-weight: 300; color: #f6f3ee; padding-right: 0.02em; transform: translateX(-105%); animation: sp-slide 720ms cubic-bezier(0.32, 0.72, 0, 1) 520ms forwards; }
@@ -105,7 +104,7 @@
   <body>
     <div id="splash" aria-hidden="true">
       <div class="sp-mark">
-        <span class="sp-open"><span><span class="sp-open-text">Open</span></span></span><span class="sp-sis">SISAKHK</span>
+        <span class="sp-open"><span><span class="sp-open-text">Open</span></span></span><span class="sp-sis">Študent</span>
       </div>
       <p class="sp-note">Aktualizace</p>
       <div class="sp-bar"><i></i></div>
@@ -114,8 +113,8 @@
     <script>
       // main.tsx sets this right before reloading into a new version.
       try {
-        if (sessionStorage.getItem("osis:updating")) {
-          sessionStorage.removeItem("osis:updating");
+        if (sessionStorage.getItem("ost:updating")) {
+          sessionStorage.removeItem("ost:updating");
           document.getElementById("splash").classList.add("note");
         }
       } catch (e) {}

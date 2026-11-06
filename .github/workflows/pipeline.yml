@@ -1,0 +1,40 @@
+# Every night (and on demand): read the public timetables of all Hradec schools, forecast the canteens, upload
+# everything to the Worker. The Worker then tells students whose class timetable changed. A second run before
+# school catches what the schools rewrote overnight.
+name: Pipeline
+
+on:
+  schedule:
+    - cron: "15 1 * * 1-5"   # 2:15 / 3:15 Prague
+    - cron: "40 4 * * 1-5"   # 5:40 / 6:40 Prague, before school
+    - cron: "0 17 * * 0"     # Sunday evening: next week's timetable
+  workflow_dispatch:
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pillow
+      # The HTTP cache (6 h) makes the second run of a night cheap for the schools' servers.
+      - uses: actions/cache@v4
+        with:
+          path: pipeline/data/cache
+          key: http-${{ github.run_id }}
+          restore-keys: http-
+      - name: Timetables, canteen forecast, export
+        working-directory: pipeline
+        run: python -m openstudent run
+      - name: Upload to the Worker
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+        run: python scripts/ingest.py

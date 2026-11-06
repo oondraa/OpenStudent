@@ -61,9 +61,9 @@ export default defineConfig({
       registerType: "prompt",
       includeAssets: ["icon.svg", "favicon-32.png", "apple-touch-icon.png"],
       manifest: {
-        name: "OpenSISAKHK",
-        short_name: "OpenSISAKHK",
-        description: "Rozvrh a známky SSAKHK",
+        name: "OpenŠtudent",
+        short_name: "OpenŠtudent",
+        description: "Rozvrh, obědy a volné učebny pro školy v Hradci Králové",
         lang: "cs",
         theme_color: "#0e0e10",
         background_color: "#0e0e10",

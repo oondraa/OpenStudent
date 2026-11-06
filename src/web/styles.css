@@ -961,6 +961,22 @@ button.tt-row:active { background-color: var(--fill); transition-duration: 0ms; 
 }
 .class-grid button:active { transform: scale(0.94); transition-duration: 80ms; }
 .class-grid .selected { background: var(--accent); color: var(--on-accent); }
+/* OpenŠtudent: school picker. Logos are drawn for white paper, so they sit on a white tile in both themes. */
+.school-sheet { max-height: min(88dvh, 760px); }
+.school-list { display: flex; flex-direction: column; gap: 6px; overflow-y: auto; margin: 4px -6px 0; padding: 0 6px; max-height: 52dvh; }
+.school-option { display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 14px; background: var(--fill); text-align: left; color: var(--text); }
+.school-option.selected { box-shadow: inset 0 0 0 2px var(--accent); }
+.school-option:disabled { opacity: 0.45; }
+.school-option-text { display: flex; flex-direction: column; min-width: 0; }
+.school-option-text b { font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.school-option-text small { font-size: 0.8125rem; color: var(--text-2); }
+.school-logo { flex: none; display: inline-grid; place-items: center; border-radius: 10px; background: #fff; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08); }
+.school-logo img { max-width: 88%; max-height: 82%; object-fit: contain; }
+.school-logo.text { background: var(--accent); color: var(--on-accent); font-weight: 800; font-size: 0.8125rem; box-shadow: none; }
+.school-head { display: flex; align-items: center; gap: 12px; }
+.sheet-back { align-self: flex-start; min-height: 32px; font-size: 0.9375rem; color: var(--accent); }
+.class-grid.groups { grid-template-columns: repeat(3, 1fr); }
+.code-input:not(:placeholder-shown) { letter-spacing: 0.35em; font-variant-numeric: tabular-nums; font-size: 1.25rem !important; }
 .sheet-later { min-height: 44px; font-size: 0.9375rem; color: var(--text-2); }
 
 /* ---------- Bug reports (Report.tsx) ---------- */
@@ -1442,3 +1458,23 @@ img.sq-icon { background: #fff; }
 .sq-delay.ok { color: var(--green); background: color-mix(in srgb, var(--green) 15%, transparent); }
 .sq-delay.slight { color: var(--orange); background: color-mix(in srgb, var(--orange) 16%, transparent); }
 .sq-delay.late { color: var(--red); background: color-mix(in srgb, var(--red) 15%, transparent); }
+
+/* ---------- Kdo kdy končí (Ends.tsx) ---------- */
+.ends-hero { display: flex; flex-direction: column; gap: 2px; padding: 18px 20px; margin-bottom: 16px; border-radius: 22px; background: var(--surface); box-shadow: var(--shadow); }
+.ends-hero-label { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); }
+.ends-hero-time { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em; color: var(--green); }
+.ends-hero-sub { font-size: 0.9375rem; color: var(--text-2); }
+.ends-wave { align-items: flex-start; gap: 14px; padding-top: 12px; padding-bottom: 12px; }
+.ends-wave.past { opacity: 0.4; }
+.ends-wave.next .ends-time b { color: var(--green); }
+.ends-time { width: 3.6rem; flex: none; display: flex; flex-direction: column; }
+.ends-time b { font-family: var(--num); font-variant-numeric: tabular-nums; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+.ends-time small { font-size: 0.75rem; color: var(--text-2); }
+.ends-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.ends-bar { height: 5px; border-radius: 3px; background: color-mix(in srgb, var(--green) 18%, transparent); overflow: hidden; margin-top: 6px; }
+.ends-bar span { display: block; height: 100%; border-radius: 3px; background: var(--green); transform-origin: left; }
+.ends-schools { display: flex; flex-wrap: wrap; gap: 6px; }
+.ends-school { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; padding: 3px 10px 3px 3px; border-radius: 10px; background: var(--fill); font-size: 0.8125rem; font-weight: 600; }
+.ends-school > span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ends-school small { font-weight: 400; color: var(--text-2); }
+.ends-school.mine { box-shadow: inset 0 0 0 2px var(--accent); }

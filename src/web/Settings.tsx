@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api, cache, type Me } from "./api";
-import { CLASSES } from "../shared/schoolOcr";
+import { SchoolLogo, SchoolPicker } from "./ClassPrompt";
 import { Chevron, LargeHeader, Section, Segmented, Switch } from "./ui";
 import { savedTheme, setTheme, setUi, useLook, useUi, type Theme, type Ui } from "./theme";
 import { ICON_GROUPS, ICONS, iconUrl, resolveIcon, savedIcon, setIcon, type IconChoice } from "./appIcon";
@@ -27,15 +27,15 @@ export function Settings({ onError, onLogout, layout, onLayout, onOrder }: {
   const me = useCachedFetch<Me>("me", api.me, onError);
   const desktop = useDesktop();
   const ui = useUi();
-  const [cls, setCls] = useState<string | null>(null);
+  const [picking, setPicking] = useState(false);
   const [report, setReport] = useState(false);
-  const myClass = cls ?? me.data?.class ?? null;
+  const myClass = me.data?.class ?? null;
   const [theme, setThemeState] = useState<Theme>(savedTheme);
   const [push, setPush] = useState<PushState>("busy");
   const [pushMsg, setPushMsg] = useState<string | null>(null);
   const [watching, setWatching] = useState<boolean | null>(null);
-  // One switch for everything: push on this device + background checks of timetable, grades and absence.
-  const notifications = push === "on" && (watching ?? me.data?.watching ?? false);
+  // One switch: push on this device; the server sends one when the school changes the class timetable.
+  const notifications = push === "on" && (watching ?? (me.data?.pushDevices ?? 0) > 0);
 
   useEffect(() => {
     if (!("serviceWorker" in navigator) || !("PushManager" in window)) return setPush("unsupported");
@@ -71,16 +71,19 @@ export function Settings({ onError, onLogout, layout, onLayout, onOrder }: {
       <LargeHeader title="Nastavení" />
       <div className="scroll">
         <div className="profile-card stagger">
-          {me.data?.hasPhoto ? (
-            <img className="avatar" src="/api/me/photo" alt="" />
+          {me.data?.school ? (
+            <SchoolLogo school={me.data.school} size={44} />
           ) : (
             <span className="avatar avatar-fallback" aria-hidden="true">
-              {(me.data?.name ?? "?").split(" ").map((p) => p[0]).slice(0, 2).join("")}
+              ?
             </span>
           )}
           <div>
-            <p className="profile-name">{me.data?.name ?? "Přihlášený student"}</p>
-            <p className="profile-meta">{myClass ? `${myClass} · ` : ""}Přihlášeno přes SIS SSAKHK</p>
+            <p className="profile-name">{me.data?.school?.nick ?? "Škola nevybraná"}</p>
+            <p className="profile-meta">
+              {myClass ? `${myClass} · ` : ""}
+              {me.data?.email ?? ""}
+            </p>
           </div>
         </div>
 
@@ -97,33 +100,26 @@ export function Settings({ onError, onLogout, layout, onLayout, onOrder }: {
           </button>
         </Section>
 
-        <Section>
-          <label className="row">
-            <span className="row-title">Třída</span>
-            <select
-              className="select"
-              value={myClass ?? ""}
-              onChange={async (e) => {
-                const next = e.target.value;
-                setCls(next);
-                try {
-                  await api.setClass(next);
-                  if (me.data) cache.set("me", { ...me.data, class: next });
-                } catch (err) {
-                  onError(err);
-                  setCls(null);
-                }
-              }}
-            >
-              {!myClass && <option value="">Vyber…</option>}
-              {CLASSES.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-          </label>
+        <Section footer={me.data?.groups.length ? `Tvoje skupiny: ${me.data.groups.join(", ")}` : "Vidíš všechny hodiny třídy. Skupiny si můžeš vybrat při změně třídy."}>
+          <button className="row more-row" onClick={() => setPicking(true)}>
+            <span className="row-main">
+              <span className="row-title">Škola a třída</span>
+            </span>
+            <span className="row-value">{me.data?.school ? `${me.data.school.nick} · ${myClass ?? "?"}` : "Vybrat"}</span>
+            <Chevron />
+          </button>
         </Section>
+        {picking && (
+          <SchoolPicker
+            me={me.data}
+            onError={onError}
+            onCancel={() => setPicking(false)}
+            onSaved={() => {
+              setPicking(false);
+              location.reload();
+            }}
+          />
+        )}
 
         <Section title="Vzhled" footer={desktop ? undefined : "Plocha: dlaždice na hlavní obrazovce, sekce se z nich otevírají. Lišta: sekce v liště dole."}>
           <div className="row">
@@ -208,13 +204,13 @@ export function Settings({ onError, onLogout, layout, onLayout, onOrder }: {
               : push === "denied"
                 ? "Notifikace jsou v prohlížeči zakázané. Povol je v nastavení prohlížeče pro tuhle stránku."
                 : (pushMsg ??
-                  "Přijde ti zpráva, když se ti změní rozvrh (i když ho škola přepíše ve 3 ráno), přibude známka nebo absence. Aby to server mohl hlídat, i když appku nemáš otevřenou, uloží si tvoje přihlášení do SIS zašifrované. Vypnutím nebo odhlášením se smaže.")
+                  "Přijde ti zpráva, když škola změní rozvrh tvojí třídy: suplování, odpadlá hodina, jiná učebna. Rozvrhy kontrolujeme každou noc a ráno. Jen pro tvoje skupiny, pokud si je vybereš.")
           }
         >
           <div className="row">
-            <span className="row-title">Rozvrh, známky a absence</span>
+            <span className="row-title">Změny rozvrhu</span>
             <Switch
-              label="Notifikace o změnách rozvrhu, nových známkách a absenci"
+              label="Notifikace o změnách rozvrhu"
               checked={notifications}
               disabled={push === "busy" || push === "unsupported" || push === "denied"}
               onChange={toggleNotifications}
@@ -234,23 +230,21 @@ export function Settings({ onError, onLogout, layout, onLayout, onOrder }: {
         <Section title="Soukromí">
           <div className="privacy">
             <p>
-              <b>Co ukládáme:</b> z profilu v SIS tvoje jméno, profilovou fotku, školní e-mail, skupiny, volitelné bloky a
-              projekty, k tomu třídu, kterou potvrdíš. Slouží k tomu, abychom věděli, kdo aplikaci používá, a pro další
-              funkce (třeba změny rozvrhu pro tvoji třídu a skupiny). U zapnutých notifikací adresu pro doručení do tohohle
-              zařízení.
+              <b>Co ukládáme:</b> tvůj e-mail (jen kvůli přihlášení), školu, třídu a skupiny, které si vybereš, a u
+              zapnutých notifikací adresu pro doručení do tohohle zařízení. Žádné heslo: při přihlášení ti pokaždé přijde
+              kód.
             </p>
             <p>
-              <b>Heslo:</b> zůstává zašifrované v tomhle zařízení, aby tě aplikace nemusela odhlašovat, když SIS ukončí
-              relaci. Do databáze se dostane jen tehdy, když si zapneš notifikace, a to zašifrované.
-              Jinak by server nemohl sám zjistit, že ti něco přibylo.
+              <b>Odkud jsou data:</b> rozvrhy jen z veřejných rozvrhů, které školy samy zveřejňují bez přihlášení
+              (Bakaláři, EduPage). Jídelníček z veřejného jídelníčku Strava.cz. O tobě ze školy nevíme nic.
             </p>
             <p>
-              <b>Co neukládáme:</b> známky, rozvrh, absenci ani finance (ty ani v tomhle zařízení). U notifikací o známkách si server pamatuje jen krátké
-              otisky (hashe), podle kterých pozná, co je nové. Samotné známky z nich nevyčte.
+              <b>Strava:</b> když propojíš účet jídelny, jméno a heslo do Stravy zůstávají jen v zašifrované cookie
+              v tomhle zařízení. Server je neukládá.
             </p>
             <p>
-              Odhlášením se smaže uložené heslo i odběr notifikací.{" "}
-              <a href="https://github.com/oondraa/OpenSISAKHK" target="_blank" rel="noreferrer">
+              Odhlášením se smaže odběr notifikací. Smazáním účtu všechno, co o tobě máme.{" "}
+              <a href="https://github.com/oondraa/OpenStudent" target="_blank" rel="noreferrer">
                 Zdrojový kód je veřejný.
               </a>
             </p>
@@ -273,12 +267,22 @@ export function Settings({ onError, onLogout, layout, onLayout, onOrder }: {
           <button className="row row-button destructive" onClick={onLogout}>
             Odhlásit se
           </button>
+          <button
+            className="row row-button destructive"
+            onClick={async () => {
+              if (!confirm("Opravdu smazat účet? Zmizí e-mail, škola, třída i testy, které jsi přidal(a).")) return;
+              await api.deleteAccount().catch(onError);
+              onLogout();
+            }}
+          >
+            Smazat účet
+          </button>
         </Section>
 
         <p className="list-footer center">
-          OpenSISAKHK {VERSION} · sestaveno {BUILT}
+          OpenŠtudent {VERSION} · sestaveno {BUILT}
           <br />
-          studentská aplikace, není spojená se školou
+          studentská aplikace, není spojená s žádnou školou
           <br />
           <span className="diag">{layoutInfo()}</span>
         </p>

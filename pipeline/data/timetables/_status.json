@@ -1,16 +1,131 @@
 {
  "zs-horakove": {
   "ok": false,
-  "error": "https://bakalari.zsmhhk.cz/Timetable/Public: timed out"
+  "error": "https://bakalari.zsmhhk.cz/Timetable/Public: [WinError 10054] Stávající připojení bylo vynuceně ukončeno vzdáleným hostitelem"
  },
  "gbn": {
   "ok": true,
   "classes": 18,
-  "at": "2026-11-06T10:45:14"
+  "at": "2026-11-06T10:45:59"
  },
  "zs-comenius": {
   "ok": true,
   "classes": 9,
-  "at": "2026-11-06T10:45:14"
+  "at": "2026-11-06T10:58:03"
+ },
+ "bisgym": {
+  "ok": true,
+  "classes": 21,
+  "at": "2026-11-06T10:45:56"
+ },
+ "gjkt": {
+  "ok": true,
+  "classes": 20,
+  "at": "2026-11-06T10:46:34"
+ },
+ "hotelovka": {
+  "ok": true,
+  "classes": 11,
+  "at": "2026-11-06T10:46:49"
+ },
+ "oahk": {
+  "ok": true,
+  "classes": 20,
+  "at": "2026-11-06T10:47:42"
+ },
+ "soavos": {
+  "ok": true,
+  "classes": 14,
+  "at": "2026-11-06T10:48:06"
+ },
+ "vocelova": {
+  "ok": true,
+  "classes": 31,
+  "at": "2026-11-06T10:48:57"
+ },
+ "sosvet": {
+  "ok": true,
+  "classes": 13,
+  "at": "2026-11-06T10:49:30"
+ },
+ "hradebni": {
+  "ok": true,
+  "classes": 47,
+  "at": "2026-11-06T10:50:57"
+ },
+ "supshnn": {
+  "ok": true,
+  "classes": 14,
+  "at": "2026-11-06T10:51:37"
+ },
+ "kyberna": {
+  "ok": true,
+  "classes": 11,
+  "at": "2026-11-06T10:51:58"
+ },
+ "nesl": {
+  "ok": true,
+  "classes": 111,
+  "at": "2026-11-06T10:57:39"
+ },
+ "zs-plotiste": {
+  "ok": true,
+  "classes": 14,
+  "at": "2026-11-06T10:58:03"
+ },
+ "zs-sever": {
+  "ok": true,
+  "classes": 23,
+  "at": "2026-11-06T10:58:50"
+ },
+ "zs-gocarova": {
+  "ok": true,
+  "classes": 27,
+  "at": "2026-11-06T11:00:12"
+ },
+ "zs-mandysova": {
+  "ok": true,
+  "classes": 20,
+  "at": "2026-11-06T11:00:51"
+ },
+ "zs-jirasek": {
+  "ok": true,
+  "classes": 22,
+  "at": "2026-11-06T11:01:30"
+ },
+ "zs-uprkova": {
+  "ok": true,
+  "classes": 20,
+  "at": "2026-11-06T11:02:03"
+ },
+ "zs-novyhk": {
+  "ok": true,
+  "classes": 11,
+  "at": "2026-11-06T11:02:21"
+ },
+ "zs-pouchov": {
+  "ok": true,
+  "classes": 18,
+  "at": "2026-11-06T11:04:03"
+ },
+ "zs-bezrucova": {
+  "ok": true,
+  "classes": 27,
+  "at": "2026-11-06T11:04:54"
+ },
+ "zs-habrmanova": {
+  "ok": true,
+  "classes": 19,
+  "at": "2026-11-06T11:05:37"
+ },
+ "zs-snp": {
+  "ok": true,
+  "classes": 29,
+  "at": "2026-11-06T11:06:48"
+ },
+ "zs-stefanikova": {
+  "ok": true,
+  "classes": 46,
+  "at": "2026-11-06T11:08:42"
  }
 }

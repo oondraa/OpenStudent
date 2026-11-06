@@ -10,7 +10,7 @@ export const todayPrague = () => DATE.format(new Date());
 /** Dev only: a pretend time of day (`?cas=9:45`, main.tsx), to try school-day screens in the evening. */
 function devTime() {
   if (!import.meta.env.DEV) return null;
-  const v = localStorage.getItem("osis:devCas")?.match(/^(\d{1,2}):(\d{2})$/);
+  const v = localStorage.getItem("ost:devCas")?.match(/^(\d{1,2}):(\d{2})$/);
   return v ? Number(v[1]) * 60 + Number(v[2]) : null;
 }
 

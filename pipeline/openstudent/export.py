@@ -3,6 +3,7 @@
 out/app/schools.json   – školy pro výběr při registraci (jen 2. stupeň ZŠ, SŠ, VOŠ)
 out/app/tt-<id>.json   – rozvrh všech tříd školy: zvonění + týdny {pondělí: {třída: [den]}}
 out/app/menza.json     – odhad vytížení jídelen (z menza.py, kopie web/data/menza.json)
+out/app/ends.json      – kdy končí která třída ve městě, po dnech (obrazovka „Kdo kdy končí“)
 
 scripts/ingest.py to pak nahraje do Workeru (PUT /api/internal/data/<jméno>).
 """
@@ -13,7 +14,7 @@ import shutil
 from collections import Counter
 from pathlib import Path
 
-from . import catalog, menza, model
+from . import catalog, menza, model, sources
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "out" / "app"
@@ -47,6 +48,7 @@ def run() -> None:
     schools = json.loads(catalog.CATALOG.read_text(encoding="utf-8"))
     logos = json.loads((LOGOS / "index.json").read_text(encoding="utf-8")) if (LOGOS / "index.json").exists() else {}
     listing = []
+    ends: dict[str, list] = {}  # datum → [{school, size, classes: {třída: konec}}]
     for s in schools:
         if s.get("system") == "-":
             continue
@@ -61,11 +63,26 @@ def run() -> None:
             if any(weeks.values()):
                 classes = sorted({c for wk in weeks.values() for c in wk}, key=_class_key)
                 entry.update(supported=True, classes=classes, periods=periods_of(weeks), fetched=d.get("fetched"))
+                n_all = len(d.get("lessons") or {}) or len(classes)
+                est = s.get("students_est", 0) * (len(classes) / n_all if s["level"] == "ZŠ" else 1)
+                size = round(max(10, min(32, est / max(1, len(classes)))))
+                for monday, wk in weeks.items():
+                    slots = sources.slots_from_detail(wk)
+                    for cls, by_day in slots.items():
+                        for di, sl in by_day.items():
+                            full = [e for _, e, f in sl if f >= 1] or [e for _, e, _ in sl]
+                            if not full:
+                                continue
+                            date = (wk[cls][di].get("date") if di < len(wk[cls]) else None) or _plus(monday, di)
+                            day = ends.setdefault(date, {})
+                            day.setdefault(s["id"], {"school": s["id"], "size": size, "classes": {}})["classes"][cls] = hhmm(max(full))
                 (OUT / f"tt-{s['id']}.json").write_text(json.dumps(
                     {"school": s["id"], "fetched": d.get("fetched"), "periods": entry["periods"], "weeks": weeks},
                     ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         listing.append(entry)
     listing.sort(key=lambda e: (not e["supported"], e["level"] != "SŠ", e["nick"]))
+    (OUT / "ends.json").write_text(json.dumps({d: list(v.values()) for d, v in sorted(ends.items())},
+                                              ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (OUT / "schools.json").write_text(json.dumps(listing, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     mz = ROOT / "web" / "data" / "menza.json"
     if mz.exists():
@@ -91,3 +108,8 @@ def _canteen(s: dict) -> dict | None:
 def _class_key(c: str):
     g = model._grade(c)
     return (g if g is not None else 99, c)
+
+
+def _plus(monday: str, days: int) -> str:
+    import datetime as dt
+    return (dt.date.fromisoformat(monday) + dt.timedelta(days=days)).isoformat()

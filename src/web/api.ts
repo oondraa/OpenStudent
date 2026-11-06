@@ -55,9 +55,14 @@ export const api = {
   logout: () => call<{ ok: true }>("/logout", { method: "POST" }),
   deleteAccount: () => call<{ ok: true }>("/me/delete", { method: "POST" }),
   schools: () => call<{ schools: SchoolInfo[] }>("/schools"),
+  /** When every class in the city finishes on `date` (Kdo kdy končí). */
+  ends: (date: string) =>
+    call<{ date: string; dates: string[]; schools: { school: string; size: number; classes: Record<string, string> }[] }>(`/ends?date=${date}`),
   classGroups: (school: string, cls: string) => call<{ groups: string[] }>(`/schools/${encodeURIComponent(school)}/groups?class=${encodeURIComponent(cls)}`),
   setProfile: (p: { school?: string; cls?: string | null; groups?: string[]; name?: string }) => post("/me/profile", p),
   timetable: (week?: string) => call<TimetableResponse>(`/timetable${week ? `?week=${week}` : ""}`),
+  /** Permanent timetable (no substitutions) of the week starting `week`: the school's regular pattern. */
+  permanentTimetable: (week: string) => call<TimetableResponse>(`/timetable?week=${week}&static=1`),
   /** The whole school's week (free rooms, teachers). */
   schoolWeek: (week?: string) => call<SchoolWeekResponse>(`/school/week${week ? `?week=${week}` : ""}`),
   tests: (week: string) => call<TestsResponse>(`/tests?week=${week}`),

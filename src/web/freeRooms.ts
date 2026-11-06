@@ -1,4 +1,4 @@
-import type { Cell } from "../shared/schoolOcr";
+import type { Cell } from "../shared/types";
 
 /** The sports hall and the weight room (that one has its own screen): nobody goes there to sit and study. */
 const NOT_CLASSROOMS = new Set(["T0", "P0"]);

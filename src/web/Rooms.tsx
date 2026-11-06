@@ -1,21 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { api, cache } from "./api";
-import { PERIODS, type Cell } from "../shared/schoolOcr";
+import { PERIODS, periodNumber } from "../shared/periods";
+import type { Cell } from "../shared/types";
 import { allRooms, blocksAt, freeRooms } from "./freeRooms";
-import { readSchoolFile, schoolFile, type SchoolWeeks } from "./school";
 import { Empty, LargeHeader, Section, SkeletonList, DayStrip } from "./ui";
 import { addDays, defaultSchoolDay, longDate, minutes, mondayOf, nextSchoolDay, nowMinutesPrague, todayPrague, weekdayIndex } from "./time";
 import { useCachedFetch } from "./useFetch";
 import { useNow } from "./hooks";
 import { AlertIcon, CalendarOffIcon, DoorIcon } from "./icons";
 
-/** Cache key of a week's five school days, read from images "1" or "2". */
-export const roomsKey = (weeks: SchoolWeeks | null | undefined, iso: string) => {
-  const file = schoolFile(weeks, iso);
-  return file ? `rooms:${file.slice(2)}:${mondayOf(iso)}` : null;
-};
+/** Cache key of a week's five school days (the whole school, from the server). */
+export const roomsKey = (iso: string) => `rooms:${mondayOf(iso)}`;
 
-export const lastPeriodOf = (day: Cell[]) => Math.max(8, ...day.map((c) => c.period));
+export const lastPeriodOf = (day: Cell[]) => Math.min(PERIODS.length - 1, Math.max(5, ...day.map((c) => c.period)));
 
 /** Period to show first: the one on now (or next) today, otherwise the first one anybody has. */
 export function autoPeriod(day: Cell[], live: boolean, now: number) {
@@ -30,25 +27,18 @@ export function autoPeriod(day: Cell[], live: boolean, now: number) {
 export function schoolStartDay() {
   const today = todayPrague();
   const day = defaultSchoolDay();
-  const key = roomsKey(cache.get<SchoolWeeks>("school-weeks"), today);
-  const week = key && cache.get<Cell[][]>(key);
+  const week = cache.get<Cell[][]>(roomsKey(today));
   if (day !== today || !week) return day;
   return nowMinutesPrague() >= minutes(PERIODS[lastPeriodOf(week[weekdayIndex(today)])][1]) ? nextSchoolDay(today) : today;
 }
 
 /** The school timetable of `selected`'s whole week: the room list comes from all of it, and switching days is then instant. */
 export function useSchoolWeek(selected: string, onError: (e: unknown) => boolean) {
-  const weeks = useCachedFetch("school-weeks", api.schoolWeeks, onError);
-  const key = roomsKey(weeks.data, selected);
+  const key = roomsKey(selected);
   const monday = mondayOf(selected);
-  const week = useCachedFetch<Cell[][]>(
-    key,
-    () => {
-      const files = [0, 1, 2, 3, 4].map((i) => schoolFile(weeks.data, addDays(monday, i)));
-      return Promise.all(files.map((f) => (f ? readSchoolFile(f) : Promise.resolve([]))));
-    },
-    onError,
-  );
+  const week = useCachedFetch<Cell[][]>(key, () => api.schoolWeek(monday).then((r) => r.days), onError);
+  // The server has this and next week; further ahead there's nothing to show.
+  const weeks = { data: { weeks: [] as { start: string; end: string; week: number }[] }, loading: false };
   return { weeks, key, week };
 }
 
@@ -91,7 +81,7 @@ export function Rooms({ onError }: { onError: (e: unknown) => boolean }) {
         ) : !rooms.length ? (
           <Empty icon={<CalendarOffIcon size={40} />} title="Tento týden se neučí" text="Rozvrh školy nemá žádnou hodinu." />
         ) : !free.length ? (
-          <Empty icon={<DoorIcon size={40} />} title="Všechno obsazeno" text={`V ${period}. hodině se učí ve všech ${rooms.length} učebnách.`} />
+          <Empty icon={<DoorIcon size={40} />} title="Všechno obsazeno" text={`V ${periodNumber(period)}. hodině se učí ve všech ${rooms.length} učebnách.`} />
         ) : (
           <Section
             grid
@@ -131,7 +121,7 @@ export function PeriodStrip({ last, period, live, now, onPick }: { last: number;
           className={`period-chip ${p === period ? "active" : ""} ${live && minutes(end) <= now ? "past" : ""}`}
           onClick={() => onPick(p)}
         >
-          <b>{p}.</b>
+          <b>{periodNumber(p)}.</b>
           <span>{start}</span>
         </button>
       ))}

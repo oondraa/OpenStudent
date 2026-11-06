@@ -11,7 +11,7 @@ import { currentSubscription, disableNotifications, enableNotifications, enabled
 export function NotifyPrompt({ onError }: { onError: (e: unknown) => boolean }) {
   const me = useCachedFetch<Me>("me", api.me, onError);
   const ready = !me.loading && !!me.data && me.data.class !== null; // after ClassPrompt, never two sheets at once
-  const watching = me.data?.watching;
+  const watching = (me.data?.pushDevices ?? 0) > 0;
   const [state, setState] = useState<"hidden" | "open" | "busy" | "error">("hidden");
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PERIODS } from "../shared/schoolOcr";
+import { PERIODS } from "../shared/periods";
 import { PeriodStrip, autoPeriod, lastPeriodOf, schoolStartDay, useSchoolWeek } from "./Rooms";
 import { teachersAt } from "./whoTeaches";
 import { Empty, LargeHeader, Section, SkeletonList, DayStrip } from "./ui";

@@ -1,4 +1,4 @@
-import type { Cell } from "../shared/schoolOcr";
+import type { Cell } from "../shared/types";
 
 export interface Teaching {
   teacher: string;

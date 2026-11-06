@@ -1,7 +1,7 @@
 import { api, cache } from "./api";
 
-// Notifications are two halves that have to agree: the push subscription of this device and the stored login on
-// the server (`me.watching`). Settings switches both; NotifyPrompt notices when they drift apart.
+// Notifications: the push subscription of this device, stored on the server (`me.pushDevices`). The server sends a
+// push when the school changes the student's class timetable. NotifyPrompt notices when the two drift apart.
 
 /** Set while notifications are switched on on this device, so a lost subscription can be told from "never enabled here". */
 const HERE = "pushHere";
@@ -18,7 +18,7 @@ export async function currentSubscription() {
 export const enabledHere = () => cache.get<boolean>(HERE) === true;
 export const markEnabledHere = () => cache.set(HERE, true);
 
-/** Subscribes this device (reusing a live subscription) and stores the login for the background checks. */
+/** Subscribes this device (reusing a live subscription). */
 export async function enableNotifications(): Promise<"on" | "denied"> {
   const reg = await navigator.serviceWorker.ready;
   if ((await Notification.requestPermission()) !== "granted") return "denied";
@@ -26,13 +26,11 @@ export async function enableNotifications(): Promise<"on" | "denied"> {
     (await reg.pushManager.getSubscription()) ??
     (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes((await api.pushKey()).key) }));
   await api.pushSubscribe(sub.toJSON());
-  await api.watch(true);
   cache.set(HERE, true);
   return "on";
 }
 
 export async function disableNotifications() {
-  await api.watch(false); // no notifications = no reason to keep the stored login
   cache.set(HERE, false);
   const sub = await currentSubscription();
   if (sub) {

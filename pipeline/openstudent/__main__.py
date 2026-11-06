@@ -100,6 +100,10 @@ def cmd_forecast(a):
     OUT.mkdir(parents=True, exist_ok=True)
     mz = menza.build(res, schools, places, day, catalog.NICK)
     mz["generated"] = res["generated"]
+    per_wd = {wd: (res if wd == day.weekday() else model.forecast(schools, tts, places, wd)) for wd in range(5)}
+    typ = menza.typical(per_wd, schools)
+    for c in mz["canteens"]:
+        c["typical"] = typ.get(c["id"], [])
     (OUT / "menza.json").write_text(json.dumps(mz, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     res.pop("arrivals", None), res.pop("arrivals_by_school", None)
     (OUT / "forecast.json").write_text(json.dumps(res, ensure_ascii=False), encoding="utf-8")

@@ -1,12 +1,12 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { api, cache, type LunchResponse, type TestsResponse, type TimetableDay, type TimetableResponse } from "./api";
 import { TEST_KINDS, sameLesson, type TestItem } from "../shared/tests";
-import type { Lesson } from "../worker/parse";
+import type { Lesson } from "../shared/types";
 import type { LunchDay } from "../worker/strava";
 import { Chevron, DayPager, DayStrip, Empty, LargeHeader, SkeletonList } from "./ui";
 import { WEEKDAYS, addDays, defaultSchoolDay, inMinutes, longDate, minutes, mondayOf, nextSchoolDay, nowMinutesPrague, todayPrague, weekdayIndex } from "./time";
 import { useCachedFetch } from "./useFetch";
-import { PERIODS } from "../shared/schoolOcr";
+import { PERIODS, periodNumber as schoolNumber } from "../shared/periods";
 import { useDesktop, useNow, useScrollToFocus } from "./hooks";
 import { CalendarOffIcon, SunIcon, UtensilsIcon } from "./icons";
 
@@ -19,7 +19,7 @@ export function startDay(days: TimetableDay[] | undefined) {
   return nowMinutesPrague() >= Math.max(...lessons.map((l) => minutes(l.end))) ? nextSchoolDay(today) : today;
 }
 
-/** Lessons that actually take place: SIS keeps a cancelled one in the day, struck out. */
+/** Lessons that actually take place: a cancelled one stays in the day, struck out. */
 export const held = (lessons: Lesson[]) => lessons.filter((l) => !l.cancelled);
 
 export function Timetable({ onError }: { onError: (e: unknown) => boolean }) {
@@ -196,7 +196,7 @@ export function periodOf(l: { start: string; end: string }) {
   });
   if (!covered.length) return "";
   const [a, b] = [covered[0], covered[covered.length - 1]];
-  return b > a ? `${a}–${b}` : `${a}`;
+  return b > a ? `${schoolNumber(a)}–${schoolNumber(b)}` : `${schoolNumber(a)}`;
 }
 
 type State = "past" | "now" | "future";
@@ -347,7 +347,7 @@ function changeLines(l: Lesson, was?: Lesson[]): { label: string; from?: string;
     });
   }
   if (l.added) return [{ label: "Navíc", to: "v běžném rozvrhu tahle hodina není" }];
-  return [{ label: "Změna", to: "SIS u hodiny hlásí změnu, ale neuvádí, co bylo původně" }];
+  return [{ label: "Změna", to: "Škola u hodiny hlásí změnu, ale neuvádí, co bylo původně" }];
 }
 
 /**

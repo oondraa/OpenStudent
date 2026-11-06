@@ -66,16 +66,18 @@ export function Lunch({ onError }: { onError: (e: unknown) => boolean }) {
     </LargeHeader>
   );
 
-  if (data && !data.connected)
+  // No school canteen known (the school doesn't use Strava, or eats somewhere we don't know): nothing to show.
+  if (data && !data.connected && !data.canteen?.strava)
     return (
       <div className="screen">
         {header}
         <div className="scroll">
           <Empty
             icon={<UtensilsIcon size={40} />}
-            title="Strava není propojená"
-            text={data.error ? "Heslo do Stravy se změnilo. Propoj ji znovu v Nastavení." : "Propoj účet jídelny v Nastavení a objednávej obědy tady."}
+            title="Jídelníček neznáme"
+            text="Tvoje škola nemá jídelnu na Strava.cz, nebo nevíme, kam chodíte na oběd."
           />
+          <CrowdCard crowd={crowd.data} date={selected} />
         </div>
       </div>
     );
@@ -98,9 +100,9 @@ export function Lunch({ onError }: { onError: (e: unknown) => boolean }) {
           <>
             {day.soup && <p className="lunch-soup">{day.soup}</p>}
             <div className="meals stagger">
-              {day.meals.map((m) => (
+              {day.meals.map((m, i) => (
                 <button
-                  key={m.veta}
+                  key={m.veta || i}
                   className={`meal ${m.ordered ? "ordered" : ""}`}
                   disabled={!m.editable || m.ordered || busy}
                   aria-pressed={m.ordered}
@@ -110,7 +112,7 @@ export function Lunch({ onError }: { onError: (e: unknown) => boolean }) {
                     <span className="meal-num">{m.number ?? "–"}</span>
                     <span className="meal-label">{m.label}</span>
                     {m.ordered && <span className="meal-badge">Objednáno</span>}
-                    <span className="meal-price">{kc(m.price)}</span>
+                    {m.price > 0 && <span className="meal-price">{kc(m.price)}</span>}
                   </span>
                   <span className="meal-name">{m.name}</span>
                   {m.allergens.length > 0 && <span className="meal-allergens">{m.allergens.join(" · ")}</span>}
@@ -118,6 +120,13 @@ export function Lunch({ onError }: { onError: (e: unknown) => boolean }) {
               ))}
             </div>
             <CrowdCard crowd={crowd.data} date={day.date} />
+            {data && !data.connected && (
+              <p className="list-footer">
+                {data.error
+                  ? "Heslo do Stravy se změnilo. Propoj ji znovu v Nastavení."
+                  : `Jídelníček ${data.canteen?.name ?? "jídelny"} ze Strava.cz. Propoj účet v Nastavení a objednávej obědy přímo tady.`}
+              </p>
+            )}
             {ordered && ordered.editable && (
               <button className="row-button destructive lunch-cancel" disabled={busy} onClick={() => setPending({ day, meal: null, from: ordered })}>
                 Odhlásit oběd
@@ -191,7 +200,7 @@ function CrowdCard({ crowd, date }: { crowd: Crowd | null; date: string }) {
         {f.best && <>Nejkratší fronta {f.best.from}–{f.best.to}. </>}
         {f.peakWait && f.peakWait.min >= 1 && <>Nejhůř kolem {f.peakWait.time}, {waitText(f.peakWait.min)}.</>}
       </p>
-      <p className="crowd-source">Odhad OpenŠtudent z rozvrhů škol, které sem chodí. Ne živý počet lidí.</p>
+      <p className="crowd-source">Odhad z veřejných rozvrhů škol, které sem chodí na oběd. Ne živý počet lidí.</p>
     </section>
   );
 }

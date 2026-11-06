@@ -1,19 +1,17 @@
 import { createContext, memo, useContext, type ReactNode, type Ref } from "react";
-import { api, cache, type CanteenResponse, type GradesResponse, type ProjectsResponse, type TimetableResponse, type UpcomingTests } from "./api";
+import { api, cache, type CanteenResponse, type TimetableResponse, type UpcomingTests } from "./api";
 import { TEST_KINDS } from "../shared/tests";
 import { forMe, groupsOf, permanentKey } from "./Tests";
-import type { Absence, Day } from "../worker/parse";
-import { PERIODS, type Cell } from "../shared/schoolOcr";
+import type { Day } from "../shared/types";
+import { PERIODS } from "../shared/periods";
+import type { Cell } from "../shared/types";
 import { held, startDay } from "./Timetable";
 import { autoPeriod, roomsKey } from "./Rooms";
 import { allRooms, freeRooms } from "./freeRooms";
-import type { SchoolWeeks } from "./school";
-import { tone } from "./Grades";
-import { LIMIT } from "./absencePlan";
 import { WEEKDAYS, addDays, inMinutes, minutes, mondayOf, nowMinutesPrague, todayPrague, weekdayIndex } from "./time";
 import { useCachedFetch } from "./useFetch";
 import { useNow } from "./hooks";
-import { AbsenceIcon, CalendarIcon, DoorIcon, DumbbellIcon, GearIcon, TeacherIcon, TestIcon, GradesIcon, ProjectIcon, RouteIcon, UtensilsIcon, WalletIcon } from "./icons";
+import { CalendarIcon, DoorIcon, DoorOutIcon, GearIcon, TeacherIcon, TestIcon, RouteIcon, UtensilsIcon } from "./icons";
 import { Chevron } from "./ui";
 
 import { homeOrder, type Part, type Tab } from "./sections";
@@ -161,17 +159,12 @@ function Tile({ id, label, icon, value, valueClass, sub, onOpen }: {
 
 /** The tiles under the timetable, in the order picked in Settings. */
 function PartTile({ part, now, onOpen }: { part: Part; now: number; onOpen: (tab: Tab) => void }) {
-  if (part === "gym") return <GymTile now={now} onOpen={onOpen} />;
+  if (part === "ends") return <Tile id="ends" label="Kdo kdy končí" icon={<DoorOutIcon />} sub="Celý Hradec" onOpen={onOpen} />;
   if (part === "rooms") return <RoomsTile now={now} onOpen={onOpen} />;
   if (part === "teachers") return <Tile id="teachers" label="Učitelé" icon={<TeacherIcon />} sub="Kdo kde učí" onOpen={onOpen} />;
   if (part === "trips") return <Tile id="trips" label="SideQuesty" icon={<RouteIcon />} sub="Stihneš to?" onOpen={onOpen} />;
-  if (part === "grades") return <GradesTile onOpen={onOpen} />;
   if (part === "tests") return <TestsTile onOpen={onOpen} />;
-  if (part === "absence") return <AbsenceTile onOpen={onOpen} />;
-  if (part === "projects") return <ProjectsTile onOpen={onOpen} />;
   if (part === "lunch") return <LunchTile onOpen={onOpen} />;
-  // No amounts on the home screen: whoever glances at the phone doesn't see what's owed.
-  if (part === "finance") return <Tile id="finance" label="Finance" icon={<WalletIcon />} sub="Školné a fond" onOpen={onOpen} />;
   return null;
 }
 
@@ -276,41 +269,10 @@ function TimetableTile({ day, days, now, loading, onOpen }: {
   );
 }
 
-/** Weight room right now, from the last OCR of today's school timetable (the Gym screen keeps it fresh). */
-function GymTile({ now, onOpen }: { now: number; onOpen: (tab: Tab) => void }) {
-  const today = todayPrague();
-  const week = cache.get<{ weeks: { start: string; end: string; week: number }[] }>("school-weeks")?.weeks.find((w) => w.start <= today && today <= w.end);
-  const wd = weekdayIndex(today);
-  const cells = week && wd < 5 ? cache.get<Cell[]>(`gym:${["PO", "UT", "ST", "CT", "PA"][wd]}${week.week}:${today}`) : null;
-  let value: string | undefined;
-  let cls = "";
-  let sub = "Kdy je volno";
-  if (cells) {
-    const p = PERIODS.findIndex(([s, e]) => minutes(s) <= now && now < minutes(e));
-    const lastEnd = minutes(PERIODS[Math.max(8, ...cells.map((c) => c.period))][1]);
-    const busy = p >= 0 ? cells.filter((c) => c.period === p) : [];
-    if (now >= lastEnd) {
-      value = "Volno";
-      cls = "free";
-      sub = "Do konce dne";
-    } else if (busy.length) {
-      value = "Obsazeno";
-      cls = "busy";
-      sub = `${busy.map((c) => c.cls).join(", ")} · do ${PERIODS[p][1]}`;
-    } else {
-      value = "Volno";
-      cls = "free";
-      sub = "Právě teď";
-    }
-  }
-  return <Tile id="gym" label="Posilovna" icon={<DumbbellIcon />} value={value} valueClass={cls} sub={sub} onOpen={onOpen} />;
-}
-
 /** How many classrooms are free in the period on now (or next), from the last read of this week's school timetable. */
 function RoomsTile({ now, onOpen }: { now: number; onOpen: (tab: Tab) => void }) {
   const today = todayPrague();
-  const key = roomsKey(cache.get<SchoolWeeks>("school-weeks"), today);
-  const week = key ? cache.get<Cell[][]>(key) : null;
+  const week = cache.get<Cell[][]>(roomsKey(today));
   const day = week?.[weekdayIndex(today)];
   let value: string | undefined;
   let sub = "Kde je volno";
@@ -348,54 +310,3 @@ function TestsTile({ onOpen }: { onOpen: (tab: Tab) => void }) {
   );
 }
 
-function GradesTile({ onOpen }: { onOpen: (tab: Tab) => void }) {
-  const subjects = cache.get<GradesResponse>("grades")?.subjects ?? [];
-  const avgs = subjects.map((s) => s.average).filter((a): a is number => a !== null);
-  const overall = avgs.length ? avgs.reduce((a, b) => a + b, 0) / avgs.length : null;
-  const count = subjects.reduce((n, s) => n + s.grades.length, 0);
-  return (
-    <Tile
-      id="grades"
-      label="Známky"
-      icon={<GradesIcon />}
-      value={overall !== null ? overall.toFixed(2).replace(".", ",") : undefined}
-      valueClass={tone(overall)}
-      sub={overall !== null ? `Průměr · ${count} ${plural(count, "známka", "známky", "známek")}` : "Průměr a nové známky"}
-      onOpen={onOpen}
-    />
-  );
-}
-
-function AbsenceTile({ onOpen }: { onOpen: (tab: Tab) => void }) {
-  const data = cache.get<Absence>("absence");
-  const over = (data?.subjects ?? []).filter((s) => s.percent >= LIMIT).map((s) => s.subject);
-  const total = data?.total;
-  const level = !total ? "" : over.length ? "high" : total.percent >= LIMIT - 10 ? "mid" : "low";
-  return (
-    <Tile
-      id="absence"
-      label="Absence"
-      icon={<AbsenceIcon />}
-      value={total ? `${total.percent.toLocaleString("cs-CZ")} %` : undefined}
-      valueClass={`absence-${level}`}
-      sub={over.length ? `Přes ${LIMIT} %: ${over.join(", ")}` : total ? `${total.missed} ${plural(total.missed, "hodina", "hodiny", "hodin")} celkem` : "Hranice 30 %"}
-      onOpen={onOpen}
-    />
-  );
-}
-
-/** The approved project of the newest election (or the first choice while it waits), from the last load. */
-function ProjectsTile({ onOpen }: { onOpen: (tab: Tab) => void }) {
-  const data = cache.get<ProjectsResponse>("projects:latest");
-  const mine = data?.mine.find((c) => c.approved) ?? data?.mine[0];
-  return (
-    <Tile
-      id="projects"
-      label="Projekty"
-      icon={<ProjectIcon />}
-      value={mine?.number}
-      sub={mine?.name ?? "Projektové dny"}
-      onOpen={onOpen}
-    />
-  );
-}

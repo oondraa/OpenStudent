@@ -33,7 +33,7 @@ const DEV_PLACES: Record<string, [number, number]> = {
 
 function devPoint(): Point | null {
   if (!import.meta.env.DEV) return null;
-  const v = localStorage.getItem("osis:devPoloha");
+  const v = localStorage.getItem("ost:devPoloha");
   if (!v) return null;
   const preset = DEV_PLACES[v.toLowerCase()];
   const [lat, lon] = preset ?? v.split(",").map(Number);

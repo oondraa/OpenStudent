@@ -27,3 +27,8 @@ export function periodOf(start: string, periods: [string, string][] = PERIODS): 
   });
   return best;
 }
+
+/** The number a school gives period `i`: schools with an early "nultá hodina" (before 7:30) count from 0, others from 1. */
+export function periodNumber(i: number, periods: [string, string][] = PERIODS): number {
+  return periods.length && min(periods[0][0]) < 7 * 60 + 30 ? i : i + 1;
+}

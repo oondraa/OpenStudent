@@ -123,3 +123,26 @@ def build(res: dict, schools: list[dict], places: list[dict], day: dt.date, nick
     out.sort(key=lambda c: (c["own_school"] is not None, -c["diners"]))
     return {"date": day.isoformat(), "axis_from": hhmm(A), "axis_to": hhmm(B), "lunch_dwell": PARAMS["lunch_dwell"],
             "canteens": out}
+
+
+def typical(per_weekday: dict[int, dict], schools: list[dict]) -> dict[str, list[dict]]:
+    """Obvyklý pondělí … pátek pro každou jídelnu (týž model, jen jiný den v týdnu). Bez jídelníčku."""
+    out: dict[str, list[dict]] = {}
+    for wd, res in sorted(per_weekday.items()):
+        for key, arr in res["arrivals"].items():
+            own = key.startswith("own:")
+            cfg = CANTEEN["own" if own else key] if (own or key in CANTEEN) else CANTEEN["own"]
+            total = sum(arr)
+            if total < 5:
+                continue
+            serve = cfg["serve"] or max(OWN_SERVE[0], min(OWN_SERVE[1], total / 35))
+            sim = simulate(arr, serve, cfg["open"], PARAMS["lunch_dwell"])
+            pw = max(range(len(sim["wait"])), key=sim["wait"].__getitem__)
+            out.setdefault(key, []).append({
+                "weekday": wd + 1, "axis_from": hhmm(A), "axis_to": hhmm(B),
+                "open": [hhmm(cfg["open"][0]), hhmm(cfg["open"][1])],
+                "series": {"wait": [round(v, 1) for v in sim["wait"]], "eating": [round(v, 1) for v in sim["eating"]]},
+                "best": best_windows(sim, cfg["open"])[:3],
+                "peak_wait": {"time": hhmm(A + pw), "min": round(sim["wait"][pw], 1)},
+            })
+    return out

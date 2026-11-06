@@ -29,7 +29,7 @@ export interface SchoolTimetable {
   weeks: Record<string, Record<string, RawDay[]>>;
 }
 
-export const DATASETS = /^(schools|menza|tt-[a-z0-9-]{1,40})$/;
+export const DATASETS = /^(schools|menza|ends|tt-[a-z0-9-]{1,40})$/;
 const TTL = 300;
 
 /** The Workers edge cache (null outside a Worker, e.g. in tests). */

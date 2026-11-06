@@ -14,18 +14,18 @@ initGlass();
 // Dev only: a fake location for SideQuesty (useLocation.ts), remembered until ?poloha=off.
 if (import.meta.env.DEV) {
   const p = new URLSearchParams(location.search).get("poloha");
-  if (p === "off") localStorage.removeItem("osis:devPoloha");
-  else if (p) localStorage.setItem("osis:devPoloha", p);
+  if (p === "off") localStorage.removeItem("ost:devPoloha");
+  else if (p) localStorage.setItem("ost:devPoloha", p);
   // ?cas=9:45: the time of day the app pretends it is (time.ts), until ?cas=off.
   const cas = new URLSearchParams(location.search).get("cas");
-  if (cas === "off") localStorage.removeItem("osis:devCas");
-  else if (cas) localStorage.setItem("osis:devCas", cas);
-  // ?mock: the app without SIS, for looking at screens (SideQuesty) in a browser that isn't logged in.
+  if (cas === "off") localStorage.removeItem("ost:devCas");
+  else if (cas) localStorage.setItem("ost:devCas", cas);
+  // ?mock: the app without a server, for looking at screens (SideQuesty) in a browser that isn't logged in.
   const mock = new URLSearchParams(location.search).get("mock");
-  if (mock === "off") localStorage.removeItem("osis:devMock");
-  else if (mock !== null) localStorage.setItem("osis:devMock", "1");
-  if (localStorage.getItem("osis:devMock")) {
-    localStorage.setItem("osis:loggedIn", "true");
+  if (mock === "off") localStorage.removeItem("ost:devMock");
+  else if (mock !== null) localStorage.setItem("ost:devMock", "1");
+  if (localStorage.getItem("ost:devMock")) {
+    localStorage.setItem("ost:loggedIn", "true");
     const real = window.fetch.bind(window);
     const lesson = (start: string, end: string, subject: string) =>
       ({ id: null, subject, start, end, room: "", group: "", teacher: "", changed: false, cancelled: false, added: false, meet: null });
@@ -57,7 +57,7 @@ const updateSW = registerSW({
   immediate: true,
   onNeedRefresh() {
     try {
-      sessionStorage.setItem("osis:updating", "1");
+      sessionStorage.setItem("ost:updating", "1");
     } catch {
       /* private mode: the new splash just won't say it */
     }
