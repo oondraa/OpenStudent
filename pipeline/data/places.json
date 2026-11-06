@@ -1,0 +1,35 @@
+[
+ {
+  "id": "jidelna-hradecka",
+  "name": "Jídelna Hradecká (Hradecká 1219)",
+  "kind": "canteen",
+  "lat": 50.203182,
+  "lon": 15.832941,
+  "open": [
+   "11:15",
+   "14:30"
+  ],
+  "capacity": 4000
+ },
+ {
+  "id": "futurum",
+  "name": "OC Futurum (Brněnská 1825)",
+  "kind": "oc",
+  "lat": 50.19701,
+  "lon": 15.84893
+ },
+ {
+  "id": "aupark",
+  "name": "Aupark (Gočárova 1754)",
+  "kind": "oc",
+  "lat": 50.21225,
+  "lon": 15.81245
+ },
+ {
+  "id": "atrium",
+  "name": "OC Atrium (Dukelská 1713)",
+  "kind": "oc",
+  "lat": 50.21348,
+  "lon": 15.81852
+ }
+]

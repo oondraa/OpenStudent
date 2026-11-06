@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenŠtudent – kdo je kdy ve městě</title>
+<style>
+  :root { --bg:#f6f6f4; --card:#fff; --ink:#1c1c1e; --mute:#6e6e73; --line:#e3e3e0; --acc:#0a7cff; --acc2:#ff8a00; --pause:#8e8e93; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111113; --card:#1c1c1f; --ink:#f2f2f2; --mute:#9a9aa0; --line:#2c2c30; --acc:#4da3ff; --acc2:#ffa640; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+  main { max-width: 1100px; margin: 0 auto; padding: 28px 18px 60px; }
+  h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -.01em; }
+  .sub { color: var(--mute); margin: 0 0 22px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 16px 12px; }
+  .card h2 { font-size: 15px; margin: 0 0 2px; }
+  .big { font-size: 30px; font-weight: 650; letter-spacing: -.02em; }
+  .mute { color: var(--mute); font-size: 13px; }
+  svg { width: 100%; height: 130px; display:block; margin-top: 8px; }
+  .tags { margin-top: 8px; font-size: 12.5px; color: var(--mute); }
+  table { width:100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { text-align:left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--mute); font-weight: 500; }
+  .ok { color: #1f9d55; font-weight: 600; } .no { color: var(--mute); }
+  section { margin-top: 30px; }
+  .note { font-size: 13px; color: var(--mute); max-width: 75ch; }
+  .tip { position: fixed; pointer-events:none; background: var(--ink); color: var(--bg); font-size:12px; padding:4px 7px; border-radius:6px; opacity:0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kdo je kdy ve městě</h1> <a href="menza.html" style="font-size:14px">→ menza</a> · <a href="konce.html" style="font-size:14px">kdo kdy končí</a> · <a href="rozvrhy.html" style="font-size:14px">všechny rozvrhy naráz</a>
+  <p class="sub" id="sub">Načítám…</p>
+
+  <div class="grid" id="places"></div>
+
+  <section>
+    <h2 style="font-size:17px">Žáci v delší pauze (≥ 25 min)</h2>
+    <div class="card" id="free"></div>
+  </section>
+
+  <section>
+    <h2 style="font-size:17px">Školy v Hradci Králové</h2>
+    <p class="note">Seznam z rejstříku škol MŠMT. „Veřejný rozvrh“ = škola sama zveřejňuje rozvrh bez přihlášení;
+      jiné školy nestahujeme. Počty žáků jsou odhad (85 % kapacity z rejstříku).</p>
+    <div class="card" style="overflow-x:auto"><table id="schools"></table></div>
+  </section>
+
+  <section>
+    <p class="note" id="method"></p>
+  </section>
+</main>
+<div class="tip" id="tip"></div>
+<script>
+const $ = (id) => document.getElementById(id);
+const toMin = (s) => { const [h, m] = s.split(":").map(Number); return h * 60 + m; };
+const hh = (m) => `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`;
+const DAYS = ["neděle","pondělí","úterý","středa","čtvrtek","pátek","sobota"];
+
+function chart(el, series, t0, step, color, from = 9 * 60, to = 18 * 60) {
+  const i0 = (from - t0) / step, i1 = (to - t0) / step;
+  const ys = series.slice(i0, i1 + 1);
+  const max = Math.max(5, ...ys);
+  const W = 600, H = 130, pad = 18;
+  const x = (i) => pad + (i / (ys.length - 1)) * (W - 2 * pad);
+  const y = (v) => H - 20 - (v / max) * (H - 34);
+  const pts = ys.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+  let ticks = "";
+  for (let m = from; m <= to; m += 60) {
+    const i = (m - from) / step;
+    ticks += `<line x1="${x(i)}" x2="${x(i)}" y1="${H - 20}" y2="${H - 16}" stroke="var(--line)"/>` +
+             `<text x="${x(i)}" y="${H - 4}" font-size="10" text-anchor="middle" fill="var(--mute)">${m / 60}</text>`;
+  }
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    <line x1="${pad}" x2="${W - pad}" y1="${H - 20}" y2="${H - 20}" stroke="var(--line)"/>${ticks}
+    <polygon points="${x(0)},${H - 20} ${pts} ${x(ys.length - 1)},${H - 20}" fill="${color}" opacity=".15"/>
+    <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" vector-effect="non-scaling-stroke"/>
+  </svg>`;
+  const svg = el.querySelector("svg"), tip = $("tip");
+  svg.addEventListener("mousemove", (e) => {
+    const r = svg.getBoundingClientRect();
+    const i = Math.round(((e.clientX - r.left) / r.width * W - pad) / (W - 2 * pad) * (ys.length - 1));
+    if (i < 0 || i >= ys.length) return;
+    tip.textContent = `${hh(from + i * step)} · ~${ys[i]} lidí`;
+    tip.style.left = e.clientX + 12 + "px"; tip.style.top = e.clientY - 28 + "px"; tip.style.opacity = 1;
+  });
+  svg.addEventListener("mouseleave", () => (tip.style.opacity = 0));
+}
+
+fetch("data/forecast.json", { cache: "no-cache" }).then((r) => r.json()).then((d) => {
+  const day = new Date(d.date);
+  const c = d.coverage;
+  $("sub").textContent = `${DAYS[day.getDay()]} ${day.toLocaleDateString("cs-CZ")} · data z ${c.schools} z ${c.schools_total} škol `
+    + `(~${c.students.toLocaleString("cs-CZ")} z ~${c.students_total.toLocaleString("cs-CZ")} žáků) · vygenerováno ${d.generated.replace("T", " ")}`;
+  const t0 = toMin(d.t0);
+  const names = Object.fromEntries(d.school_list.map((s) => [s.id, s.nick || s.short || s.id]));
+
+  for (const p of d.places.filter((p) => p.kind !== "own-canteen")) {
+    const card = document.createElement("div");
+    card.className = "card";
+    const busy = p.busy_from ? `nejrušněji ${p.busy_from[0]}–${p.busy_from[1]}` : "podle rozvrhů nikdo";
+    const who = Object.entries(p.by_school).slice(0, 5).map(([k, v]) => `${names[k] || k} ~${v}`).join(" · ");
+    card.innerHTML = `<h2>${p.name}</h2>
+      <div><span class="big">~${p.peak.count}</span> <span class="mute">lidí ve špičce v ${p.peak.time}</span></div>
+      <div class="mute">${busy}</div><div class="ch"></div><div class="tags">${who ? "Odkud: " + who : ""}</div>`;
+    $("places").append(card);
+    chart(card.querySelector(".ch"), p.series, t0, d.step_min, p.kind === "oc" ? "var(--acc2)" : "var(--acc)",
+          p.kind === "oc" ? 9 * 60 : 10 * 60, p.kind === "oc" ? 18 * 60 : 15 * 60);
+  }
+
+  const f = d.free_students;
+  $("free").innerHTML = `<div><span class="big">~${f.peak.count}</span> <span class="mute">žáků má najednou volno v ${f.peak.time} (ze sledovaných škol)</span></div><div class="ch"></div>`;
+  chart($("free").querySelector(".ch"), f.series, t0, d.step_min, "var(--pause)", 8 * 60, 17 * 60);
+
+  const sys = { bakalari: "Bakaláři", edupage: "EduPage", kybernais: "KybernaIS (vlastní)", "?": "neznámý", "-": "–" };
+  const canteen = { own: "vlastní", "jidelna-hradecka": "Hradecká" };
+  $("schools").innerHTML = "<tr><th>Škola</th><th>Typ</th><th>Systém</th><th>Rozvrh</th><th>Žáků ~</th><th>Oběd</th></tr>" +
+    d.school_list.map((s) => `<tr><td><span style="display:inline-flex;align-items:center;gap:8px">${s.logo ? `<span style="width:44px;height:28px;background:#fff;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex:none"><img src="${s.logo}" style="max-width:90%;max-height:85%;object-fit:contain"></span>` : `<span style="width:44px;flex:none"></span>`}${s.nick || s.short}</span>${s.note ? `<div class="mute">${s.note}</div>` : ""}</td><td>${s.level}</td>
+      <td>${sys[s.system] || s.system}</td><td class="${s.public ? "ok" : "no"}">${s.public ? "veřejný" : "jen po přihlášení / ne"}</td>
+      <td>${s.students_est}</td><td>${canteen[s.canteen] || "?"}</td></tr>`).join("");
+
+  const P = d.params;
+  $("method").innerHTML = `<b>Jak se to počítá.</b> Z veřejných rozvrhů všech tříd (včetně suplování) se pro každou třídu najdou
+    pauzy delší než ${P.min_gap} min. Kdo chodí na obědy (odhad ${P.lunch_share["SŠ"] * 100} % SŠ, ${P.lunch_share["ZŠ"] * 100} % ZŠ),
+    jde do jídelny v první pauze, kdy to stihne (výdej v Jídelně Hradecká 11:15–14:30), jinak po vyučování.
+    Z ostatních volných středoškoláků jde podle odhadu ${P.oc_gap * 100} % během pauzy do nejbližšího OC (je-li do ${P.oc_gap_max_travel} min),
+    po vyučování ${P.oc_after * 100} % (ZŠ jen 6.–9. třída a méně). Cesta = pěšky, nad 15 min MHD. Rozvrh říká, kdo <i>může</i> být volný;
+    procenta jsou odhady, ne měření – čísla ber jako „kolik lidí čekat“, ne přesný počet.`;
+}).catch((e) => ($("sub").textContent = "Chybí data/forecast.json – spusť: python -m openstudent run"));
+</script>
+</body>
+</html>

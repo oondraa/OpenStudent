@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenŠtudent – kdo kdy končí</title>
+<style>
+  :root { --bg:#f6f6f4; --card:#fff; --ink:#1c1c1e; --mute:#6e6e73; --line:#e6e6e2; --end:#10b981; --hl:#ef4444; --past:.38; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111113; --card:#1b1b1e; --ink:#f2f2f2; --mute:#9a9aa0; --line:#2a2a2e; --end:#34d399; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+  a { color: inherit; }
+  header { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px 18px 10px; }
+  .top { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:baseline; margin-bottom:8px; }
+  h1 { font-size: 22px; margin: 0; letter-spacing: -.01em; }
+  nav a { color: var(--mute); margin-right: 12px; text-decoration: none; }
+  nav a:hover { color: var(--ink); }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:9px; overflow:hidden; }
+  .seg button { border:0; background:var(--card); color:var(--ink); padding:6px 12px; cursor:pointer; font:inherit; }
+  .seg button.on { background: var(--ink); color: var(--bg); }
+  .mute { color: var(--mute); }
+  main { max-width: 1180px; margin: 0 auto; padding: 18px 18px 80px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  h2 { font-size: 15px; margin: 28px 0 10px; }
+
+  /* hero */
+  .hero { display:grid; grid-template-columns: minmax(260px, 1fr) 2fr; gap: 14px; }
+  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+  .big { font-size: 46px; font-weight: 750; letter-spacing: -.02em; line-height: 1.05; }
+  .big small { font-size: 16px; font-weight: 500; color: var(--mute); letter-spacing: 0; }
+  .hero .logos { display:flex; flex-wrap:wrap; gap:6px; margin-top: 12px; }
+  #hist { width:100%; height:150px; display:block; }
+
+  /* logo */
+  .logo { width: 54px; height: 36px; border-radius: 8px; background: #fff; border: 1px solid var(--line); flex: none;
+          display:inline-flex; align-items:center; justify-content:center; overflow:hidden; }
+  .logo img { max-width: 90%; max-height: 84%; object-fit: contain; }
+  .logo.txt { font-size: 11px; font-weight: 700; color: #fff; border: 0; }
+  .logo.lg { width: 96px; height: 60px; border-radius: 12px; }
+  .logo.sm { width: 26px; height: 26px; border-radius: 6px; }
+
+  /* vlny konců */
+  .wave { display:grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .wave:last-child { border-bottom: 0; }
+  .wave.past { opacity: var(--past); }
+  .wave.next .t { color: var(--end); }
+  .t { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+  .t small { display:block; font-size: 12px; font-weight: 500; color: var(--mute); margin-top: 5px; }
+  .meter { height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--end) 18%, transparent); margin: 2px 0 10px; }
+  .meter i { display:block; height:100%; border-radius:3px; background: var(--end); }
+  .chips { display:flex; flex-wrap:wrap; gap: 8px; }
+  .chip { display:flex; gap: 8px; align-items:center; background: color-mix(in srgb, var(--ink) 4%, var(--card)); border: 1px solid var(--line);
+          border-radius: 10px; padding: 5px 10px 5px 5px; max-width: 360px; }
+  .chip b { font-weight: 600; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width: 290px; }
+  .chip span { font-size: 12px; color: var(--mute); }
+  .badge { font-size: 11px; padding: 1px 7px; border-radius: 99px; background: var(--end); color: #062; font-weight: 650; margin-left: 6px; vertical-align: 3px; }
+
+  /* školy */
+  .schools { display:grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }
+  .sc { display:flex; flex-direction:column; gap: 10px; }
+  .sc .hd { display:flex; gap: 12px; align-items:center; }
+  .sc .hd b { display:block; font-size: 14px; line-height:1.25; }
+  .sc .hd span { font-size: 12px; color: var(--mute); }
+  .strip { position: relative; height: 34px; border-radius: 8px; background: color-mix(in srgb, var(--ink) 4%, var(--card)); }
+  .strip i { position:absolute; bottom: 4px; width: 4px; margin-left:-2px; border-radius: 2px; background: var(--end); }
+  .strip .h { position:absolute; top:0; bottom:0; border-left: 1px solid var(--line); }
+  .strip .h span { position:absolute; top:1px; left:3px; font-size: 9px; color: var(--mute); }
+  .strip .now { position:absolute; top:0; bottom:0; border-left: 2px solid var(--hl); opacity: .6; }
+  .kv { display:flex; justify-content:space-between; font-size: 13px; }
+  .kv b { font-variant-numeric: tabular-nums; }
+  #info { position: fixed; z-index: 30; pointer-events:none; background: var(--ink); color: var(--bg); padding:6px 9px; border-radius:8px; font-size:12px; display:none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <h1>Kdo kdy končí</h1>
+    <nav><a href="index.html">předpověď</a><a href="menza.html">menza</a><a href="rozvrhy.html">všechny rozvrhy</a></nav>
+    <span class="mute" id="stat"></span>
+  </div>
+  <div class="bar">
+    <div class="seg" id="days"></div>
+    <div class="seg" id="levels"></div>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <div class="card" id="headline"></div>
+    <div class="card">
+      <div class="mute" style="font-size:13px;margin-bottom:4px">Kolik žáků skončí s vyučováním <span class="mute">(odhad / 10 min)</span></div>
+      <svg id="hist" viewBox="0 0 800 150" preserveAspectRatio="none"></svg>
+    </div>
+  </div>
+
+  <h2>Vlny konců vyučování <span class="mute" style="font-weight:400">· každá vlna = třídy, které skončí ve stejných 10 minutách</span></h2>
+  <div class="card" id="waves"></div>
+
+  <h2>Školy <span class="mute" style="font-weight:400">· seřazené podle toho, kdy končí většina tříd</span></h2>
+  <div class="schools" id="schools"></div>
+  <p class="mute" style="font-size:12px;margin-top:24px">Sledujeme 2. stupeň ZŠ (6.–9. třída), střední školy a VOŠ s veřejným rozvrhem.
+    „Konec“ = konec poslední hodiny celé třídy (odpolední hodiny jen pro skupinu se nepočítají). Počty žáků jsou odhad z kapacity v rejstříku škol.
+    Loga patří školám, stažena z jejich webů.</p>
+</main>
+<div id="info"></div>
+<script>
+const DN = ["Po", "Út", "St", "Čt", "Pá"], LV = [["", "Vše"], ["SŠ", "Střední"], ["ZŠ", "ZŠ 2. stupeň"]];
+const BIN = 10, A = 10 * 60, B = 17 * 60;   // vlny po 10 min, graf 10:00–17:00
+const hh = (m) => `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`;
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => Math.round(n).toLocaleString("cs-CZ");
+const today = (new Date().getDay() + 6) % 7, nowM = new Date().getHours() * 60 + new Date().getMinutes();
+let D, state = { day: Math.min(4, today), level: "" };
+
+function hue(id) { let h = 0; for (const c of id) h = (h * 31 + c.charCodeAt(0)) % 360; return h; }
+function logo(s, cls = "") {
+  if (s.logo) return `<span class="logo ${cls}" title="${s.name}"><img src="${s.logo}" alt="" data-id="${s.id}" data-cls="${cls}" onerror="fallback(this)"></span>`;
+  return mono(s.id, s.name, cls);
+}
+window.fallback = (img) => { const s = D.schools.find((x) => x.id === img.dataset.id); img.parentNode.outerHTML = mono(s.id, s.name, img.dataset.cls); };
+window.mono = (id, name, cls) => {
+  const ini = name.replace(/[^A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/g, "").slice(0, 3) || name.slice(0, 2);
+  return `<span class="logo txt ${cls}" style="background:hsl(${hue(id)} 55% 45%)">${ini}</span>`;
+};
+
+function endOf(slots) {
+  if (!slots || !slots.length) return null;
+  const full = slots.filter((s) => s[2] >= 1);
+  return Math.max(...(full.length ? full : slots).map((s) => s[1]));
+}
+
+function collect() {
+  const ends = [];      // {s, c, end, n}
+  for (const s of D.schools) {
+    if (state.level && s.level !== state.level) continue;
+    for (const [c, days] of Object.entries(s.classes)) {
+      const e = endOf(days[state.day]);
+      if (e != null) ends.push({ s, c, end: e, n: s.class_size });
+    }
+  }
+  return ends;
+}
+
+function render() {
+  const ends = collect(), isToday = state.day === today;
+  const total = ends.reduce((a, x) => a + x.n, 0);
+  $("stat").textContent = `${DN[state.day]} · ${ends.length} tříd · ~${fmt(total)} žáků · ${new Set(ends.map((x) => x.s.id)).size} škol`;
+
+  // ---- vlny
+  const waves = new Map();
+  for (const x of ends) {
+    const k = Math.floor(x.end / BIN) * BIN;
+    if (!waves.has(k)) waves.set(k, { k, n: 0, schools: new Map() });
+    const w = waves.get(k); w.n += x.n;
+    if (!w.schools.has(x.s.id)) w.schools.set(x.s.id, { s: x.s, classes: [], n: 0, times: new Set() });
+    const g = w.schools.get(x.s.id); g.classes.push(x.c); g.n += x.n; g.times.add(x.end);
+  }
+  const list = [...waves.values()].sort((a, b) => a.k - b.k);
+  const maxN = Math.max(1, ...list.map((w) => w.n));
+  const next = isToday ? list.find((w) => w.k + BIN > nowM) : null;
+  const peak = list.reduce((a, w) => (w.n > a.n ? w : a), list[0] || { n: 0 });
+
+  $("waves").innerHTML = list.map((w) => {
+    const past = isToday && w.k + BIN <= nowM;
+    const sch = [...w.schools.values()].sort((a, b) => b.n - a.n);
+    const exact = [...new Set(sch.flatMap((g) => [...g.times]))].sort((a, b) => a - b);
+    const chips = sch.map((g) => {
+      const cl = g.classes.sort((a, b) => a.localeCompare(b, "cs", { numeric: true }));
+      const shown = cl.length > 6 ? cl.slice(0, 6).join(", ") + ` +${cl.length - 6}` : cl.join(", ");
+      return `<div class="chip">${logo(g.s)}<div><b>${g.s.name}</b><span>${[...g.times].sort().map(hh).join(", ")} · ${shown} · ~${fmt(g.n)}</span></div></div>`;
+    }).join("");
+    return `<div class="wave${past ? " past" : ""}${w === next ? " next" : ""}">
+      <div class="t">${hh(exact[0])}<small>~${fmt(w.n)} žáků${w === peak ? " · nejvíc" : ""}</small></div>
+      <div><div class="meter"><i style="width:${(w.n / maxN * 100).toFixed(1)}%"></i></div><div class="chips">${chips}</div></div></div>`;
+  }).join("") || `<p class="mute">V tento den nemáme žádné rozvrhy.</p>`;
+
+  // ---- hlavní sdělení
+  let head;
+  if (next) {
+    const sch = [...next.schools.values()].sort((a, b) => b.n - a.n);
+    const exact = Math.min(...sch.flatMap((g) => [...g.times]));
+    head = `<div class="mute">Teď je ${hh(nowM)} · nejbližší konec</div>
+      <div class="big">${hh(exact)} <small>za ${exact - nowM > 0 ? exact - nowM + " min" : "chvíli"}</small></div>
+      <div style="margin-top:6px">končí <b>~${fmt(next.n)} žáků</b> z ${sch.length} ${sch.length === 1 ? "školy" : "škol"}</div>
+      <div class="logos">${sch.map((g) => logo(g.s)).join("")}</div>`;
+  } else if (list.length) {
+    const sch = [...peak.schools.values()].sort((a, b) => b.n - a.n);
+    head = `<div class="mute">${isToday ? "Dnes už všichni skončili. " : ""}Nejvíc lidí končí ${isToday ? "dnes" : ["v pondělí", "v úterý", "ve středu", "ve čtvrtek", "v pátek"][state.day]}</div>
+      <div class="big">${hh(peak.k)}–${hh(peak.k + BIN)}</div>
+      <div style="margin-top:6px"><b>~${fmt(peak.n)} žáků</b> z ${sch.length} ${sch.length === 1 ? "školy" : "škol"}</div>
+      <div class="logos">${sch.map((g) => logo(g.s)).join("")}</div>`;
+  } else head = `<div class="mute">Žádná data.</div>`;
+  $("headline").innerHTML = head;
+
+  hist(list, isToday);
+  schools(ends, isToday);
+}
+
+function hist(list, isToday) {
+  const W = 800, H = 150, n = (B - A) / BIN, bw = W / n, max = Math.max(1, ...list.map((w) => w.n));
+  let o = "";
+  for (const w of list) {
+    const i = (w.k - A) / BIN; if (i < 0 || i >= n) continue;
+    const h = w.n / max * (H - 34), past = isToday && w.k + BIN <= nowM;
+    o += `<rect data-k="${w.k}" x="${i * bw + 1}" y="${H - 16 - h}" width="${bw - 2}" height="${h}" rx="2" fill="var(--end)" opacity="${past ? .3 : w.n === max ? 1 : .7}"></rect>`;
+  }
+  for (let m = A; m <= B; m += 60) o += `<line x1="${(m - A) / BIN * bw}" x2="${(m - A) / BIN * bw}" y1="0" y2="${H - 14}" stroke="var(--line)"/><text x="${(m - A) / BIN * bw + 3}" y="${H - 2}" font-size="11" fill="var(--mute)">${m / 60}:00</text>`;
+  if (isToday && nowM > A && nowM < B) o += `<line x1="${(nowM - A) / BIN * bw}" x2="${(nowM - A) / BIN * bw}" y1="0" y2="${H - 14}" stroke="var(--hl)" stroke-width="2"/>`;
+  $("hist").innerHTML = o;
+  const byK = new Map(list.map((w) => [w.k, w]));
+  $("hist").onmousemove = (e) => {
+    const k = +e.target.dataset?.k, w = byK.get(k), info = $("info");
+    if (!w) { info.style.display = "none"; return; }
+    info.style.display = "block"; info.style.left = e.clientX + 12 + "px"; info.style.top = e.clientY + 12 + "px";
+    info.innerHTML = `<b>${hh(k)}–${hh(k + BIN)}</b> · ~${fmt(w.n)} žáků · ${[...w.schools.values()].map((g) => g.s.name.split(/[ ,]/)[0]).slice(0, 5).join(", ")}${w.schools.size > 5 ? "…" : ""}`;
+  };
+  $("hist").onmouseleave = () => ($("info").style.display = "none");
+}
+
+function schools(ends, isToday) {
+  const by = new Map();
+  for (const x of ends) { if (!by.has(x.s.id)) by.set(x.s.id, { s: x.s, e: [] }); by.get(x.s.id).e.push(x.end); }
+  const arr = [...by.values()].map((g) => {
+    const e = g.e.sort((a, b) => a - b);
+    return { ...g, first: e[0], med: e[Math.floor((e.length - 1) / 2)], last: e[e.length - 1] };
+  }).sort((a, b) => a.med - b.med || a.first - b.first);
+  const SA = 11 * 60, SB = 17 * 60, px = (m) => ((Math.min(Math.max(m, SA), SB) - SA) / (SB - SA) * 100).toFixed(2) + "%";
+  $("schools").innerHTML = arr.map((g) => {
+    const cnt = {}; g.e.forEach((m) => (cnt[m] = (cnt[m] || 0) + 1));
+    const mx = Math.max(...Object.values(cnt));
+    let strip = "";
+    for (let m = 12 * 60; m < SB; m += 60) strip += `<div class="h" style="left:${px(m)}"><span>${m / 60}</span></div>`;
+    for (const [m, c] of Object.entries(cnt)) strip += `<i style="left:${px(+m)};height:${(4 + c / mx * 20).toFixed(0)}px" title="${hh(+m)}: ${c} tříd"></i>`;
+    if (isToday && nowM > SA && nowM < SB) strip += `<div class="now" style="left:${px(nowM)}"></div>`;
+    const done = isToday ? g.e.filter((m) => m <= nowM).length : null;
+    return `<div class="card sc">
+      <div class="hd">${logo(g.s, "lg")}<div><b>${g.s.name}</b><span>${g.s.level === "ZŠ" ? "ZŠ 2. stupeň" : g.s.level} · ${g.e.length} tříd · ~${fmt(g.e.length * g.s.class_size)} žáků</span></div></div>
+      <div class="strip">${strip}</div>
+      <div class="kv"><span class="mute">první</span><b>${hh(g.first)}</b><span class="mute">většina</span><b>${hh(g.med)}</b><span class="mute">poslední</span><b>${hh(g.last)}</b></div>
+      ${done !== null ? `<div class="mute" style="font-size:12px">${done === g.e.length ? "všichni už skončili" : done ? `už skončilo ${done} z ${g.e.length} tříd` : "zatím nikdo neskončil"}</div>` : ""}
+    </div>`;
+  }).join("");
+}
+
+function controls() {
+  $("days").innerHTML = DN.map((d, i) => `<button data-d="${i}" class="${i === state.day ? "on" : ""}">${d}${i === today ? " ·" : ""}</button>`).join("");
+  $("levels").innerHTML = LV.map(([v, t]) => `<button data-l="${v}" class="${v === state.level ? "on" : ""}">${t}</button>`).join("");
+}
+$("days").onclick = (e) => { if (e.target.dataset.d) { state.day = +e.target.dataset.d; controls(); render(); } };
+$("levels").onclick = (e) => { if (e.target.dataset.l !== undefined) { state.level = e.target.dataset.l; controls(); render(); } };
+
+fetch("data/timetables.json", { cache: "no-cache" }).then((r) => r.json()).then((d) => { D = d; controls(); render(); })
+  .catch(() => ($("stat").textContent = "Chybí data/timetables.json – spusť: python -m openstudent forecast"));
+</script>
+</body>
+</html>

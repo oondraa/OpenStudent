@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenŠtudent – menza</title>
+<style>
+  :root { --bg:#f6f6f4; --card:#fff; --ink:#1c1c1e; --mute:#6e6e73; --line:#e6e6e2; --eat:#3b82f6; --q:#ef4444; --ok:#10b981; --me:#f59e0b; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111113; --card:#1b1b1e; --ink:#f2f2f2; --mute:#9a9aa0; --line:#2a2a2e; --eat:#5b9bff; --q:#f87171; --ok:#34d399; --me:#fbbf24; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+  header { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px 18px 10px; }
+  .top { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:baseline; }
+  h1 { font-size: 22px; margin: 0; }
+  nav a { color: var(--mute); margin-right: 12px; text-decoration: none; }
+  nav a:hover { color: var(--ink); }
+  .mute { color: var(--mute); }
+  main { max-width: 1180px; margin: 0 auto; padding: 18px 18px 80px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  h2 { font-size: 15px; margin: 26px 0 10px; }
+  select { font:inherit; padding:6px 9px; border:1px solid var(--line); border-radius:9px; background:var(--card); color:var(--ink); max-width: 100%; }
+  .row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 900px) { .row { grid-template-columns: 1fr; } }
+  .label { font-size: 12px; color: var(--mute); text-transform: uppercase; letter-spacing: .05em; }
+  .big { font-size: 40px; font-weight: 750; letter-spacing: -.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .big small { font-size: 15px; font-weight: 500; color: var(--mute); letter-spacing: 0; }
+  .good .big { color: var(--ok); } .bad .big { color: var(--q); } .me .big { color: var(--me); }
+  .pill { display:inline-block; font-size: 12px; padding: 2px 9px; border-radius: 99px; border: 1px solid var(--line); margin: 6px 6px 0 0; }
+  .pick { display:flex; flex-wrap: wrap; gap: 8px; align-items:center; margin-top: 8px; }
+  #chart { width:100%; height: 230px; display:block; }
+  .legend span { display:inline-flex; align-items:center; gap:5px; margin-right:14px; font-size: 12px; color:var(--mute); }
+  .legend i { width:12px; height:12px; border-radius:3px; display:inline-block; }
+  .two { display:grid; grid-template-columns: 1.2fr 1fr; gap: 12px; }
+  @media (max-width: 900px) { .two { grid-template-columns: 1fr; } }
+  .menu div { padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .menu div:last-child { border: 0; }
+  .menu b { display:block; font-size: 12px; color: var(--mute); font-weight: 600; }
+  .who { display:flex; flex-direction: column; gap: 7px; }
+  .who > div { display:grid; grid-template-columns: 54px 200px 1fr 50px; gap: 10px; align-items:center; }
+  .who .bar { height: 6px; border-radius: 3px; background: var(--eat); }
+  .logo { width: 54px; height: 34px; border-radius: 7px; background:#fff; border:1px solid var(--line); display:inline-flex; align-items:center; justify-content:center; overflow:hidden; }
+  .logo img { max-width: 90%; max-height: 84%; object-fit: contain; }
+  table { width:100%; border-collapse: collapse; }
+  th, td { text-align:left; padding: 8px 6px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  th { font-size: 12px; color: var(--mute); font-weight: 600; }
+  tr.sel td { background: color-mix(in srgb, var(--eat) 10%, transparent); }
+  tbody tr { cursor: pointer; }
+  #info { position: fixed; z-index: 30; pointer-events:none; background: var(--ink); color: var(--bg); padding:6px 9px; border-radius:8px; font-size:12px; display:none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <h1>Menza</h1>
+    <nav><a href="index.html">předpověď</a><a href="konce.html">kdo kdy končí</a><a href="rozvrhy.html">všechny rozvrhy</a></nav>
+    <span class="mute" id="stat"></span>
+  </div>
+  <div class="pick">
+    <select id="canteen"></select>
+    <span class="mute">·</span>
+    <span class="mute">moje třída:</span>
+    <select id="school"><option value="">— vyber školu —</option></select>
+    <select id="cls" disabled><option value="">třída</option></select>
+  </div>
+</header>
+<main>
+  <div class="row">
+    <div class="card" id="now"></div>
+    <div class="card good" id="best"></div>
+    <div class="card bad" id="worst"></div>
+  </div>
+  <div class="card me" id="mine" style="margin-top:12px;display:none"></div>
+
+  <h2>Průběh dne</h2>
+  <div class="card">
+    <div class="legend"><span><i style="background:var(--eat)"></i>lidí u stolů</span><span><i style="background:var(--q)"></i>čekání ve frontě (min, pravá osa)</span><span><i style="background:color-mix(in srgb,var(--ok) 35%,transparent)"></i>nejlepší čas</span><span id="lgMe" style="display:none"><i style="background:color-mix(in srgb,var(--me) 35%,transparent)"></i>kdy máš volno</span></div>
+    <svg id="chart" viewBox="0 0 1000 230" preserveAspectRatio="none"></svg>
+  </div>
+
+  <div class="two" style="margin-top:12px">
+    <div class="card"><div class="label" style="margin-bottom:6px">Dnes se vaří <span id="strava"></span></div><div class="menu" id="menu"></div></div>
+    <div class="card"><div class="label" style="margin-bottom:10px">Kdo tam přijde <span class="mute" style="text-transform:none;letter-spacing:0">(ze sledovaných škol)</span></div><div class="who" id="who"></div></div>
+  </div>
+
+  <h2>Všechny jídelny</h2>
+  <div class="card" style="padding:6px 12px"><table id="all"></table></div>
+
+  <p class="mute" style="font-size:12px;margin-top:24px">Odhad z veřejných rozvrhů: kdo má kdy pauzu nebo konec a stihne dojít na oběd. Počítá se jen 2. stupeň ZŠ, SŠ a VOŠ,
+    které zveřejňují rozvrh. Učitelé, 1. stupeň, cizí strávníci a školy bez veřejného rozvrhu v číslech nejsou, takže skutečnost bude spíš plnější.
+    Fronta = příchody vs. rychlost výdeje (odhad: <span id="serve"></span> lidí/min). Jídelníček z veřejného jídelníčku Strava.cz.</p>
+</main>
+<div id="info"></div>
+<script>
+const $ = (id) => document.getElementById(id);
+const hm = (s) => { const [h, m] = s.split(":").map(Number); return h * 60 + m; };
+const hh = (m) => `${Math.floor(m / 60)}:${String(Math.round(m) % 60).padStart(2, "0")}`;
+const fmt = (n) => Math.round(n).toLocaleString("cs-CZ");
+const nowM = new Date().getHours() * 60 + new Date().getMinutes();
+let M, T, A0, sel, mine = JSON.parse(localStorage.getItem("menza-mine") || "{}");
+const QP = new URLSearchParams(location.search);
+if (QP.get("skola")) mine = { school: QP.get("skola"), cls: QP.get("trida") || "" };
+
+const school = (id) => T.schools.find((s) => s.id === id);
+const logo = (s) => s && s.logo ? `<span class="logo"><img src="${s.logo}" alt=""></span>` : `<span class="logo"></span>`;
+const waitTxt = (w) => (w < 1 ? "bez fronty" : `fronta ~${Math.round(w)} min`);
+
+// skóre příchodu v čase t: čekání + tlačenice u stolů (stejně jako v menza.py)
+function score(c, t) {
+  const i = t - A0, s = c.series, pk = Math.max(1, ...s.eating);
+  if (i < 0 || i + 15 > s.wait.length) return null;
+  const w = s.wait.slice(i, i + 5).reduce((a, b) => a + b, 0) / 5;
+  const crowd = s.eating.slice(i, i + 15).reduce((a, b) => a + b, 0) / 15 / pk;
+  return { t, wait: w, crowd, score: w + 4 * crowd };
+}
+const crowdTxt = (c) => (c < .15 ? "skoro prázdno" : c < .45 ? "volno" : c < .75 ? "dost lidí" : "plno");
+
+// volná okna třídy dnes (pauzy ≥ 25 min + po vyučování)
+function freeWindows(s, cname) {
+  const day = (new Date().getDay() + 6) % 7;
+  const slots = ((s.classes[cname] || {})[Math.min(day, 4)] || []).map((x) => x.slice()).sort((a, b) => a[0] - b[0]);
+  if (!slots.length) return [];
+  const full = slots.filter((x) => x[2] >= 1), end = Math.max(...(full.length ? full : slots).map((x) => x[1]));
+  const out = []; let cur = slots[0][1];
+  for (const x of slots.slice(1)) { if (x[0] >= end) break; if (x[0] - cur >= 25) out.push([cur, x[0]]); cur = Math.max(cur, x[1]); }
+  out.push([end, 24 * 60]);
+  return out;
+}
+
+function myPlan(c) {
+  if (!mine.school || !mine.cls) return null;
+  const s = school(mine.school); if (!s) return null;
+  const own = c.own_school === s.id, walk = own ? 3 : (s.walk || {})[c.id];
+  if (walk == null || (c.own_school && !own)) return { s, err: own ? null : "do téhle jídelny tvoje škola nechodí" };
+  const [o1, o2] = c.open.map(hm), wins = freeWindows(s, mine.cls), opts = [];
+  for (const [a, b] of wins) {
+    const back = b >= 24 * 60 ? 0 : walk;               // po škole se zpátky nevracíš
+    for (let t = Math.max(a + walk, o1); t + M.lunch_dwell + back <= Math.min(b, o2 + M.lunch_dwell) && t <= o2 - 5; t += 5) {
+      const sc = score(c, Math.ceil(t / 5) * 5); if (sc) opts.push({ ...sc, leave: t - walk, win: [a, b], after: b >= 24 * 60 });
+    }
+  }
+  opts.sort((x, y) => x.score - y.score || x.t - y.t);
+  const asap = opts.slice().sort((x, y) => x.t - y.t)[0];
+  return { s, walk, wins, best: opts[0], opts, asap };
+}
+
+function render() {
+  const c = M.canteens.find((x) => x.id === sel) || M.canteens[0]; sel = c.id;
+  const S = c.series, [o1, o2] = c.open.map(hm), isToday = M.date === new Date().toISOString().slice(0, 10);
+  $("serve").textContent = c.serve_per_min;
+  $("stat").textContent = `${new Date(M.date).toLocaleDateString("cs-CZ", { weekday: "long", day: "numeric", month: "numeric" })} · výdej ${c.open.join("–")}`;
+
+  // teď
+  const i = nowM - A0;
+  if (isToday && nowM >= o1 && nowM < o2 && i >= 0 && i < S.wait.length) {
+    $("now").innerHTML = `<div class="label">Teď (${hh(nowM)})</div><div class="big">${fmt(S.eating[i])} <small>lidí u stolů</small></div>
+      <span class="pill">${waitTxt(S.wait[i])}</span><span class="pill">${crowdTxt(S.eating[i] / Math.max(1, ...S.eating))}</span>`;
+  } else {
+    $("now").innerHTML = `<div class="label">${isToday && nowM < o1 ? "Zatím zavřeno" : isToday ? "Výdej skončil" : "Mimo dnešek"}</div>
+      <div class="big">${c.open[0]} <small>až ${c.open[1]}</small></div><span class="pill">dnes přijde ~${fmt(c.diners)} lidí</span>
+      <span class="pill">špička ${c.peak_eating.time} (~${fmt(c.peak_eating.count)})</span>`;
+  }
+  const b = c.best[0], w = c.worst[0];
+  $("best").innerHTML = `<div class="label">Nejlepší jít</div><div class="big">${b.from} <small>– ${b.to}</small></div>
+    <span class="pill">${waitTxt(b.wait)}</span><span class="pill">${crowdTxt(b.crowd)}</span>
+    <div class="mute" style="font-size:12px;margin-top:8px">další dobré: ${c.best.slice(1).map((x) => x.from).join(", ")}</div>`;
+  $("worst").innerHTML = `<div class="label">Vyhni se</div><div class="big">${w.from} <small>– ${w.to}</small></div>
+    <span class="pill">${waitTxt(w.wait)}</span><span class="pill">${crowdTxt(w.crowd)}</span>
+    <div class="mute" style="font-size:12px;margin-top:8px">nejdelší fronta ~${Math.round(c.peak_wait.min)} min kolem ${c.peak_wait.time}</div>`;
+
+  // moje třída
+  const P = myPlan(c);
+  if (P && P.best) {
+    const x = P.best;
+    $("mine").style.display = "block";
+    $("mine").innerHTML = `<div class="label">${P.s.name} · ${mine.cls} · dnes</div>
+      <div class="big">vyraz v ${hh(x.leave)} <small>→ v jídelně ${hh(x.t)} (${Math.round(P.walk)} min pěšky)</small></div>
+      <span class="pill">${waitTxt(x.wait)}</span><span class="pill">${crowdTxt(x.crowd)}</span>
+      <span class="pill">${x.after ? "po vyučování" : `v pauze ${hh(x.win[0])}–${hh(x.win[1])}`}</span>
+      <div style="font-size:13px;margin-top:10px">${P.asap && P.asap.t !== x.t ? `Když půjdeš hned (${hh(P.asap.leave)}): v jídelně ${hh(P.asap.t)}, ${waitTxt(P.asap.wait)}, ${crowdTxt(P.asap.crowd)}. Počkáním ušetříš ~${Math.max(0, Math.round(P.asap.wait - x.wait))} min ve frontě.` : "Nejlepší je jít hned."}</div>`;
+  } else if (P) {
+    $("mine").style.display = "block";
+    $("mine").innerHTML = `<div class="label">${P.s.name} · ${mine.cls}</div><div style="margin-top:6px">${P.err || "Dnes během výdeje nemáš dost dlouhou pauzu ani nekončíš včas."}</div>`;
+  } else $("mine").style.display = "none";
+
+  chart(c, P, isToday);
+
+  $("strava").innerHTML = c.strava ? `<a class="mute" style="text-transform:none;letter-spacing:0" href="https://app.strava.cz/jidelnicky?jidelna=${c.strava}" target="_blank">· Strava.cz ${c.strava}</a>` : "";
+  $("menu").innerHTML = c.menu.length ? c.menu.map((m) => `<div><b>${m.kind}</b>${m.name}${m.allergens.length ? ` <span class="mute" style="font-size:11px">(${m.allergens.join(", ")})</span>` : ""}</div>`).join("")
+    : `<div class="mute">Jídelníček není veřejně dostupný.</div>`;
+  const by = Object.entries(c.by_school), mx = Math.max(1, ...by.map((x) => x[1]));
+  $("who").innerHTML = by.map(([id, n]) => { const s = school(id); return `<div>${logo(s)}<div style="font-size:13px">${s ? s.name : id}</div><div><div class="bar" style="width:${n / mx * 100}%"></div></div><div class="mute" style="text-align:right">~${fmt(n)}</div></div>`; }).join("");
+
+  $("all").innerHTML = `<thead><tr><th>Jídelna</th><th>Strávníků ~</th><th>Špička</th><th>Max. fronta</th><th>Nejlepší jít</th></tr></thead><tbody>` +
+    M.canteens.map((x) => `<tr data-id="${x.id}" class="${x.id === sel ? "sel" : ""}"><td>${x.name}</td><td>${fmt(x.diners)}</td><td>${x.peak_eating.time}</td><td>${x.peak_wait.min < 1 ? "—" : "~" + Math.round(x.peak_wait.min) + " min"}</td><td>${x.best[0].from}</td></tr>`).join("") + "</tbody>";
+}
+
+function chart(c, P, isToday) {
+  const S = c.series, n = S.eating.length, W = 1000, H = 230, L = 34, R = 34, top = 12, bot = 22;
+  const x = (i) => L + i / (n - 1) * (W - L - R);
+  const maxE = Math.max(10, ...S.eating) * 1.1, maxW = Math.max(5, ...S.wait) * 1.15;
+  const yE = (v) => H - bot - v / maxE * (H - top - bot), yW = (v) => H - bot - v / maxW * (H - top - bot);
+  let o = "";
+  const [o1, o2] = c.open.map(hm);
+  o += `<rect x="${x(0)}" y="${top}" width="${x(Math.max(0, o1 - A0)) - x(0)}" height="${H - top - bot}" fill="var(--ink)" opacity=".05"/>`;
+  o += `<rect x="${x(Math.min(n - 1, o2 - A0))}" y="${top}" width="${x(n - 1) - x(Math.min(n - 1, o2 - A0))}" height="${H - top - bot}" fill="var(--ink)" opacity=".05"/>`;
+  if (P && P.wins) for (const [a, b] of P.wins) {
+    const ia = Math.max(0, a - A0), ib = Math.min(n - 1, b - A0); if (ib > ia) o += `<rect x="${x(ia)}" y="${top}" width="${x(ib) - x(ia)}" height="${H - top - bot}" fill="var(--me)" opacity=".16"/>`;
+  }
+  for (const bw of c.best.slice(0, 1)) { const ia = hm(bw.from) - A0, ib = hm(bw.to) - A0; o += `<rect x="${x(ia)}" y="${top}" width="${x(ib) - x(ia)}" height="${H - top - bot}" fill="var(--ok)" opacity=".25"/>`; }
+  o += `<polygon fill="var(--eat)" opacity=".75" points="${x(0)},${yE(0)} ${S.eating.map((v, i) => `${x(i)},${yE(v)}`).join(" ")} ${x(n - 1)},${yE(0)}"/>`;
+  o += `<polyline fill="none" stroke="var(--q)" stroke-width="2.5" points="${S.wait.map((v, i) => `${x(i)},${yW(v)}`).join(" ")}"/>`;
+  for (let m = Math.ceil(A0 / 30) * 30; m <= A0 + n; m += 30) o += `<text x="${x(m - A0)}" y="${H - 6}" font-size="11" fill="var(--mute)" text-anchor="middle">${hh(m)}</text>`;
+  for (const f of [.5, 1]) {
+    o += `<text x="${L - 4}" y="${yE(maxE / 1.1 * f) + 4}" font-size="10" fill="var(--eat)" text-anchor="end">${fmt(maxE / 1.1 * f)}</text>`;
+    o += `<text x="${W - R + 4}" y="${yW(maxW / 1.15 * f) + 4}" font-size="10" fill="var(--q)">${Math.round(maxW / 1.15 * f)}′</text>`;
+  }
+  if (P && P.best) o += `<line x1="${x(P.best.t - A0)}" x2="${x(P.best.t - A0)}" y1="${top}" y2="${H - bot}" stroke="var(--me)" stroke-width="3"/><text x="${x(P.best.t - A0) + 5}" y="${top + 12}" font-size="12" fill="var(--me)" font-weight="700">ty</text>`;
+  if (isToday && nowM > A0 && nowM < A0 + n) o += `<line x1="${x(nowM - A0)}" x2="${x(nowM - A0)}" y1="${top}" y2="${H - bot}" stroke="var(--ink)" stroke-dasharray="4 3"/><text x="${x(nowM - A0) + 4}" y="${H - bot - 4}" font-size="11" fill="var(--ink)">teď</text>`;
+  $("chart").innerHTML = o;
+  $("chart").onmousemove = (e) => {
+    const r = $("chart").getBoundingClientRect(), fx = (e.clientX - r.left) / r.width * W, i = Math.round((fx - L) / (W - L - R) * (n - 1));
+    if (i < 0 || i >= n) return ($("info").style.display = "none");
+    Object.assign($("info").style, { display: "block", left: e.clientX + 12 + "px", top: e.clientY + 12 + "px" });
+    $("info").innerHTML = `<b>${hh(A0 + i)}</b> · u stolů ~${fmt(S.eating[i])} · ${waitTxt(S.wait[i])} · přichází ~${fmt(S.arrivals.slice(i, i + 5).reduce((a, b) => a + b, 0))}/5 min`;
+  };
+  $("chart").onmouseleave = () => ($("info").style.display = "none");
+}
+
+function pickers() {
+  $("canteen").innerHTML = M.canteens.map((c) => `<option value="${c.id}" ${c.id === sel ? "selected" : ""}>${c.name}</option>`).join("");
+  $("school").innerHTML = `<option value="">— vyber školu —</option>` + T.schools.map((s) => `<option value="${s.id}" ${s.id === mine.school ? "selected" : ""}>${s.name}</option>`).join("");
+  const s = school(mine.school);
+  $("cls").disabled = !s;
+  $("cls").innerHTML = `<option value="">třída</option>` + (s ? Object.keys(s.classes).sort((a, b) => a.localeCompare(b, "cs", { numeric: true })).map((c) => `<option ${c === mine.cls ? "selected" : ""}>${c}</option>`).join("") : "");
+  $("lgMe").style.display = mine.cls ? "" : "none";
+}
+function save() { localStorage.setItem("menza-mine", JSON.stringify(mine)); }
+
+$("canteen").onchange = (e) => { sel = e.target.value; render(); };
+$("school").onchange = (e) => {
+  mine = { school: e.target.value, cls: "" }; save();
+  // vlastní jídelna školy, jinak ta, kam škola chodí
+  const own = M.canteens.find((c) => c.own_school === mine.school);
+  const fl = T.schools.find((s) => s.id === mine.school);
+  if (own) sel = own.id; else if (M.canteens.some((c) => c.by_school[mine.school])) sel = M.canteens.find((c) => c.by_school[mine.school]).id;
+  pickers(); render();
+};
+$("cls").onchange = (e) => { mine.cls = e.target.value; save(); pickers(); render(); };
+$("all").onclick = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) { sel = tr.dataset.id; pickers(); render(); scrollTo({ top: 0, behavior: "smooth" }); } };
+
+Promise.all([fetch("data/menza.json", { cache: "no-cache" }).then((r) => r.json()), fetch("data/timetables.json", { cache: "no-cache" }).then((r) => r.json())])
+  .then(([m, t]) => { M = m; T = t; A0 = hm(m.axis_from); sel = QP.get("jidelna") || (M.canteens.find((c) => c.own_school === mine.school) || M.canteens.find((c) => c.by_school[mine.school]) || M.canteens[0]).id; pickers(); render(); })
+  .catch((e) => ($("stat").textContent = "Chybí data/menza.json – spusť: python -m openstudent forecast (" + e + ")"));
+</script>
+</body>
+</html>

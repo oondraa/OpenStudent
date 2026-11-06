@@ -1,0 +1,330 @@
+{
+ "bezrucka.cz": {
+  "final": "https://www.bezrucka.cz/",
+  "hits": [
+   "https://bezrucka.bakalari.cz",
+   "https://bezrucka.bakalari.cz/bakaweb/Timetable/Public",
+   "https://bezrucka.bakalari.cz/bakaweb/core/Events/PublicModule",
+   "https://bezrucka.bakalari.cz/bakaweb/next/zmeny.aspx"
+  ]
+ },
+ "bisgymbb.cz": {
+  "final": "https://www.bisgymbb.cz/",
+  "hits": [
+   "https://bisgymbb.bakalari.cz/bakaweb",
+   "https://bisgymbb.bakalari.cz/bakaweb/Timetable/Public",
+   "https://bisgymbb.bakalari.cz/bakaweb/next/zmeny.aspx"
+  ]
+ },
+ "daneta.cz": {
+  "final": "https://www.daneta.cz/",
+  "hits": []
+ },
+ "ddu-hk.cz": {
+  "final": "https://www.ddu-hk.cz/",
+  "hits": []
+ },
+ "edu-zssnp.cz": {
+  "final": "https://www.zssnp.cz/",
+  "hits": [
+   "https://www.instagram.com/zakladniskola_snphk/?next=%2F"
+  ]
+ },
+ "erazim.cz": {
+  "final": "https://erazim.cz/",
+  "hits": []
+ },
+ "gjkt.cz": {
+  "final": "ERR URLError",
+  "hits": []
+ },
+ "gybon.cz": {
+  "final": "https://www.gybon.cz/",
+  "hits": [
+   "//gybon.bakalari.cz",
+   "http://bakalari.gybon.cz/bakaweb",
+   "https://bakalari.gybon.cz/bakaweb",
+   "https://bakalari.gybon.cz/bakaweb/Timetable/Public",
+   "https://bakalari.gybon.cz/bakaweb/next/akce.aspx",
+   "https://bakalari.gybon.cz/bakaweb/next/zmeny.aspx",
+   "https://gybon.bakalari.cz",
+   "https://gybon.bakalari.cz/Timetable/Public",
+   "https://gybon.bakalari.cz/next/akce.aspx",
+   "https://gybon.bakalari.cz/next/zmeny.aspx",
+   "https://gybon.bakalari.cz/suplovani.aspx"
+  ]
+ },
+ "habrmanova.cz": {
+  "final": "https://www.habrmanova.cz/",
+  "hits": [
+   "/rozvrhy",
+   "/suplovani"
+  ]
+ },
+ "highschool.cz": {
+  "final": "https://www.sion.cz/stredni-skola/",
+  "hits": [
+   "https://www.edupage.com",
+   "https://www.sion.cz/stredni-skola/edupage/",
+   "https://www.sion.cz/stredni-skola/wp-content/themes/sion/dist/images/logo-edupage.png"
+  ]
+ },
+ "hnn.cz": {
+  "final": "https://www.hnn.cz/informace-pro-uchazece-o-studium-na-sups-hnn/",
+  "hits": [
+   "https://bakalari.supshk.cz/next/akce.aspx"
+  ]
+ },
+ "hotelovka.cz": {
+  "final": "https://www.hotelovka.cz/",
+  "hits": [
+   "https://hotelovka.bakalari.cz/login",
+   "https://www.hotelovka.cz/pro-studenty/bakalari/"
+  ]
+ },
+ "hradebni.cz": {
+  "final": "https://www.hradebni.cz/",
+  "hits": [
+   "/bakalari",
+   "/rozvrh-hodin-a-prestavky",
+   "/zmeny-rozvrhu",
+   "https://bakalari.hradebni.cz/Login",
+   "https://bakalari2.hradebni.cz/Login"
+  ]
+ },
+ "mandyska.cz": {
+  "final": "https://mandyska.cz/",
+  "hits": [
+   "https://bakalari.mandyska.cz/next/zmeny.aspx",
+   "https://bakalari.mandyska.cz/rozvrh.aspx"
+  ]
+ },
+ "neslhk.com": {
+  "final": "http://neslhk.com/",
+  "hits": [
+   "https://bakalari.neslhk.com/"
+  ]
+ },
+ "oahk.cz": {
+  "final": "https://www.oahk.cz/",
+  "hits": [
+   "/rozvrh/",
+   "https://oahk.bakalari.cz/"
+  ]
+ },
+ "prointepo.org": {
+  "final": "https://www.prointepo.org/",
+  "hits": []
+ },
+ "psjg.cz": {
+  "final": "https://1sjg.cz/",
+  "hits": [
+   "http://1sjg.cz/suplovani/",
+   "https://psjg.bakalari.cz/bakaweb/Login",
+   "https://psjg.bakalari.cz/bakaweb/next/zmeny.aspx"
+  ]
+ },
+ "scioskola.cz": {
+  "final": "https://www.scioskola.cz/",
+  "hits": []
+ },
+ "sion.cz": {
+  "final": "https://www.sion.cz/",
+  "hits": []
+ },
+ "skolacomenius.cz": {
+  "final": "https://skolacomenius.cz/",
+  "hits": []
+ },
+ "skolakrok.cz": {
+  "final": "https://www.skolakrok.cz/",
+  "hits": []
+ },
+ "skolytalent.cz": {
+  "final": "https://skolytalent.cz/",
+  "hits": []
+ },
+ "soavoshk.cz": {
+  "final": "https://soavoshk.cz/",
+  "hits": []
+ },
+ "sosasou-vocelova.cz": {
+  "final": "https://www.sosasou-vocelova.cz/",
+  "hits": [
+   "/wp-includes/ler-homepage/images/bakalari.svg",
+   "https://vocelova.bakalari.cz/next/login.aspx",
+   "https://www.sosasou-vocelova.cz/rozvrh-hodin/",
+   "https://www.sosasou-vocelova.cz/suplovani/"
+  ]
+ },
+ "sosvet.cz": {
+  "final": "https://www.sosvet.cz/",
+  "hits": [
+   "http://b.sosvet.cz/bakaweb/rozvrh.aspx",
+   "https://www.sosvet.cz/category/zmeny-v-rozvrhu/"
+  ]
+ },
+ "specialnihk.cz": {
+  "final": "https://www.specialnihk.cz/",
+  "hits": []
+ },
+ "specialniskolavrchlabi.cz": {
+  "final": "https://specialniskolavrchlabi.diakonie.cz/",
+  "hits": [
+   "http://www.specialniskoladvurkralove.cz",
+   "http://www.specialniskolavrchlabi.cz",
+   "https://specialniskolahradeckralove.diakonie.cz/",
+   "https://specialniskolatrutnov.diakonie.cz/",
+   "https://specialniskolavrchlabi.diakonie.cz/",
+   "https://specialniskolavrchlabi.diakonie.cz/comments/feed/",
+   "https://specialniskolavrchlabi.diakonie.cz/et_pb_layout/o-nas/",
+   "https://specialniskolavrchlabi.diakonie.cz/feed/",
+   "https://specialniskolavrchlabi.diakonie.cz/jak-nas-muzete-podporit/",
+   "https://specialniskolavrchlabi.diakonie.cz/kdyz-pomoc-prichazi-od-srdce-dekujeme-papirnictvi-astir/",
+   "https://specialniskolavrchlabi.diakonie.cz/kontakt/",
+   "https://specialniskolavrchlabi.diakonie.cz/krakonosuv-trojboj-v-semilech/",
+   "https://specialniskolavrchlabi.diakonie.cz/kurzy/",
+   "https://specialniskolavrchlabi.diakonie.cz/lib/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+   "https://specialniskolavrchlabi.diakonie.cz/lib/js/jquery/jquery.min.js?ver=3.7.1",
+   "https://specialniskolavrchlabi.diakonie.cz/moduly/gdpr/dist/scripts/main.js?ver=5.2.2",
+   "https://specialniskolavrchlabi.diakonie.cz/moduly/gdpr/dist/styles/gdpr-main-nf.css",
+   "https://specialniskolavrchlabi.diakonie.cz/o-nas/",
+   "https://specialniskolavrchlabi.diakonie.cz/o-nas/ke-stazeni/",
+   "https://specialniskolavrchlabi.diakonie.cz/o-nas/projekty/",
+   "https://specialniskolavrchlabi.diakonie.cz/o-nas/vyrocni-zpravy/",
+   "https://specialniskolavrchlabi.diakonie.cz/obsah/et-cache/1/22/8533/et-core-unified-8533.min.css?ver=1790847638",
+   "https://specialniskolavrchlabi.diakonie.cz/obsah/et-cache/1/22/8533/et-core-unified-tb-171-tb-11884-deferred-8533.min.css?ver=1790847639",
+   "https://specialniskolavrchlabi.diakonie.cz/obsah/et-cache/1/22/8533/et-divi-dynamic-tb-171-tb-11884-8533-late.css",
+   "https://specialniskolavrchlabi.diakonie.cz/obsah/et-cache/1/22/8533/et-divi-dynamic-tb-171-tb-11884-8533.css"
+  ]
+ },
+ "spsstavhk.cz": {
+  "final": "https://www.spsstavhk.cz/",
+  "hits": [
+   "https://spsstavhk.edupage.org",
+   "https://www.spsstavhk.cz/suplovani/suplování - informace pro žáky.html"
+  ]
+ },
+ "ssakhk.cz": {
+  "final": "ERR URLError",
+  "hits": []
+ },
+ "sspphk.cz": {
+  "final": "https://www.sspphk.cz/",
+  "hits": [
+   "https://sspphk.bakalari.cz/login"
+  ]
+ },
+ "sssoghk.cz": {
+  "final": "ERR URLError",
+  "hits": []
+ },
+ "stefcova.cz": {
+  "final": "https://www.stefcova.cz/ZS-Stefcova",
+  "hits": []
+ },
+ "vizualskola.cz": {
+  "final": "https://www.vizualskola.cz/",
+  "hits": [
+   "/studenti/bakalari/"
+  ]
+ },
+ "zs-malsovalhota.cz": {
+  "final": "https://zs-malsovalhota.cz/",
+  "hits": [
+   "https://zs-malsovalhota.cz/rozvrhy"
+  ]
+ },
+ "zsgocarova.cz": {
+  "final": "https://www.zsgocarova.cz/",
+  "hits": [
+   "/default/stranka?url=rozvrhy-hodin",
+   "/images/logo-bakalari.png",
+   "https://zsgocarova.bakalari.cz"
+  ]
+ },
+ "zshk.cz": {
+  "final": "https://www.zshk.cz/",
+  "hits": [
+   "https://ibakalari.zshk.cz/next/login.aspx",
+   "https://ibakalari.zshk.cz/next/zmeny.aspx",
+   "https://ibakalari.zshk.cz/timetable/public"
+  ]
+ },
+ "zshorakhk.cz": {
+  "final": "https://zshorakhk.cz/",
+  "hits": [
+   "https://bakalari.zsmhhk.cz/Timetable/Public/",
+   "https://bakalari.zsmhhk.cz/core/Events/PublicModule",
+   "https://bakalari.zsmhhk.cz/login",
+   "https://bakalari.zsmhhk.cz/next/zmeny.aspx"
+  ]
+ },
+ "zsjirasek.cz": {
+  "final": "https://www.zsjirasek.cz/ZS-a-MS-Jiraskovo-namesti",
+  "hits": [
+   "https://zsjirasek.bakalari.cz/login",
+   "https://zsjirasek.bakalari.cz/next/zmeny.aspx",
+   "https://zsjirasek.bakalari.cz/timetable/public"
+  ]
+ },
+ "zskukleny.cz": {
+  "final": "https://zskukleny.cz/",
+  "hits": [
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/rozvrh-hodin/",
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/rozvrh-hodin/classroom/",
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/rozvrh-hodin/suplovani/",
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/suplovani/"
+  ]
+ },
+ "zsnovyhk.cz": {
+  "final": "https://www.zsnovyhk.cz/",
+  "hits": [
+   "https://zsnovyhk.bakalari.cz/login"
+  ]
+ },
+ "zsplotiste.cz": {
+  "final": "https://www.zsplotiste.cz/",
+  "hits": [
+   "https://bakalari.zsplotiste.eu/",
+   "https://bakalari.zsplotiste.eu/Timetable/Public/",
+   "https://bakalari.zsplotiste.eu/next/akce.aspx",
+   "https://bakalari.zsplotiste.eu/next/zmeny.aspx",
+   "https://www.zsplotiste.cz/supl/suplov.htm"
+  ]
+ },
+ "zspouchov.cz": {
+  "final": "https://www.zspouchov.cz/ZS-Pouchov-Hradec-Kralove",
+  "hits": [
+   "/Rozvrh-hodin",
+   "/Zmena-v-rozvrhu-hodin"
+  ]
+ },
+ "zssever.cz": {
+  "final": "https://www.zssever.cz/",
+  "hits": [
+   "https://bakalari.zssever.cz",
+   "https://www.facebook.com/zakladniskolasever"
+  ]
+ },
+ "zsstefanikovahk.cz": {
+  "final": "https://www.zsstefanikovahk.cz/",
+  "hits": [
+   "/bakalari.htm",
+   "/platby-bakalari.htm",
+   "/rozvrhy-hodin.htm",
+   "/suplovani.htm",
+   "https://bakalari.zsstefanikovahk.cz/next/login.aspx"
+  ]
+ },
+ "zssvobodnedvory.cz": {
+  "final": "https://zssvobodnedvory.cz/",
+  "hits": [
+   "https://zssvobodnedvory.edupage.org"
+  ]
+ },
+ "zsuprkova.cz": {
+  "final": "ERR URLError",
+  "hits": []
+ }
+}

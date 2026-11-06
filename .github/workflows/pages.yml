@@ -1,0 +1,54 @@
+# Promo site (site/) to GitHub Pages. Bakes the Worker origin from the API_URL secret into the page
+# (same secret the watch Action uses), so %API_URL% in site/index.html becomes the live API.
+name: Promo site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bake in the API origin
+        env:
+          API_URL: ${{ secrets.API_URL }}
+        run: |
+          if [ -z "$API_URL" ]; then echo "API_URL secret is not set" >&2; exit 1; fi
+          # Strip a trailing slash, then swap the placeholder for the real origin.
+          origin="${API_URL%/}"
+          sed -i "s#%API_URL%#${origin}#g" site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      # Tell Bing (and the other IndexNow engines) the page changed, so it's recrawled in minutes instead of days.
+      # The key isn't a secret: the engines check it against site/f5b71dfafd650729da6bce07dad31c77.txt. A failed ping never fails the deploy.
+      - name: Ping IndexNow
+        continue-on-error: true
+        run: |
+          curl -fsS -X POST https://api.indexnow.org/indexnow -H "content-type: application/json; charset=utf-8" -d '{
+            "host": "oondraa.github.io",
+            "key": "f5b71dfafd650729da6bce07dad31c77",
+            "keyLocation": "https://oondraa.github.io/OpenSISAKHK/f5b71dfafd650729da6bce07dad31c77.txt",
+            "urlList": ["https://oondraa.github.io/OpenSISAKHK/"]
+          }' -w "IndexNow: %{http_code}\n"

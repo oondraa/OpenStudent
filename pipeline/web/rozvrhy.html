@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenŠtudent – všechny rozvrhy naráz</title>
+<style>
+  :root { --bg:#f6f6f4; --card:#fff; --ink:#1c1c1e; --mute:#6e6e73; --line:#e6e6e2; --les:#3b82f6; --gap:#f59e0b; --end:#10b981; --hl:#ef4444; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111113; --card:#1b1b1e; --ink:#f2f2f2; --mute:#9a9aa0; --line:#2a2a2e; --les:#5b9bff; --gap:#fbbf24; --end:#34d399; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:13px/1.35 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+  header { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); padding: 10px 14px 8px; }
+  h1 { font-size: 18px; margin: 0 6px 6px 0; display:inline-block; }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .seg button { border:0; background:var(--card); color:var(--ink); padding:5px 10px; cursor:pointer; font:inherit; }
+  .seg button.on { background: var(--ink); color: var(--bg); }
+  select, input { font:inherit; padding:5px 8px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); }
+  label { color: var(--mute); }
+  .mute { color: var(--mute); }
+  main { padding: 10px 14px 60px; }
+  .overview { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:10px; margin-bottom: 12px; }
+  @media (max-width: 900px) { .overview { grid-template-columns: 1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+  .card h2 { font-size: 13px; margin: 0 0 4px; font-weight: 600; }
+  .card svg { width:100%; height:120px; display:block; }
+  .legend span { display:inline-flex; align-items:center; gap:4px; margin-right:10px; color:var(--mute); }
+  .legend i { width:10px; height:10px; border-radius:2px; display:inline-block; }
+
+  #grid { position: relative; background: var(--card); border:1px solid var(--line); border-radius: 12px; }
+  .axis { position: sticky; top: var(--hdr, 92px); z-index: 10; height: 24px; background: var(--card); border-bottom:1px solid var(--line); border-radius: 12px 12px 0 0; }
+  .row { position: relative; height: 17px; border-bottom: 1px solid color-mix(in srgb, var(--line) 50%, transparent); }
+  .row:hover { background: color-mix(in srgb, var(--les) 7%, transparent); }
+  .lab { position:absolute; left:0; width: var(--labw); padding: 0 6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:17px; }
+  .lab b { font-weight: 600; }
+  .tl { position:absolute; left: var(--labw); right: 8px; top:0; bottom:0; }
+  .les { position:absolute; top:3px; bottom:3px; background: var(--les); border-radius:2px; }
+  .les.half { opacity: .45; }
+  .gap { position:absolute; top:2px; bottom:2px; background: color-mix(in srgb, var(--gap) 28%, transparent); border:1px solid var(--gap); border-radius:3px;
+         font-size:10px; line-height:11px; text-align:center; color: color-mix(in srgb, var(--gap) 70%, var(--ink)); overflow:hidden; }
+  .endt.part { color: var(--mute); font-weight: 400; }
+  .endt { position:absolute; top:0; font-size:10px; line-height:17px; padding-left:3px; color: var(--end); font-weight:600; white-space:nowrap; }
+  .school { position: relative; height: 24px; background: color-mix(in srgb, var(--ink) 5%, var(--card)); border-bottom:1px solid var(--line);
+            line-height:24px; padding: 0 8px; font-weight: 650; cursor: pointer; user-select:none; }
+  .school .mute { font-weight: 400; }
+  .hour { position:absolute; top:0; bottom:0; border-left:1px solid var(--line); }
+  .hour span { position:absolute; top:4px; left:3px; color:var(--mute); font-size:11px; }
+  #cursor { position:absolute; top:0; bottom:0; width:0; border-left: 1px dashed var(--hl); pointer-events:none; z-index: 5; display:none; }
+  #now { position:absolute; top:0; bottom:0; width:0; border-left: 2px solid var(--hl); opacity:.5; pointer-events:none; z-index: 4; }
+  #info { position: fixed; z-index: 30; pointer-events:none; background: var(--ink); color: var(--bg); padding:6px 9px; border-radius:8px; font-size:12px; display:none; white-space: nowrap; }
+  #lines { position:absolute; left: var(--labw); right: 8px; top:0; bottom:0; pointer-events:none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Všechny rozvrhy naráz</h1> <a href="index.html" class="mute">← předpověď</a> · <a href="konce.html" class="mute">kdo kdy končí</a> · <a href="menza.html" class="mute">menza</a>
+  <div class="bar">
+    <div class="seg" id="days"></div>
+    <div class="seg" id="levels"></div>
+    <select id="school"><option value="">Všechny školy</option></select>
+    <select id="sort">
+      <option value="school">Řadit: podle školy</option>
+      <option value="end">Řadit: podle konce vyučování</option>
+      <option value="start">Řadit: podle začátku</option>
+      <option value="gap">Řadit: podle nejdelší pauzy</option>
+    </select>
+    <input id="q" placeholder="hledat třídu (např. 3.A)" size="18">
+    <label><input type="checkbox" id="onlyGap"> jen třídy s pauzou ≥ <span class="mg"></span> min</label>
+    <span class="mute" id="stat"></span>
+  </div>
+</header>
+<main>
+  <div class="overview">
+    <div class="card">
+      <h2>Kde jsou žáci v každou chvíli <span class="mute">(odhad počtu žáků)</span></h2>
+      <div class="legend"><span><i style="background:var(--les)"></i>na hodině</span><span><i style="background:var(--gap)"></i>v pauze ≥ <span class="mg"></span> min</span><span><i style="background:var(--end)"></i>už po vyučování</span></div>
+      <svg id="stack" viewBox="0 0 800 120" preserveAspectRatio="none"></svg>
+    </div>
+    <div class="card"><h2>Konce vyučování <span class="mute">(žáci / 15 min)</span></h2><svg id="ends" viewBox="0 0 400 120" preserveAspectRatio="none"></svg></div>
+    <div class="card"><h2>Začátky dlouhých pauz <span class="mute">(žáci / 15 min)</span></h2><svg id="gaps" viewBox="0 0 400 120" preserveAspectRatio="none"></svg></div>
+  </div>
+  <div id="grid" style="--labw: 190px">
+    <div class="axis" id="axis"></div>
+    <div id="lines"><div id="cursor"></div><div id="now"></div></div>
+    <div id="rows"></div>
+  </div>
+</main>
+<div id="info"></div>
+<script>
+const F = 7 * 60, T = 18 * 60 + 40, R = T - F;          // osa 7:00–18:40
+const DN = ["Po", "Út", "St", "Čt", "Pá"];
+const hh = (m) => `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`;
+const pct = (m) => ((Math.min(Math.max(m, F), T) - F) / R * 100).toFixed(3) + "%";
+const $ = (id) => document.getElementById(id);
+let D, rows = [], state = { day: Math.min(4, Math.max(0, (new Date().getDay() + 6) % 7)), level: "", school: "", sort: "school", q: "", onlyGap: false };
+const collapsed = new Set();
+
+function analyse(slots, minGap) {
+  slots = slots.map((s) => s.slice()).sort((a, b) => a[0] - b[0]);
+  if (!slots.length) return null;
+  // konec = konec poslední hodiny CELÉ třídy; odpolední hodiny jen pro část třídy (volitelné, skupiny) jsou „dobíhající“
+  const full = slots.filter((s) => s[2] >= 1);
+  const start = slots[0][0], end = full.length ? Math.max(...full.map((s) => s[1])) : Math.max(...slots.map((s) => s[1]));
+  const lastAny = Math.max(...slots.map((s) => s[1]));
+  const gaps = []; let cur = slots[0][1];
+  for (const s of slots.slice(1)) { if (s[0] >= end) break; if (s[0] - cur >= minGap) gaps.push([cur, s[0]]); cur = Math.max(cur, s[1]); }
+  return { slots, start, end, lastAny, gaps, maxGap: Math.max(0, ...gaps.map((g) => g[1] - g[0])) };
+}
+
+function build() {
+  rows = [];
+  for (const s of D.schools) {
+    if (state.level && s.level !== state.level) continue;
+    if (state.school && s.id !== state.school) continue;
+    for (const [c, days] of Object.entries(s.classes)) {
+      if (state.q && !c.toLowerCase().includes(state.q.toLowerCase())) continue;
+      const a = analyse(days[state.day] || [], D.min_gap);
+      if (!a) continue;
+      if (state.onlyGap && !a.gaps.length) continue;
+      rows.push({ s, c, ...a });
+    }
+  }
+  const by = { end: (r) => r.end, start: (r) => r.start, gap: (r) => -r.maxGap };
+  if (state.sort !== "school") rows.sort((a, b) => by[state.sort](a) - by[state.sort](b) || a.s.name.localeCompare(b.s.name));
+  renderGrid(); renderOverview();
+}
+
+function renderGrid() {
+  let html = "", last = null;
+  const grouped = state.sort === "school";
+  for (const r of rows) {
+    if (grouped && r.s !== last) {
+      const n = rows.filter((x) => x.s === r.s).length;
+      html += `<div class="school" data-id="${r.s.id}">${collapsed.has(r.s.id) ? "▸" : "▾"} ${r.s.logo ? `<img src="${r.s.logo}" style="height:16px;max-width:40px;object-fit:contain;vertical-align:-3px;background:#fff;border-radius:3px;padding:1px 2px">` : ""} ${r.s.name} <span class="mute">· ${r.s.level} · ${n} tříd · ~${r.s.class_size} žáků/třída · ${r.s.system}</span></div>`;
+      last = r.s;
+    }
+    if (grouped && collapsed.has(r.s.id)) continue;
+    let tl = "";
+    for (const [b, e, f] of r.slots) tl += `<div class="les${f < 1 ? " half" : ""}" style="left:${pct(b)};width:calc(${pct(e)} - ${pct(b)})" title="${hh(b)}–${hh(e)}${f < 1 ? " (jen část třídy)" : ""}"></div>`;
+    for (const [b, e] of r.gaps) tl += `<div class="gap" style="left:${pct(b)};width:calc(${pct(e)} - ${pct(b)})" title="pauza ${hh(b)}–${hh(e)}">${e - b}′</div>`;
+    tl += `<div class="endt" style="left:${pct(r.end)}">${hh(r.end)}</div>`;
+    if (r.lastAny > r.end) tl += `<div class="endt part" style="left:${pct(r.lastAny)}" title="část třídy (skupiny/volitelné) do ${hh(r.lastAny)}">${hh(r.lastAny)}*</div>`;
+    html += `<div class="row" data-k="${r.s.id}|${r.c}"><div class="lab">${grouped ? "" : `<span class="mute">${r.s.name} · </span>`}<b>${r.c}</b></div><div class="tl">${tl}</div></div>`;
+  }
+  $("rows").innerHTML = html;
+  const st = rows.reduce((a, r) => a + r.s.class_size, 0);
+  $("stat").textContent = `${rows.length} tříd · ~${st.toLocaleString("cs-CZ")} žáků · ${new Set(rows.map((r) => r.s.id)).size} škol`;
+  document.querySelectorAll(".school").forEach((el) => el.onclick = () => {
+    const id = el.dataset.id; collapsed.has(id) ? collapsed.delete(id) : collapsed.add(id); renderGrid();
+  });
+  const now = new Date(), nm = now.getHours() * 60 + now.getMinutes();
+  $("now").style.display = (now.getDay() + 6) % 7 === state.day && nm > F && nm < T ? "block" : "none";
+  $("now").style.left = pct(nm);
+}
+
+function counts(m) {   // kolik žáků (odhad) je v minutě m na hodině / v pauze / po škole
+  let les = 0, gap = 0, done = 0;
+  for (const r of rows) {
+    const n = r.s.class_size;
+    if (m >= r.end) {
+      let busy = 0;
+      for (const [b, e, f] of r.slots) if (m >= b && m < e) busy = Math.max(busy, f);
+      les += n * busy; done += n * (1 - busy); continue;
+    }
+    if (m < r.start) continue;
+    let busy = 0;
+    for (const [b, e, f] of r.slots) if (m >= b && m < e) busy = Math.max(busy, f);
+    les += n * busy;
+    if (r.gaps.some(([b, e]) => m >= b && m < e)) gap += n * (1 - busy);
+  }
+  return { les, gap, done };
+}
+
+function renderOverview() {
+  const step = 5, xs = [];
+  for (let m = F; m <= T; m += step) xs.push({ m, ...counts(m) });
+  const max = Math.max(10, ...xs.map((p) => p.les + p.gap + p.done));
+  const W = 800, H = 120, x = (i) => i / (xs.length - 1) * W, y = (v) => H - 14 - v / max * (H - 18);
+  const area = (lo, hi, color) => `<polygon fill="${color}" opacity=".85" points="${xs.map((p, i) => `${x(i)},${y(hi(p))}`).join(" ")} ${xs.map((p, i) => `${x(i)},${y(lo(p))}`).reverse().join(" ")}"/>`;
+  let ax = "";
+  for (let m = F; m <= 18 * 60; m += 60) ax += `<text x="${(m - F) / R * W}" y="${H - 2}" font-size="10" fill="var(--mute)" text-anchor="middle">${m / 60}</text>`;
+  $("stack").innerHTML = area((p) => 0, (p) => p.les, "var(--les)") + area((p) => p.les, (p) => p.les + p.gap, "var(--gap)")
+    + area((p) => p.les + p.gap, (p) => p.les + p.gap + p.done, "var(--end)") + ax;
+  hist($("ends"), rows.map((r) => [r.end, r.s.class_size]), "var(--end)");
+  hist($("gaps"), rows.flatMap((r) => r.gaps.map((g) => [g[0], r.s.class_size])), "var(--gap)");
+}
+
+function hist(svg, items, color) {
+  const a = 10 * 60, b = 17 * 60, step = 15, n = (b - a) / step, bins = new Array(n).fill(0);
+  for (const [m, w] of items) { const i = Math.floor((m - a) / step); if (i >= 0 && i < n) bins[i] += w; }
+  const max = Math.max(1, ...bins), W = 400, H = 120, bw = W / n;
+  let k = bins.indexOf(max), out = "";
+  bins.forEach((v, i) => out += `<rect x="${i * bw + 1}" y="${H - 14 - v / max * (H - 30)}" width="${bw - 2}" height="${v / max * (H - 30)}" fill="${color}" opacity="${i === k ? 1 : .6}"><title>${hh(a + i * step)}–${hh(a + (i + 1) * step)}: ~${Math.round(v)} žáků</title></rect>`);
+  for (let m = a; m <= b; m += 60) out += `<text x="${(m - a) / step * bw}" y="${H - 2}" font-size="10" fill="var(--mute)" text-anchor="middle">${m / 60}</text>`;
+  out += `<text x="${k * bw + bw / 2}" y="12" font-size="11" fill="var(--ink)" text-anchor="middle">nejvíc ${hh(a + k * step)} (~${Math.round(max)})</text>`;
+  svg.innerHTML = out;
+}
+
+function axis() {
+  let h = "", l = "";
+  for (let m = F; m <= 18 * 60; m += 60) {
+    h += `<div class="hour" style="left:calc(var(--labw) + (100% - var(--labw) - 8px) * ${(m - F) / R})"><span>${m / 60}:00</span></div>`;
+    l += `<div class="hour" style="left:${pct(m)}"></div>`;
+  }
+  $("axis").innerHTML = h;
+  $("lines").insertAdjacentHTML("beforeend", l);
+}
+
+function controls() {
+  $("days").innerHTML = DN.map((d, i) => `<button data-d="${i}" class="${i === state.day ? "on" : ""}">${d}</button>`).join("");
+  $("days").onclick = (e) => { if (e.target.dataset.d) { state.day = +e.target.dataset.d; controls(); build(); } };
+  $("levels").innerHTML = [["", "Vše"], ["SŠ", "SŠ"], ["ZŠ", "ZŠ 2. st."]].map(([v, t]) => `<button data-l="${v}" class="${v === state.level ? "on" : ""}">${t}</button>`).join("");
+  $("levels").onclick = (e) => { if (e.target.dataset.l !== undefined) { state.level = e.target.dataset.l; controls(); build(); } };
+}
+
+const grid = $("grid"), cur = $("cursor"), info = $("info");
+grid.addEventListener("mousemove", (e) => {
+  const tl = $("lines").getBoundingClientRect();
+  const fx = (e.clientX - tl.left) / tl.width;
+  if (fx < 0 || fx > 1) { cur.style.display = info.style.display = "none"; return; }
+  const m = Math.round((F + fx * R) / 5) * 5, c = counts(m);
+  cur.style.display = "block"; cur.style.left = pct(m);
+  info.style.display = "block";
+  info.style.left = Math.min(e.clientX + 14, innerWidth - 260) + "px"; info.style.top = e.clientY + 14 + "px";
+  info.innerHTML = `<b>${hh(m)}</b> · na hodině ~${Math.round(c.les)} · v pauze ~${Math.round(c.gap)} · po škole ~${Math.round(c.done)}`;
+});
+grid.addEventListener("mouseleave", () => (cur.style.display = info.style.display = "none"));
+
+for (const [id, k, ev] of [["school", "school", "change"], ["sort", "sort", "change"], ["q", "q", "input"]])
+  $(id).addEventListener(ev, (e) => { state[k] = e.target.value; build(); });
+$("onlyGap").addEventListener("change", (e) => { state.onlyGap = e.target.checked; build(); });
+new ResizeObserver(() => document.documentElement.style.setProperty("--hdr", document.querySelector("header").offsetHeight + "px")).observe(document.querySelector("header"));
+
+fetch("data/timetables.json", { cache: "no-cache" }).then((r) => r.json()).then((d) => {
+  D = d;
+  document.querySelectorAll(".mg").forEach((el) => (el.textContent = d.min_gap));
+  $("school").innerHTML += d.schools.map((s) => `<option value="${s.id}">${s.name} (${s.level})</option>`).join("");
+  controls(); axis(); build();
+}).catch(() => ($("stat").textContent = "Chybí data/timetables.json – spusť: python -m openstudent forecast"));
+</script>
+</body>
+</html>

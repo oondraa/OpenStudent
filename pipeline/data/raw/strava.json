@@ -1,0 +1,251 @@
+{
+ "bisgym": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "gbn": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "gjkt": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 2
+ },
+ "hotelovka": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 3
+ },
+ "oahk": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 3
+ },
+ "soavos": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "vocelova": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 9
+ },
+ "sosvet": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 2
+ },
+ "hradebni": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 12
+ },
+ "supshnn": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 3
+ },
+ "kyberna": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 2
+ },
+ "nesl": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 3
+ },
+ "specialni": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 2
+ },
+ "daneta": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "prointepo": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 5
+ },
+ "psjg": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "spsstav": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 2
+ },
+ "sionhs": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "sspp": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "sssog": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 2
+ },
+ "vizual": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "szs": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 2
+ },
+ "zs-plotiste": {
+  "uses_strava": true,
+  "jidelny": {
+   "4566": "https://www.zsplotiste.cz/?page_id=399"
+  },
+  "pages": 3
+ },
+ "zs-comenius": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 2
+ },
+ "zs-sever": {
+  "uses_strava": true,
+  "jidelny": {
+   "3560": "https://www.zssever.cz/skolni-jidelna/"
+  },
+  "pages": 2
+ },
+ "zs-gocarova": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 2
+ },
+ "zs-mandysova": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-jirasek": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 2
+ },
+ "zs-uprkova": {
+  "uses_strava": true,
+  "jidelny": {
+   "5636": "https://zsuprkova.cz/skolni-jidelna/jidelnicek/"
+  },
+  "pages": 11
+ },
+ "zs-novyhk": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 5
+ },
+ "zs-pouchov": {
+  "uses_strava": true,
+  "jidelny": {
+   "3589": "https://www.zspouchov.cz/Jidelnicek"
+  },
+  "pages": 7
+ },
+ "zs-bezrucova": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 2
+ },
+ "zs-habrmanova": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 2
+ },
+ "zs-horakove": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-snp": {
+  "uses_strava": true,
+  "jidelny": {
+   "3668": "https://www.zssnphk.cz/aktuality-v-nasi-skole/cesta-kolem-sveta-ve-skolni-jidelne"
+  },
+  "pages": 9
+ },
+ "zs-stefanikova": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 5
+ },
+ "zs-scio": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-erazim": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-krok": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-sion": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-talent": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-kukleny": {
+  "uses_strava": true,
+  "jidelny": {
+   "4334": "https://zskukleny.cz/zakladni-skola/soucasti-skoly/jidelna/jidelnicek-materske-skoly/"
+  },
+  "pages": 12
+ },
+ "zs-malsovalhota": {
+  "uses_strava": true,
+  "jidelny": {},
+  "pages": 2
+ },
+ "zs-svobodnedvory": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-stefcova": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "zs-diakonie": {
+  "uses_strava": false,
+  "jidelny": {},
+  "pages": 1
+ },
+ "jidelna-hradecka": {
+  "uses_strava": true,
+  "jidelny": {
+   "0288": "https://www.jidelnahradecka.cz/"
+  },
+  "pages": 12
+ }
+}

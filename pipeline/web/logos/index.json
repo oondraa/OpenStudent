@@ -1,0 +1,174 @@
+{
+ "bisgym": {
+  "file": "bisgym.svg",
+  "source": "https://www.bisgymbb.cz/themes/bisgymbb/logo.svg"
+ },
+ "gbn": {
+  "file": "gbn.png",
+  "source": "https://www.gybon.cz/wp-content/uploads/2015/01/logo.png"
+ },
+ "gjkt": {
+  "file": "gjkt.png",
+  "source": "https://www.gjkt.cz/wp-content/uploads/2019/10/GJKT-logo-75.png"
+ },
+ "hotelovka": {
+  "file": "hotelovka.webp",
+  "source": "https://www.hotelovka.cz/wp-content/uploads/2026/09/logo-850.webp"
+ },
+ "oahk": {
+  "file": "oahk.gif",
+  "source": "https://9ce6e9a5b9.clvaw-cdnwnd.com/a8fe3b784d963ab5c6f8286b0794a70f/200000502-7038271327/piktogram_slouceni%20pruhledny.gif?ph=9ce6e9a5b9"
+ },
+ "soavos": {
+  "file": "soavos.png",
+  "source": "https://soavoshk.cz/cofresag/themes/soavoshk/favicons/apple-icon-180x180.png"
+ },
+ "vocelova": {
+  "file": "vocelova.svg",
+  "source": "https://www.sosasou-vocelova.cz/wp-includes/ler-homepage/images/logo1.svg"
+ },
+ "sosvet": {
+  "file": "sosvet.png",
+  "source": "https://www.sosvet.cz/wp-content/uploads/2023/09/logo_vrch-300x84_new.png"
+ },
+ "hradebni": {
+  "file": "hradebni.png",
+  "source": "https://www.hradebni.cz/image.php?nid=18237&oid=9193211"
+ },
+ "kyberna": {
+  "file": "kyberna.svg",
+  "source": "https://www.ssakhk.cz/imgs/svg/logo_menu.svg"
+ },
+ "nesl": {
+  "file": "nesl.png",
+  "source": "https://neslhk.com/wp-content/uploads/2016/11/logo_skola_hradec-1.png"
+ },
+ "specialni": {
+  "file": "specialni.jpg",
+  "source": "https://www.specialnihk.cz/wp-content/uploads/2024/10/Spec_skoly_logo_ver2_barva.jpg"
+ },
+ "daneta": {
+  "file": "daneta.svg",
+  "source": "https://www.daneta.cz/webconfig/uloziste/2023/06/06/717c6390ab47fb3e989e921ad75e5085/logo.svg"
+ },
+ "prointepo": {
+  "file": "prointepo.webp",
+  "source": "https://www.prointepo.org/image.php?nid=21931&oid=13900959"
+ },
+ "psjg": {
+  "file": "psjg.png",
+  "source": "http://1sjg.cz/wp-content/uploads/2023/08/Logo_steel.png"
+ },
+ "spsstav": {
+  "file": "spsstav.png",
+  "source": "https://www.spsstavhk.cz/img/loga/spsshk.png"
+ },
+ "sionhs": {
+  "file": "sionhs.png",
+  "source": "https://www.sion.cz/stredni-skola/wp-content/themes/sion/dist/images/favicon/apple-touch-icon.png"
+ },
+ "sspp": {
+  "file": "sspp.jpg",
+  "source": "https://www.sspphk.cz/templates/css/images/logo.jpg"
+ },
+ "sssog": {
+  "file": "sssog.png",
+  "source": "https://www.sssoghk.cz/wp-content/uploads/2022/09/Logo_krivky_barvy.png"
+ },
+ "vizual": {
+  "file": "vizual.svg",
+  "source": "https://www.vizualskola.cz/img/logo.svgz"
+ },
+ "szs": {
+  "file": "szs.svg",
+  "source": "https://www.zshk.cz/wp-content/themes/zshk/dist/images/logo.svg"
+ },
+ "zs-plotiste": {
+  "file": "zs-plotiste.jpg",
+  "source": "https://www.zsplotiste.cz/wp-content/uploads/2023/07/logo1.jpg"
+ },
+ "zs-comenius": {
+  "file": "zs-comenius.png",
+  "source": "https://skolacomenius.cz/wp-content/uploads/2022/03/skola-comenius-logo-text.png"
+ },
+ "zs-sever": {
+  "file": "zs-sever.svg",
+  "source": "https://www.zssever.cz/wp-content/uploads/2022/11/logo-HP.svg"
+ },
+ "zs-gocarova": {
+  "file": "zs-gocarova.png",
+  "source": "https://www.zsgocarova.cz/images/logo5.png"
+ },
+ "zs-mandysova": {
+  "file": "zs-mandysova.png",
+  "source": "https://mandyska.cz/assets/images/logo.png"
+ },
+ "zs-jirasek": {
+  "file": "zs-jirasek.svg",
+  "source": "https://www.zsjirasek.cz/media/skola/Z-sDXw6N1kSj5NEgjm2AmA/knihovna/fSZnX-9K1k2ySFNcqvxhCA/v1/logo.svg"
+ },
+ "zs-uprkova": {
+  "file": "zs-uprkova.png",
+  "source": "https://zsuprkova.cz/wp-content/themes/blankslate-child/images/header_logo_text.png"
+ },
+ "zs-novyhk": {
+  "file": "zs-novyhk.png",
+  "source": "https://www.zsnovyhk.cz/public/source/images/favicon.png"
+ },
+ "zs-pouchov": {
+  "file": "zs-pouchov.png",
+  "source": "https://www.zspouchov.cz/media/skola/PKxbjezu9UWvHm0ct3gBAw/knihovna/XkzMWSjuZU-22HgCM4UwJQ/v1/logo.png"
+ },
+ "zs-bezrucova": {
+  "file": "zs-bezrucova.png",
+  "source": "https://www.bezrucka.cz/img/header/logo.png"
+ },
+ "zs-habrmanova": {
+  "file": "zs-habrmanova.png",
+  "source": "https://www.habrmanova.cz/static/images/loga/Logo_habrmanka.png"
+ },
+ "zs-horakove": {
+  "file": "zs-horakove.png",
+  "source": "https://zshorakhk.cz/wp-content/uploads/2026/03/logo_31-1.png"
+ },
+ "zs-snp": {
+  "file": "zs-snp.svg",
+  "source": "https://www.zssnphk.cz/files/publishing/snp_logo_text-1_31.svg"
+ },
+ "zs-stefanikova": {
+  "file": "zs-stefanikova.svg",
+  "source": "https://www.zsstefanikovahk.cz/images/logo.svg"
+ },
+ "zs-scio": {
+  "file": "zs-scio.svg",
+  "source": "https://www.scioskola.cz/media/xrelukqd/logo.svg"
+ },
+ "zs-erazim": {
+  "file": "zs-erazim.png",
+  "source": "https://erazim.cz/wp-content/uploads/2020/04/cropped-cropped-logo-pruhledne-1.png"
+ },
+ "zs-krok": {
+  "file": "zs-krok.png",
+  "source": "https://www.skolakrok.cz/assets/logo/krok-logo.png"
+ },
+ "zs-sion": {
+  "file": "zs-sion.png",
+  "source": "https://www.sion.cz/wp-content/themes/sion/dist/images/favicon/apple-touch-icon.png"
+ },
+ "zs-talent": {
+  "file": "zs-talent.png",
+  "source": "https://skolytalent.cz/wp-content/uploads/2025/08/cropped-logo_ZS-Talent_RGB_BL02-1.png"
+ },
+ "zs-kukleny": {
+  "file": "zs-kukleny.svg",
+  "source": "https://www.zskukleny.cz/wp-content/themes/zskuklenycz/img/logo.svg?v=3"
+ },
+ "zs-malsovalhota": {
+  "file": "zs-malsovalhota.png",
+  "source": "http://zs-malsovalhota.cz/wp-content/uploads/2017/10/Logo110.png"
+ },
+ "zs-stefcova": {
+  "file": "zs-stefcova.png",
+  "source": "https://www.stefcova.cz/media/skola/6xOtQUmdF0mFVrWCUDDOdQ/knihovna/v46wS4H4n064tkLx7RMz5A/v3/logo-menu.png"
+ }
+}

@@ -1,0 +1,475 @@
+{
+ "specialni": {
+  "name": "MŠ, Speciální ZŠ a PrŠ",
+  "domain": "specialnihk.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://www.youtube.com/embed/JjYOvU3nB1E?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/8od8Jd_AS9I?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/4aKiEw8rWew?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/4aKiEw8rWew?start=233&#038;feature=oembed": "iframe",
+   "https://www.youtube.com/embed/5dfI3c3NWAU?start=2&#038;feature=oembed": "iframe",
+   "https://www.youtube.com/embed/AHxt8zvaYTw?start=12&#038;feature=oembed": "iframe",
+   "https://www.youtube.com/embed/Qe4-7ge2Y2A?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/4aKiEw8rWew?start=241&#038;feature=oembed": "iframe",
+   "https://www.youtube.com/embed/ClTO-KrT8JQ?start=69&#038;feature=oembed": "iframe",
+   "https://www.youtube.com/embed/AHxt8zvaYTw?start=5&#038;feature=oembed": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d10214.69984237093!2d15.829133217155313!3d50.20460632141055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zTWF0ZcWZc2vDoSDFoWtvbGEsIFNwZWNpw6FsbsOtIHrDoWtsYWRuw60gxaFrb2xhIGEgUHJha3RpY2vDoSDFoWtvbGEsIEhyYWRlYyBLcsOhbG92w6k!5e0!3m2!1scs!2scz!4v1728937494580!5m2!1scs!2scz": "iframe",
+   "https://www.youtube.com/embed/U1ys65c369U?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/ClTO-KrT8JQ?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/5dfI3c3NWAU?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/AHxt8zvaYTw?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/-lSm7RZN1ac?feature=oembed": "iframe"
+  },
+  "verified": {}
+ },
+ "daneta": {
+  "name": "MŠ, ZŠ a SŠ Daneta, s.r.o.",
+  "domain": "daneta.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.084686689862!2d15.849504399999999!3d50.2156379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dd4d66ca775c1%3A0xf7d477e059fdc045!2zVWhlbG7DoSwgNTAwIDAzIEhyYWRlYyBLcsOhbG92w6k!5e0!3m2!1scs!2scz!4v1687762073473!5m2!1scs!2scz": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.366972783249!2d15.815612700000003!3d50.210362499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c2b3b5b671fc5%3A0x766399d2ee16c21!2zTmVydWRvdmEgMTE4MC8yOCwgUHJhxb5za8OpIFDFmWVkbcSbc3TDrSwgNTAwIDAyIEhyYWRlYyBLcsOhbG92w6k!5e0!3m2!1scs!2scz!4v1693312380390!5m2!1scs!2scz": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2552.984944424316!2d15.8495504!3d50.21750180000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dd529fbfef789%3A0x70c59d61f47ac8c2!2zTGlkaWNrw6EgMTE3NS8yLCA1MDAgMDMgSHJhZGVjIEtyw6Fsb3bDqQ!5e0!3m2!1scs!2scz!4v1693312528029!5m2!1scs!2scz": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2552.8443674044915!2d15.844052399999997!3d50.2201287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dd52ada6e937b%3A0x2722807b567c5b8d!2zU2V2ZXJuw60gODQzLzIwLCBTbGV6c2vDqSBQxZllZG3Em3N0w60sIDUwMCAwMyBIcmFkZWMgS3LDoWxvdsOp!5e0!3m2!1scs!2scz!4v1693312637269!5m2!1scs!2scz": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.267072286289!2d15.8147965!3d50.2122295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c2b2345234bdf%3A0x8251ac025422cdb!2zU3Vrb3Z5IHNhZHkgNjYwLzEsIFByYcW-c2vDqSBQxZllZG3Em3N0w60sIDUwMCAwMiBIcmFkZWMgS3LDoWxvdsOp!5e0!3m2!1scs!2scz!4v1693312904199!5m2!1scs!2scz": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.366972783249!2d15.815612700000003!3d50.210362499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c2b3b5b671fc5%3A0x766399d2ee16c21!2zTmVydWRvdmEgMTE4MC8yOCwgUHJhxb5za8OpIFDFmWVkbcSbc3TDrSwgNTAwIDAyIEhyYWRlYyBLcsOhbG92w6k!5e0!3m2!1scs!2scz!4v1693313059168!5m2!1scs!2scz": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.1863740350573!2d15.842167799999999!3d50.213737599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dd4d491d544f3%3A0x42fb762fd53277b9!2zUG9zcMOtxaFpbG92YSA3ODcvMTEsIDUwMCAwMyBIcmFkZWMgS3LDoWxvdsOpIDM!5e0!3m2!1scs!2scz!4v1695618469308!5m2!1scs!2scz": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.1863740350573!2d15.842167799999999!3d50.213737599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dd4d491d544f3%3A0x42fb762fd53277b9!2zUG9zcMOtxaFpbG92YSA3ODcvMTEsIDUwMCAwMyBIcmFkZWMgS3LDoWxvdsOpIDM!5e0!3m2!1scs!2scz!4v1695620157149!5m2!1scs!2scz": "iframe"
+  },
+  "verified": {}
+ },
+ "prointepo": {
+  "name": "PROINTEPO - SŠ, ZŠ a MŠ s.r.o.",
+  "domain": "prointepo.org",
+  "pages_checked": 40,
+  "error": null,
+  "links": {},
+  "verified": {}
+ },
+ "psjg": {
+  "name": "První soukr.jazyk.gymnázium Hradec Král.",
+  "domain": "psjg.cz",
+  "pages_checked": 1,
+  "error": null,
+  "links": {
+   "https://psjg.bakalari.cz/bakaweb/Login": "Absence",
+   "https://psjg.bakalari.cz/bakaweb/next/zmeny.aspx": "Suplování",
+   "http://1sjg.cz/suplovani/": "Suplování"
+  },
+  "verified": {
+   "https://psjg.bakalari.cz/bakaweb": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://psjg.bakalari.cz/bakaweb/Timetable/Public: The read operation timed out"
+   }
+  }
+ },
+ "spsstav": {
+  "name": "SPŠ stavební",
+  "domain": "spsstavhk.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://www.spsstavhk.cz/suplovani/suplování - informace pro žáky.html": "Zm&#283;ny rozvrhu",
+   "https://spsstavhk.edupage.org": "IS EduPage",
+   "https://mapy.com/s/jufujeleje": "iframe"
+  },
+  "verified": {
+   "spsstavhk.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "timetables": []
+   }
+  }
+ },
+ "sionhs": {
+  "name": "Střední škola Sion High School, Hradec Králové",
+  "domain": "highschool.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://www.googletagmanager.com/ns.html?id=GTM-TPBZ35D": "iframe",
+   "https://mssion.edupage.org/menu/": "Jídelníček",
+   "https://www.googletagmanager.com/ns.html?id=GTM-NFHJD28": "iframe",
+   "https://zssion.edupage.org/": "",
+   "https://www.googletagmanager.com/ns.html?id=GTM-KWWGJ8S": "iframe",
+   "https://sionhs.edupage.org/": "https://sionhs.edupage.org/",
+   "https://mssion.edupage.org/register/": "https://mssion.edupage.org/ register/"
+  },
+  "verified": {
+   "zssion.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "timetables": []
+   },
+   "mssion.edupage.org": {
+    "system": "edupage",
+    "public": true,
+    "timetables": [
+     "2025/2026 (01. 09. 2025 - 31. 08. 2026)"
+    ]
+   },
+   "sionhs.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "timetables": []
+   }
+  }
+ },
+ "sspp": {
+  "name": "SŠ profesní přípravy, Hradec Králové",
+  "domain": "sspphk.cz",
+  "pages_checked": 39,
+  "error": null,
+  "links": {
+   "https://sspphk.bakalari.cz/login": "Bakal&#225;ři",
+   "https://www.sspphk.cz/rozvrh-hodin": "Rozvrh hodin",
+   "https://www.youtube.com/embed/zQnCmYnrMmE": "iframe"
+  },
+  "verified": {
+   "https://sspphk.bakalari.cz": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://sspphk.bakalari.cz/Timetable/Public vyžaduje přihlášení – není veřejné"
+   }
+  }
+ },
+ "sssog": {
+  "name": "SŠ služeb, obchodu a gastronomie",
+  "domain": "sssoghk.cz",
+  "pages_checked": 0,
+  "error": "http://www.sssoghk.cz/: timed out",
+  "links": {},
+  "verified": {}
+ },
+ "vizual": {
+  "name": "Střední škola vizuální tvorby, s.r.o.",
+  "domain": "vizualskola.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://www.vizualskola.cz/studenti/bakalari/": "Bakaláři",
+   "https://vizualskola.bakalari.cz/next/login.aspx": "BAKALÁŘI VSTUP",
+   "https://play.google.com/store/apps/details?id=cz.bakalari.mobile&amp;hl=cs": "Aplikace je dostupná v&nbsp;obchodu Google Play…",
+   "http://www.bakalari.cz": "Více informací na&nbsp;webových stránkách Bakaláři."
+  },
+  "verified": {
+   "https://www.vizualskola.cz": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://www.vizualskola.cz/Timetable/Public: HTTP 404"
+   },
+   "http://www.bakalari.cz": {
+    "system": "bakalari",
+    "public": false,
+    "error": "http://www.bakalari.cz/Timetable/Public: HTTP 404"
+   },
+   "https://play.google.com": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://play.google.com/Timetable/Public: HTTP 404"
+   },
+   "https://vizualskola.bakalari.cz": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://vizualskola.bakalari.cz/Timetable/Public vyžaduje přihlášení – není veřejné"
+   }
+  }
+ },
+ "szs": {
+  "name": "VOŠ zdravotnická a Střední zdrav. škola",
+  "domain": "zshk.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://ibakalari.zshk.cz/timetable/public": "Rozvrhy",
+   "https://ibakalari.zshk.cz/next/zmeny.aspx": "Suplování",
+   "https://ibakalari.zshk.cz/next/login.aspx": "IBakalari",
+   "https://www.googletagmanager.com/ns.html?id=GTM-MWR457BV": "iframe",
+   "https://www.youtube.com/embed/lN-57feEirk?start=1&#038;feature=oembed": "iframe",
+   "https://www.zshk.cz/wp-content/uploads/2023/10/Budova-domova-mladeze-v-Komenskeho-ulici-268-1.pptx": "Prezentace_Budova domova mladeze v Komenského ulici",
+   "https://www.youtube.com/embed/A9qDAin-u2I?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/l5rAZRTDfi8?si=TeK2t2t04yVOZ3Pi": "iframe",
+   "https://www.youtube.com/embed/1YfnmAzfDwM": "iframe",
+   "https://my.matterport.com/show/?m=uzEaHyNibZ9": "iframe"
+  },
+  "verified": {
+   "https://ibakalari.zshk.cz": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://ibakalari.zshk.cz/Timetable/Public vyžaduje přihlášení – není veřejné"
+   }
+  }
+ },
+ "ddu": {
+  "name": "Dětský diagnostický ústav, SVP, ZŠ a ŠJ",
+  "domain": "ddu-hk.cz",
+  "pages_checked": 38,
+  "error": null,
+  "links": {},
+  "verified": {}
+ },
+ "zs-scio": {
+  "name": "ScioŠkola Hradec Králové - ZŠ. s.r.o.",
+  "domain": "scioskola.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://www.googletagmanager.com/ns.html?id=GTM-M8HXDK6": "iframe",
+   "https://www.youtube.com/embed/648a6w0JWf8?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/sRcMkZcolCI?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/keMLexzNlNg?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/R1i3-1Qa9X8?si=0V9aI0CCu1Szww9a": "iframe",
+   "https://www.youtube.com/embed/xQWZesFaKfw?si=Wi4Jyt8PnBweP5BP": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40953.67907548891!2d14.447095!3d50.093683!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94bb50899cf7%3A0xa812ecbf888bce70!2sScio!5e0!3m2!1scs!2sus!4v1763727536396!5m2!1scs!2sus": "iframe",
+   "https://www.youtube.com/embed/7G8VCZh_3Ag?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/8uzsehjquxo?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/nkHupucUZ7Q?start=415&feature=oembed": "iframe",
+   "https://www.youtube.com/embed/EN3zrIQgl-I?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/Cw8lLktgW7s?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/AbaTjaXpB9k?feature=oembed": "iframe"
+  },
+  "verified": {}
+ },
+ "zs-erazim": {
+  "name": "Základní škola Erazim 6, školská právnická osoba",
+  "domain": "erazim.cz",
+  "pages_checked": 38,
+  "error": null,
+  "links": {
+   "https://www.googletagmanager.com/ns.html?id=GTM-5JT8HFX4": "iframe",
+   "https://docs.google.com/forms/d/e/1FAIpQLSezvZHd5fkGGDPDT1u2gf1xoIemgXFI_oxEhnNhCB3Buayn1w/viewform?embedded=true": "iframe",
+   "https://www.youtube.com/embed/Z_sFjqqLD-I?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/VTkvBJ4ujzI?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/BeuHtLP1IBo?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/rKJDFU2PFnY?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/vBjQAeJIa30?feature=oembed": "iframe",
+   "https://www.youtube.com/embed/GxzkIYPKyIY?feature=oembed": "iframe",
+   "https://www.facebook.com/hashtag/stredniskola": "stredniskola",
+   "https://calendar.google.com/calendar/embed?height=600&#038;wkst=2&#038;ctz=Europe%2FPrague&#038;bgcolor=%23ffffff&#038;mode=AGENDA&#038;showPrint=0&#038;showCalendars=0&#038;showTz=0&#038;showTitle=0&#038;src=Y18zMjcyMmM4ZTExOTE4Y2Q2ZDBjZTdmOTZmNTQ1ODVlYjJiNDNmNTI2MzcxZGQzYmMzYzA0YjEwMzk1OTAxZjE1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&#038;color=%238E24AA": "iframe",
+   "https://www.youtube.com/embed/R7HWVID5VHo?feature=oembed": "iframe"
+  },
+  "verified": {}
+ },
+ "zs-krok": {
+  "name": "Základní škola Krok, z. ú.",
+  "domain": "skolakrok.cz",
+  "pages_checked": 17,
+  "error": null,
+  "links": {},
+  "verified": {}
+ },
+ "zs-sion": {
+  "name": "Základní škola Sion J. A. Komenského",
+  "domain": "sion.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://zssion.edupage.org/": "",
+   "https://www.googletagmanager.com/ns.html?id=GTM-KWWGJ8S": "iframe",
+   "https://mssion.edupage.org/menu/": "Jídelníček",
+   "https://www.googletagmanager.com/ns.html?id=GTM-NFHJD28": "iframe",
+   "https://www.googletagmanager.com/ns.html?id=GTM-TPBZ35D": "iframe",
+   "https://zssion.edupage.org/menu/": "jídelníčku",
+   "https://zssion.edupage.org/menu/?what=menu": "EduPage",
+   "https://zssion.edupage.org/register/": "tuto přihlášku"
+  },
+  "verified": {
+   "zssion.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "timetables": []
+   },
+   "mssion.edupage.org": {
+    "system": "edupage",
+    "public": true,
+    "timetables": [
+     "2025/2026 (01. 09. 2025 - 31. 08. 2026)"
+    ]
+   }
+  }
+ },
+ "zs-talent": {
+  "name": "Základní škola TALENT Hradec Králové s.r.o.",
+  "domain": "skolytalent.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {},
+  "verified": {}
+ },
+ "zs-fn": {
+  "name": "ZŠ a MŠ při Fakultní nemocnici",
+  "domain": "volny.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {},
+  "verified": {}
+ },
+ "zs-kukleny": {
+  "name": "Základní škola a Mateřská škola",
+  "domain": "zskukleny.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/rozvrh-hodin/": "Rozvrh hodin",
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/rozvrh-hodin/suplovani/": "Suplování",
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/rozvrh-hodin/classroom/": "Classroom",
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/suplovani/": "Suplování",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.5210500329817!2d15.796137801705939!3d50.20748291322877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c2b13f677a575%3A0xa6f29e8b86b83c31!2zUHJhxb5za8OhIHTFmS4gMTk4LzQwLCBLdWtsZW55LCA1MDAgMDQgSHJhZGVjIEtyw6Fsb3bDqQ!5e0!3m2!1scs!2scz!4v1521451334187": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20435.184354368306!2d15.773783934271052!3d50.19109025999316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2d57ec9fd8d3bf4a!2zWsOha2xhZG7DrSDFoWtvbGEgYSBNYXRlxZlza8OhIMWha29sYSwgSHJhZGVjIEtyw6Fsb3bDqSAtIEt1a2xlbnksIFByYcW-c2vDoSAxOTggLSDFoGtvbG7DrSBqw61kZWxuYSAtIHbDvWRlam5h!5e0!3m2!1scs!2scz!4v1521451790518": "iframe",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20435.184354368306!2d15.773783934271052!3d50.19109025999316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb40d3514ba583c5a!2zTWF0ZcWZc2vDoSDFoWtvbGthIE1hcmtvdmEgLSBaxaAgYSBNxaAgS3VrbGVueSwgUHJhxb5za8OhIDE5OA!5e0!3m2!1scs!2scz!4v1521451808525": "iframe",
+   "https://zskukleny.cz/zakladni-skola/vzdelavani/rozvrh-hodin/domaci-ukoly/": "Domácí úkoly",
+   "https://zskukleny.bakalari.cz/bakaweb/next/zmeny.aspx": "iframe",
+   "https://zskukleny.cz/zakovska-knizka/bakalari/": "Bakaláři &#8211; vstup",
+   "https://zskukleny.bakalari.cz/bakaweb/login": "",
+   "https://apps.apple.com/cz/app/bakalari-online/id1459368580": "",
+   "https://play.google.com/store/apps/details?id=cz.bakalari.mobile&amp;hl=cs": "",
+   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.5195804363702!2d15.795547715722662!3d50.20751037944264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470c2b13f677a575%3A0xa6f29e8b86b83c31!2zUHJhxb5za8OhIHTFmS4gMTk4LzQwLCBLdWtsZW55LCA1MDAgMDQgSHJhZGVjIEtyw6Fsb3bDqQ!5e0!3m2!1scs!2scz!4v1521456843979": "iframe",
+   "https://www.youtube.com/embed/7NsfwSdzJpU?feature=oembed": "iframe",
+   "https://my.matterport.com/show/?m=yLkaaa1vWre": "iframe"
+  },
+  "verified": {
+   "https://play.google.com": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://play.google.com/Timetable/Public: HTTP 404"
+   },
+   "https://apps.apple.com": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://apps.apple.com/Timetable/Public: HTTP 404"
+   },
+   "https://zskukleny.cz": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://zskukleny.cz/Timetable/Public: HTTP 404"
+   },
+   "https://zskukleny.bakalari.cz/bakaweb": {
+    "system": "bakalari",
+    "public": false,
+    "error": "https://zskukleny.bakalari.cz/bakaweb/Timetable/Public vyžaduje přihlášení – není veřejné"
+   }
+  }
+ },
+ "zs-malsovalhota": {
+  "name": "Základní škola a Mateřská škola",
+  "domain": "zs-malsovalhota.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://zs-malsovalhota.cz/rozvrhy": "Rozvrhy",
+   "https://zs-malsovalhota.cz/rozvrhy#sidr": ""
+  },
+  "verified": {}
+ },
+ "zs-svobodnedvory": {
+  "name": "Základní škola a Mateřská škola",
+  "domain": "zssvobodnedvory.cz",
+  "pages_checked": 1,
+  "error": null,
+  "links": {},
+  "verified": {}
+ },
+ "zs-stefcova": {
+  "name": "Základní škola a Mateřská škola",
+  "domain": "stefcova.cz",
+  "pages_checked": 40,
+  "error": null,
+  "links": {
+   "https://www.googletagmanager.com/ns.html?id=GTM-N3RDM8F": "iframe",
+   "https://help.edupage.org/?p=u38&amp;lang_id=8": "Kompletní návody pro PC i mobilní aplikaci",
+   "https://cloud-c.edupage.org/cloud?z%3AVooFO%2BXtg%2F%2BbcLitBHWe2WINxTWNFO4iqy7K0OecnTi6ZqvLpYGn0xRtsArFscUo": "Návod na přihlášení&nbsp;do Edupage na PC, změna hesla dítět",
+   "https://cloud-f.edupage.org/cloud?z%3A%2Bk7ODDp28LN%2BcdDByEKFOBD0XZ5IfXockKOk4rqTZm8cNonqXSFwIwIL%2BUV%2FoEKi": "Popis prostředí Edupage",
+   "https://cloud-2.edupage.org/cloud?z%3AGT5%2BzUelfzYWt6KJjQSM%2FDFIPuMjFOnc0wvj07iWh20RFr53tnywAUQtjezUpops": "Návod na komunikaci v Edupage",
+   "https://cloud-9.edupage.org/cloud?z%3AAORx%2B4RJ9HB7oa%2BkEcSWSM%2Fycs0cN5gZ8T91I79vzXgo7laWSij%2BoCr%2FAD8VGR89": "Návod na sledování docházky a elektronické omluvenky",
+   "https://help.edupage.org/cz/e1136": "Jak nastavit, aby se nezobzazovaly všechny zprávy",
+   "https://help.edupage.org/?p=u42&amp;lang_id=8": "Kompletní návody pro PC i mobilní aplikaci",
+   "https://cloud-c.edupage.org/cloud?z%3ArFXlpoh%2FT3SM54ViSRa%2BqmHQZGapPf2F0NrGnrwzFZ%2B4CEZRVsaqO1cvk%2BT%2Bb0et": "Návod na první přihlášení do školní mailové schránky",
+   "https://cloud-a.edupage.org/cloud?z%3AEsNEqilOAK%2F0iuydpWWWLnLLbWVwPg5JoHJ3G1k4qcc%2FAYMppDJ4lNPlOFYwe0VM": "Popis prostředí Edupage"
+  },
+  "verified": {
+   "cloud-9.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "error": "https://cloud-9.edupage.org/timetable/server/ttviewer.js?__func=getTTViewerData: HTTP 404"
+   },
+   "cloud-c.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "error": "https://cloud-c.edupage.org/timetable/server/ttviewer.js?__func=getTTViewerData: HTTP 404"
+   },
+   "cloud-2.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "error": "https://cloud-2.edupage.org/timetable/server/ttviewer.js?__func=getTTViewerData: HTTP 404"
+   },
+   "help.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "error": "https://help.edupage.org/timetable/server/ttviewer.js?__func=getTTViewerData: HTTP 404"
+   },
+   "cloud-f.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "error": "https://cloud-f.edupage.org/timetable/server/ttviewer.js?__func=getTTViewerData: HTTP 404"
+   },
+   "cloud-a.edupage.org": {
+    "system": "edupage",
+    "public": false,
+    "error": "https://cloud-a.edupage.org/timetable/server/ttviewer.js?__func=getTTViewerData: HTTP 404"
+   }
+  }
+ },
+ "zs-diakonie": {
+  "name": "ZŠ speciální a prakt. škola Diakonie ČCE Vrchlabí",
+  "domain": "seznam.cz",
+  "pages_checked": 15,
+  "error": null,
+  "links": {
+   "https://specialniskolahradeckralove.diakonie.cz/": "",
+   "https://specialniskolahradeckralove.diakonie.cz/o-nas/": "O nás",
+   "https://specialniskolahradeckralove.diakonie.cz/o-nas/ke-stazeni/": "Ke stažení",
+   "https://specialniskolahradeckralove.diakonie.cz/o-nas/vyrocni-zpravy/": "Výroční zprávy",
+   "https://specialniskolavrchlabi.diakonie.cz/o-nas/projekty/": "Projekty",
+   "https://specialniskolahradeckralove.diakonie.cz/kontakt/": "Kontakt",
+   "http://www.specialniskoladvurkralove.cz": "Speciální škola Diakonie ČCE Vrchlabí – Dvůr Králové nad Lab",
+   "https://specialniskolatrutnov.diakonie.cz/": "Speciální škola Diakonie ČCE Vrchlabí &#8211; Trutnov",
+   "http://www.specialniskolavrchlabi.cz": "Speciální škola Diakonie ČCE Vrchlabí",
+   "https://specialniskolahradeckralove.diakonie.cz/et_pb_layout/o-nas/": "Více informací",
+   "https://specialniskolahradeckralove.diakonie.cz/clanky/": "Všechny články",
+   "https://specialniskolahradeckralove.diakonie.cz/nahledli-jsme-do-sveta-zachranaru/": "4. listopadu, 2026   Nahlédli jsme do světa záchranářů",
+   "https://specialniskolahradeckralove.diakonie.cz/strasidelna-prespavacka-zombie-apokalypsa/": "27. října, 2026   Strašidelná přespávačka – Zombie apokalyps",
+   "https://specialniskolahradeckralove.diakonie.cz/navsteva-safari-parku-dvur-kralove-tyden-duchu/": "26. října, 2026   Návštěva Safari Parku Dvůr Králové – Týden",
+   "https://specialniskolahradeckralove.diakonie.cz/den-bez-aut-odpoledne-plne-zajimavych-aktivit-a-zazitku/": "23. září, 2026   Den bez aut – odpoledne plné zajímavých akt",
+   "mailto:kumprechtovam@specialniskolavrchlabi.cz": "kumprechtovam@specialniskolavrchlabi.cz",
+   "https://specialniskolahradeckralove.diakonie.cz/o-nas/#info": "Více informací",
+   "https://specialniskolahradeckralove.diakonie.cz": "Úvod",
+   "https://specialniskolahradeckralove.diakonie.cz/kontakt/#ucitelskysbor": "Seznam kantorů",
+   "mailto:&#098;&#111;rovk&#111;&#118;al&#064;&#115;p&#101;c&#105;a&#108;niskolav&#114;&#099;hl&#097;bi.cz": "  &#098;&#111;rovk&#111;&#118;al&#064;&#115;p&#101;c&#105;a",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/10/Volebni-rad_Jednaci-rad_Slozeni-skolske-rady.pdf": "Volební řád školské rady_Jednací řád školské rady_Složení šk",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/10/vyrocni-zprava-2025-2026.pdf": "výroční zpráva 2025-2026",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/09/Preventivni-program-skoly-2026-2027.pdf": "Preventivní program školy 2026-2027",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/01/SVP-Internat.pdf": "ŠVP Internát",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/01/SVP-pro-SD.pdf": "ŠVP pro ŠD",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/01/SVP-Tvorive-a-hrave-ZSS.pdf": "ŠVP Tvořivě a hravě - ZŠS",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/01/SVP-Tvorive-a-snadneji.pdf": "ŠVP Tvořivě a snadněji",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/01/Smernice-SPP-ZSS-a-PS-Diakonie-CCE.pdf": "Směrnice ŠPP ZŠS a PŠ Diakonie ČCE",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2026/01/Zpusob-podavani-podnetu-Skolske-rade.pdf": "Způsob podávání podnětů Školské radě",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2025/10/vyrocni-zprava-2024-25.pdf": "Výroční zpráva 2024-2025",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2025/05/Prihlaska-internat-2026-27.docx": "Přihláška na internát 2026/27",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2025/04/SKOLNI-RAD-ZS-od-1.2.2026.pdf": "Školní řád ZŠ",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2025/03/vyrocni-zprava-2023-24.pdf": "Výroční zpráva 2023-2024",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2024/12/Smernice-internat-2024-2025.pdf": "Směrnice k umísťování žáků školy na internát",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2024/12/Vnitrni-rad-internatu-1.9.2025.pdf": "Vnitřní řád internátu",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2024/11/05.-Vyrocni-zprava-2019-2020.pdf": "Výroční zpráva 2019-2020",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2024/11/04.-Vyrocni-zprava-2018-2019.pdf": "Výroční zpráva 2018-2019",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2024/11/03.-Vyrocni-zprava-2017-2018.pdf": "Výroční zpráva 2017-2018",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2024/11/02.-Vyrocni-zprava-2016-2017.pdf": "Výroční zpráva 2016-2017",
+   "https://specialniskolahradeckralove.diakonie.cz/obsah/uploads/sites/33/2024/11/01.-Vyrocni-zprava-2015-2016.pdf": "Výroční zpráva 2015-2016"
+  },
+  "verified": {}
+ }
+}

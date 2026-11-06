@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+*.local
+.scratch/
+test/fixtures/*.jpg
+.agents/
+.claude/skills/
+*.zip
+
+# Strava probe (scripts/strava-probe.ts)
+.strava.local
+*.local.json
+*.local.html
+
+# /brag-slim working files (the video itself is brand/promo.mp4)
+brag-output*/
+
+# Internal notes, never published
+internal/
+
+# Python pipeline
+__pycache__/
+pipeline/data/cache/

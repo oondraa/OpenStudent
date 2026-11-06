@@ -1,0 +1,2457 @@
+[
+ {
+  "redIzo": "600001466",
+  "ico": "25262092",
+  "izo": "043475621",
+  "druh": "ZŠ",
+  "nazev": "Základní škola TALENT Hradec Králové s.r.o.",
+  "kratky": "Základní škola TALENT Hradec Králové s.r.o.",
+  "kapacita": 180,
+  "zrizovatel": "5",
+  "emaily": [
+   "zdenek.kratochvil@skolytalent.cz"
+  ],
+  "mista": [
+   "Vocelova 1334"
+  ],
+  "ruian": [
+   23896353
+  ]
+ },
+ {
+  "redIzo": "600011615",
+  "ico": "25262297",
+  "izo": "011583771",
+  "druh": "SŠ",
+  "nazev": "První soukromé jazykové gymnázium Hradec Králové spol. s r.o.",
+  "kratky": "První soukr.jazyk.gymnázium Hradec Král.",
+  "kapacita": 300,
+  "zrizovatel": "5",
+  "emaily": [
+   "ladislav.bartuska@psjg.cz",
+   "bartuska.ladislav@psjg.cz"
+  ],
+  "mista": [
+   "Brandlova 875"
+  ],
+  "ruian": [
+   23910658
+  ]
+ },
+ {
+  "redIzo": "600011623",
+  "ico": "25918583",
+  "izo": "012996050",
+  "druh": "SŠ",
+  "nazev": "Střední škola vizuální tvorby, s.r.o.",
+  "kratky": "Střední škola vizuální tvorby, s.r.o.",
+  "kapacita": 225,
+  "zrizovatel": "5",
+  "emaily": [
+   "jedlicka@vizualskola.cz",
+   "info@vizualskola.cz"
+  ],
+  "mista": [
+   "Černilovská 7",
+   "Jiráskovy sady 237"
+  ],
+  "ruian": [
+   23847981,
+   23865946
+  ]
+ },
+ {
+  "redIzo": "600011631",
+  "ico": "25261991",
+  "izo": "011021420",
+  "druh": "SŠ",
+  "nazev": "Střední škola a vyšší odborná škola aplikované kybernetiky s.r.o.",
+  "kratky": "SŠ a VOŠ aplikované kybernetiky s.r.o.",
+  "kapacita": 350,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@ssakhk.cz",
+   "lang@ssakhk.cz"
+  ],
+  "mista": [
+   "Hradecká 1151"
+  ],
+  "ruian": [
+   23874830
+  ]
+ },
+ {
+  "redIzo": "600011631",
+  "ico": "25261991",
+  "izo": "181048507",
+  "druh": "VOŠ",
+  "nazev": "Střední škola a vyšší odborná škola aplikované kybernetiky s.r.o.",
+  "kratky": "SŠ a VOŠ aplikované kybernetiky s.r.o.",
+  "kapacita": 250,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@ssakhk.cz",
+   "lang@ssakhk.cz"
+  ],
+  "mista": [
+   "Hradecká 1151"
+  ],
+  "ruian": [
+   23874830
+  ]
+ },
+ {
+  "redIzo": "600011658",
+  "ico": "62690035",
+  "izo": "062690035",
+  "druh": "SŠ",
+  "nazev": "Střední průmyslová škola stavební, Hradec Králové, Pospíšilova tř. 787",
+  "kratky": "SPŠ stavební",
+  "kapacita": 600,
+  "zrizovatel": "7",
+  "emaily": [
+   "a@spsstavhk.cz"
+  ],
+  "mista": [
+   "Pospíšilova 787"
+  ],
+  "ruian": [
+   23871253
+  ]
+ },
+ {
+  "redIzo": "600011666",
+  "ico": "62690043",
+  "izo": "062690043",
+  "druh": "SŠ",
+  "nazev": "Gymnázium Boženy Němcové, Hradec Králové, Pospíšilova tř. 324",
+  "kratky": "Gymnázium Boženy Němcové",
+  "kapacita": 640,
+  "zrizovatel": "7",
+  "emaily": [
+   "gbn@gybon.cz"
+  ],
+  "mista": [
+   "Pospíšilova 324"
+  ],
+  "ruian": [
+   23866772
+  ]
+ },
+ {
+  "redIzo": "600011674",
+  "ico": "62690060",
+  "izo": "062690060",
+  "druh": "SŠ",
+  "nazev": "Gymnázium J. K. Tyla, Hradec Králové, Tylovo nábř. 682",
+  "kratky": "Gymnázium J. K. Tyla",
+  "kapacita": 640,
+  "zrizovatel": "7",
+  "emaily": [
+   "kancelar@gjkt.cz"
+  ],
+  "mista": [
+   "Tylovo nábřeží 682"
+  ],
+  "ruian": [
+   23870192
+  ]
+ },
+ {
+  "redIzo": "600011674",
+  "ico": "62690060",
+  "izo": "102778311",
+  "druh": "jídelna",
+  "nazev": "Gymnázium J. K. Tyla, Hradec Králové, Tylovo nábř. 682",
+  "kratky": "Gymnázium J. K. Tyla",
+  "kapacita": 800,
+  "zrizovatel": "7",
+  "emaily": [
+   "kancelar@gjkt.cz"
+  ],
+  "mista": [
+   "Tylovo nábřeží 682"
+  ],
+  "ruian": [
+   23870192
+  ]
+ },
+ {
+  "redIzo": "600011712",
+  "ico": "00527939",
+  "izo": "000527939",
+  "druh": "SŠ",
+  "nazev": "Střední škola služeb, obchodu a gastronomie",
+  "kratky": "SŠ služeb, obchodu a gastronomie",
+  "kapacita": 1200,
+  "zrizovatel": "7",
+  "emaily": [
+   "sekretariat@sssoghk.cz"
+  ],
+  "mista": [
+   "Velká 3",
+   "V Lipkách 1523",
+   "K Sokolovně 428",
+   "třída Edvarda Beneše 1543",
+   "Truhlářská 462",
+   "K Sokolovně 452",
+   "Eliščino nábřeží 375"
+  ],
+  "ruian": [
+   23919906,
+   23898241,
+   25764811,
+   23818352,
+   23923768,
+   23923661,
+   23928085
+  ]
+ },
+ {
+  "redIzo": "600011739",
+  "ico": "62690272",
+  "izo": "062690272",
+  "druh": "SŠ",
+  "nazev": "Obchodní akademie, Střední odborná škola a Jazyková škola s právem státní jazykové zkoušky, Hradec Králové",
+  "kratky": "OA, SOŠ a JŠ s pr. st. jaz. zk.",
+  "kapacita": 770,
+  "zrizovatel": "7",
+  "emaily": [
+   "vitvarova.jana@oahk.cz",
+   "oahk.skola@oahk.cz"
+  ],
+  "mista": [
+   "Pospíšilova 365"
+  ],
+  "ruian": [
+   23867159
+  ]
+ },
+ {
+  "redIzo": "600011747",
+  "ico": "00145238",
+  "izo": "110100867",
+  "druh": "SŠ",
+  "nazev": "Střední uměleckoprůmyslová škola hudebních nástrojů a nábytku, Hradec Králové, 17. listopadu 1202",
+  "kratky": "Stř.uměleckoprům.škola hud.nástr. a náb.",
+  "kapacita": 542,
+  "zrizovatel": "7",
+  "emaily": [
+   "hnn@hnn.cz",
+   "jan.opitz@hnn.cz"
+  ],
+  "mista": [
+   "Brněnská 207",
+   "17. listopadu 1202",
+   "Hradecká 1205"
+  ],
+  "ruian": [
+   23805196,
+   23875348,
+   23875372
+  ]
+ },
+ {
+  "redIzo": "600011771",
+  "ico": "25262131",
+  "izo": "062062883",
+  "druh": "SŠ",
+  "nazev": "Hotelová škola Hradec Králové, s.r.o.",
+  "kratky": "Hotelová škola Hradec Králové, s.r.o.",
+  "kapacita": 480,
+  "zrizovatel": "5",
+  "emaily": [
+   "hotelovka@hotelovka.cz"
+  ],
+  "mista": [
+   "Československé armády 274"
+  ],
+  "ruian": [
+   23866284
+  ]
+ },
+ {
+  "redIzo": "600011771",
+  "ico": "25262131",
+  "izo": "108007821",
+  "druh": "jídelna",
+  "nazev": "Hotelová škola Hradec Králové, s.r.o.",
+  "kratky": "Hotelová škola Hradec Králové, s.r.o.",
+  "kapacita": 600,
+  "zrizovatel": "5",
+  "emaily": [
+   "hotelovka@hotelovka.cz"
+  ],
+  "mista": [
+   "Československé armády 274"
+  ],
+  "ruian": [
+   23866284
+  ]
+ },
+ {
+  "redIzo": "600011798",
+  "ico": "25262327",
+  "izo": "044445288",
+  "druh": "SŠ",
+  "nazev": "Obchodní akademie, Střední pedagogická škola, Vyšší odborná škola a Jazyková škola s právem státní jazykové zkoušky, s.r.o.",
+  "kratky": "OA, SPgŠ, VOŠ a JŠ s pr. SJZ",
+  "kapacita": 300,
+  "zrizovatel": "5",
+  "emaily": [
+   "reditel@soavoshk.cz",
+   "sekretariat@soavoshk.cz"
+  ],
+  "mista": [
+   "třída SNP 170"
+  ],
+  "ruian": [
+   23903635
+  ]
+ },
+ {
+  "redIzo": "600011798",
+  "ico": "25262327",
+  "izo": "110100182",
+  "druh": "VOŠ",
+  "nazev": "Obchodní akademie, Střední pedagogická škola, Vyšší odborná škola a Jazyková škola s právem státní jazykové zkoušky, s.r.o.",
+  "kratky": "OA, SPgŠ, VOŠ a JŠ s pr. SJZ",
+  "kapacita": 60,
+  "zrizovatel": "5",
+  "emaily": [
+   "reditel@soavoshk.cz",
+   "sekretariat@soavoshk.cz"
+  ],
+  "mista": [
+   "třída SNP 170"
+  ],
+  "ruian": [
+   23903635
+  ]
+ },
+ {
+  "redIzo": "600011801",
+  "ico": "62690281",
+  "izo": "108007863",
+  "druh": "SŠ",
+  "nazev": "Střední odborná škola veterinární, Hradec Králové-Kukleny, Pražská 68",
+  "kratky": "Střední odborná škola veterinární",
+  "kapacita": 408,
+  "zrizovatel": "7",
+  "emaily": [
+   "reditel@sosvet.cz",
+   "kancelar@sosvet.cz"
+  ],
+  "mista": [
+   "Pražská třída 68"
+  ],
+  "ruian": [
+   23823135
+  ]
+ },
+ {
+  "redIzo": "600011801",
+  "ico": "62690281",
+  "izo": "102754772",
+  "druh": "jídelna",
+  "nazev": "Střední odborná škola veterinární, Hradec Králové-Kukleny, Pražská 68",
+  "kratky": "Střední odborná škola veterinární",
+  "kapacita": 300,
+  "zrizovatel": "7",
+  "emaily": [
+   "reditel@sosvet.cz",
+   "kancelar@sosvet.cz"
+  ],
+  "mista": [
+   "Pražská třída 68"
+  ],
+  "ruian": [
+   23823135
+  ]
+ },
+ {
+  "redIzo": "600011828",
+  "ico": "15062848",
+  "izo": "015062848",
+  "druh": "SŠ",
+  "nazev": "Střední průmyslová škola, Střední odborná škola a Střední odborné učiliště, Hradec Králové",
+  "kratky": "SPŠ, SOŠ a SOU",
+  "kapacita": 1500,
+  "zrizovatel": "7",
+  "emaily": [
+   "hradebni@hradebni.cz",
+   "tobyska@hradebni.cz"
+  ],
+  "mista": [
+   "Hradecká 647",
+   "Dlouhá 190",
+   "Hradební 1029"
+  ],
+  "ruian": [
+   23869879,
+   23865555,
+   23873591
+  ]
+ },
+ {
+  "redIzo": "600011828",
+  "ico": "15062848",
+  "izo": "110028856",
+  "druh": "jídelna",
+  "nazev": "Střední průmyslová škola, Střední odborná škola a Střední odborné učiliště, Hradec Králové",
+  "kratky": "SPŠ, SOŠ a SOU",
+  "kapacita": 750,
+  "zrizovatel": "7",
+  "emaily": [
+   "hradebni@hradebni.cz",
+   "tobyska@hradebni.cz"
+  ],
+  "mista": [
+   "Hradební 1029"
+  ],
+  "ruian": [
+   23873591
+  ]
+ },
+ {
+  "redIzo": "600019772",
+  "ico": "00581101",
+  "izo": "110030591",
+  "druh": "SŠ",
+  "nazev": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Hradec Králové, Komenského 234",
+  "kratky": "VOŠ zdravotnická a Střední zdrav. škola",
+  "kapacita": 660,
+  "zrizovatel": "7",
+  "emaily": [
+   "sona.lamichova@zshk.cz",
+   "zshk@zshk.cz"
+  ],
+  "mista": [
+   "Komenského 234"
+  ],
+  "ruian": [
+   23865920
+  ]
+ },
+ {
+  "redIzo": "600019772",
+  "ico": "00581101",
+  "izo": "110030621",
+  "druh": "VOŠ",
+  "nazev": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Hradec Králové, Komenského 234",
+  "kratky": "VOŠ zdravotnická a Střední zdrav. škola",
+  "kapacita": 440,
+  "zrizovatel": "7",
+  "emaily": [
+   "sona.lamichova@zshk.cz",
+   "zshk@zshk.cz"
+  ],
+  "mista": [
+   "Komenského 234"
+  ],
+  "ruian": [
+   23865920
+  ]
+ },
+ {
+  "redIzo": "600019772",
+  "ico": "00581101",
+  "izo": "110100131",
+  "druh": "jídelna",
+  "nazev": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Hradec Králové, Komenského 234",
+  "kratky": "VOŠ zdravotnická a Střední zdrav. škola",
+  "kapacita": 650,
+  "zrizovatel": "7",
+  "emaily": [
+   "sona.lamichova@zshk.cz",
+   "zshk@zshk.cz"
+  ],
+  "mista": [
+   "Hradecká 868"
+  ],
+  "ruian": [
+   23872063
+  ]
+ },
+ {
+  "redIzo": "600023915",
+  "ico": "70837554",
+  "izo": "102078297",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola při Fakultní nemocnici, Hradec Králové, Sokolská 581",
+  "kratky": "ZŠ a MŠ při Fakultní nemocnici",
+  "kapacita": 60,
+  "zrizovatel": "7",
+  "emaily": [
+   "szsfnhk@volny.cz"
+  ],
+  "mista": [
+   "Sokolská 581"
+  ],
+  "ruian": [
+   23808772
+  ]
+ },
+ {
+  "redIzo": "600023940",
+  "ico": "25262165",
+  "izo": "110011473",
+  "druh": "SŠ",
+  "nazev": "Mateřská škola, základní škola a střední škola Daneta, s.r.o.",
+  "kratky": "MŠ, ZŠ a SŠ Daneta, s.r.o.",
+  "kapacita": 44,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@daneta.cz",
+   "monika.bourova@daneta.cz"
+  ],
+  "mista": [
+   "Nerudova 1180",
+   "Lidická 1175",
+   "Severní 843"
+  ],
+  "ruian": [
+   23894814,
+   73606901,
+   23910330
+  ]
+ },
+ {
+  "redIzo": "600023940",
+  "ico": "25262165",
+  "izo": "048162485",
+  "druh": "ZŠ",
+  "nazev": "Mateřská škola, základní škola a střední škola Daneta, s.r.o.",
+  "kratky": "MŠ, ZŠ a SŠ Daneta, s.r.o.",
+  "kapacita": 70,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@daneta.cz",
+   "monika.bourova@daneta.cz"
+  ],
+  "mista": [
+   "Nerudova 1180"
+  ],
+  "ruian": [
+   23894814
+  ]
+ },
+ {
+  "redIzo": "600023940",
+  "ico": "25262165",
+  "izo": "110011490",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola, základní škola a střední škola Daneta, s.r.o.",
+  "kratky": "MŠ, ZŠ a SŠ Daneta, s.r.o.",
+  "kapacita": 120,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@daneta.cz",
+   "monika.bourova@daneta.cz"
+  ],
+  "mista": [
+   "Nerudova 1180"
+  ],
+  "ruian": [
+   23894814
+  ]
+ },
+ {
+  "redIzo": "600023940",
+  "ico": "25262165",
+  "izo": "181004925",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola, základní škola a střední škola Daneta, s.r.o.",
+  "kratky": "MŠ, ZŠ a SŠ Daneta, s.r.o.",
+  "kapacita": 67,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@daneta.cz",
+   "monika.bourova@daneta.cz"
+  ],
+  "mista": [
+   "Lidická 1175",
+   "Uhelná 1142"
+  ],
+  "ruian": [
+   73606901,
+   40525783
+  ]
+ },
+ {
+  "redIzo": "600023958",
+  "ico": "25263633",
+  "izo": "181073501",
+  "druh": "SŠ",
+  "nazev": "PROINTEPO - Střední škola, Základní škola a Mateřská škola s.r.o.",
+  "kratky": "PROINTEPO - SŠ, ZŠ a MŠ s.r.o.",
+  "kapacita": 12,
+  "zrizovatel": "5",
+  "emaily": [
+   "prointepo@prointepo.org",
+   "urbanova@prointepo.org"
+  ],
+  "mista": [
+   "Hrubínova 1458"
+  ],
+  "ruian": [
+   23897597
+  ]
+ },
+ {
+  "redIzo": "600023958",
+  "ico": "25263633",
+  "izo": "061223174",
+  "druh": "ZŠ",
+  "nazev": "PROINTEPO - Střední škola, Základní škola a Mateřská škola s.r.o.",
+  "kratky": "PROINTEPO - SŠ, ZŠ a MŠ s.r.o.",
+  "kapacita": 62,
+  "zrizovatel": "5",
+  "emaily": [
+   "prointepo@prointepo.org",
+   "urbanova@prointepo.org"
+  ],
+  "mista": [
+   "Hrubínova 1458"
+  ],
+  "ruian": [
+   23897597
+  ]
+ },
+ {
+  "redIzo": "600023958",
+  "ico": "25263633",
+  "izo": "110100468",
+  "druh": "výdejna",
+  "nazev": "PROINTEPO - Střední škola, Základní škola a Mateřská škola s.r.o.",
+  "kratky": "PROINTEPO - SŠ, ZŠ a MŠ s.r.o.",
+  "kapacita": 90,
+  "zrizovatel": "5",
+  "emaily": [
+   "prointepo@prointepo.org",
+   "urbanova@prointepo.org"
+  ],
+  "mista": [
+   "Hrubínova 1458"
+  ],
+  "ruian": [
+   23897597
+  ]
+ },
+ {
+  "redIzo": "600023974",
+  "ico": "62693514",
+  "izo": "110013387",
+  "druh": "SŠ",
+  "nazev": "Mateřská škola, Speciální základní škola a Praktická škola, Hradec Králové",
+  "kratky": "MŠ, Speciální ZŠ a PrŠ",
+  "kapacita": 40,
+  "zrizovatel": "7",
+  "emaily": [
+   "info@specialnihk.cz",
+   "pavel.zalesky@specialnihk.cz"
+  ],
+  "mista": [
+   "Hradecká 1231"
+  ],
+  "ruian": [
+   25249762
+  ]
+ },
+ {
+  "redIzo": "600023974",
+  "ico": "62693514",
+  "izo": "102078327",
+  "druh": "ZŠ",
+  "nazev": "Mateřská škola, Speciální základní škola a Praktická škola, Hradec Králové",
+  "kratky": "MŠ, Speciální ZŠ a PrŠ",
+  "kapacita": 366,
+  "zrizovatel": "7",
+  "emaily": [
+   "info@specialnihk.cz",
+   "pavel.zalesky@specialnihk.cz"
+  ],
+  "mista": [
+   "17. listopadu 1212",
+   "Hradecká 1231"
+  ],
+  "ruian": [
+   23875411,
+   25249762
+  ]
+ },
+ {
+  "redIzo": "600023974",
+  "ico": "62693514",
+  "izo": "110100077",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola, Speciální základní škola a Praktická škola, Hradec Králové",
+  "kratky": "MŠ, Speciální ZŠ a PrŠ",
+  "kapacita": 73,
+  "zrizovatel": "7",
+  "emaily": [
+   "info@specialnihk.cz",
+   "pavel.zalesky@specialnihk.cz"
+  ],
+  "mista": [
+   "Markovická 621"
+  ],
+  "ruian": [
+   23908114
+  ]
+ },
+ {
+  "redIzo": "600024016",
+  "ico": "62690361",
+  "izo": "110013450",
+  "druh": "SŠ",
+  "nazev": "Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549",
+  "kratky": "VOŠ, SŠ, ZŠ a MŠ",
+  "kapacita": 160,
+  "zrizovatel": "7",
+  "emaily": [
+   "iva.rindova@neslhk.com",
+   "info@neslhk.com"
+  ],
+  "mista": [
+   "Štefánikova 549"
+  ],
+  "ruian": [
+   23930390
+  ]
+ },
+ {
+  "redIzo": "600024016",
+  "ico": "62690361",
+  "izo": "181078520",
+  "druh": "VOŠ",
+  "nazev": "Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549",
+  "kratky": "VOŠ, SŠ, ZŠ a MŠ",
+  "kapacita": 84,
+  "zrizovatel": "7",
+  "emaily": [
+   "iva.rindova@neslhk.com",
+   "info@neslhk.com"
+  ],
+  "mista": [
+   "Štefánikova 549"
+  ],
+  "ruian": [
+   23930390
+  ]
+ },
+ {
+  "redIzo": "600024016",
+  "ico": "62690361",
+  "izo": "110013417",
+  "druh": "ZŠ",
+  "nazev": "Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549",
+  "kratky": "VOŠ, SŠ, ZŠ a MŠ",
+  "kapacita": 302,
+  "zrizovatel": "7",
+  "emaily": [
+   "iva.rindova@neslhk.com",
+   "info@neslhk.com"
+  ],
+  "mista": [
+   "Štefánikova 549"
+  ],
+  "ruian": [
+   23930390
+  ]
+ },
+ {
+  "redIzo": "600024016",
+  "ico": "62690361",
+  "izo": "102754756",
+  "druh": "jídelna",
+  "nazev": "Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549",
+  "kratky": "VOŠ, SŠ, ZŠ a MŠ",
+  "kapacita": 592,
+  "zrizovatel": "7",
+  "emaily": [
+   "iva.rindova@neslhk.com",
+   "info@neslhk.com"
+  ],
+  "mista": [
+   "Šimkova 879",
+   "Štefánikova 549"
+  ],
+  "ruian": [
+   23872179,
+   23930390
+  ]
+ },
+ {
+  "redIzo": "600024016",
+  "ico": "62690361",
+  "izo": "110100069",
+  "druh": "výdejna",
+  "nazev": "Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549",
+  "kratky": "VOŠ, SŠ, ZŠ a MŠ",
+  "kapacita": 30,
+  "zrizovatel": "7",
+  "emaily": [
+   "iva.rindova@neslhk.com",
+   "info@neslhk.com"
+  ],
+  "mista": [
+   "Brněnská 268"
+  ],
+  "ruian": [
+   23805790
+  ]
+ },
+ {
+  "redIzo": "600024024",
+  "ico": "62690400",
+  "izo": "062690400",
+  "druh": "SŠ",
+  "nazev": "Střední škola profesní přípravy, Hradec Králové",
+  "kratky": "SŠ profesní přípravy, Hradec Králové",
+  "kapacita": 400,
+  "zrizovatel": "7",
+  "emaily": [
+   "sekretariat@sspphk.cz"
+  ],
+  "mista": [
+   "17. listopadu 1212",
+   "Vážní 891"
+  ],
+  "ruian": [
+   23875411,
+   23910810
+  ]
+ },
+ {
+  "redIzo": "600024636",
+  "ico": "71197621",
+  "izo": "110011791",
+  "druh": "ZŠ",
+  "nazev": "Základní škola speciální a praktická škola Diakonie ČCE Vrchlabí",
+  "kratky": "ZŠ speciální a prakt. škola Diakonie ČCE Vrchlabí",
+  "kapacita": 105,
+  "zrizovatel": "6",
+  "emaily": [
+   "sps.dcce.vrchlabi@seznam.cz",
+   "kumprechtovam@specialniskolavrchlabi.cz"
+  ],
+  "mista": [
+   "Hradecká 1151"
+  ],
+  "ruian": [
+   23874830
+  ]
+ },
+ {
+  "redIzo": "600029603",
+  "ico": "00528315",
+  "izo": "108007766",
+  "druh": "jídelna",
+  "nazev": "Domov mládeže, internát a školní jídelna, Hradec Králové, Vocelova 1469/5",
+  "kratky": "Domov mládeže, internát a školní jídelna",
+  "kapacita": 175,
+  "zrizovatel": "7",
+  "emaily": [
+   "info@dmhk.cz"
+  ],
+  "mista": [
+   "Vocelova 1469"
+  ],
+  "ruian": [
+   23897708
+  ]
+ },
+ {
+  "redIzo": "600029611",
+  "ico": "62690001",
+  "izo": "110035356",
+  "druh": "ZŠ",
+  "nazev": "Dětský diagnostický ústav, středisko výchovné péče, základní škola a školní jídelna, Hradec Králové, Říčařova 277",
+  "kratky": "Dětský diagnostický ústav, SVP, ZŠ a ŠJ",
+  "kapacita": 60,
+  "zrizovatel": "1",
+  "emaily": [
+   "ddu@ddu-hk.cz",
+   "ekonom@ddu-hk.cz"
+  ],
+  "mista": [
+   "Brandlova 112",
+   "Nerudova 104",
+   "Říčařova 277"
+  ],
+  "ruian": [
+   23903066,
+   23884240,
+   23841320
+  ]
+ },
+ {
+  "redIzo": "600029611",
+  "ico": "62690001",
+  "izo": "102754748",
+  "druh": "jídelna",
+  "nazev": "Dětský diagnostický ústav, středisko výchovné péče, základní škola a školní jídelna, Hradec Králové, Říčařova 277",
+  "kratky": "Dětský diagnostický ústav, SVP, ZŠ a ŠJ",
+  "kapacita": 130,
+  "zrizovatel": "1",
+  "emaily": [
+   "ddu@ddu-hk.cz",
+   "ekonom@ddu-hk.cz"
+  ],
+  "mista": [
+   "Říčařova 277",
+   "Brandlova 112"
+  ],
+  "ruian": [
+   23841320,
+   23903066
+  ]
+ },
+ {
+  "redIzo": "600033813",
+  "ico": "49335499",
+  "izo": "000484083",
+  "druh": "jídelna",
+  "nazev": "Školní jídelna, Hradec Králové, Hradecká 1219",
+  "kratky": "Školní jídelna",
+  "kapacita": 4000,
+  "zrizovatel": "7",
+  "emaily": [
+   "info@jidelnahradecka.cz"
+  ],
+  "mista": [
+   "Hradecká 1219",
+   "Švendova 1282"
+  ],
+  "ruian": [
+   23875488,
+   74154915
+  ]
+ },
+ {
+  "redIzo": "600087824",
+  "ico": "71000658",
+  "izo": "102778922",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola Lužická, Hradec Králové, Severní 842",
+  "kratky": "Mateřská škola Lužická",
+  "kapacita": 250,
+  "zrizovatel": "2",
+  "emaily": [
+   "ms.luzicka@seznam.cz"
+  ],
+  "mista": [
+   "Severní 842"
+  ],
+  "ruian": [
+   23910321
+  ]
+ },
+ {
+  "redIzo": "600087824",
+  "ico": "71000658",
+  "izo": "117100552",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola Lužická, Hradec Králové, Severní 842",
+  "kratky": "Mateřská škola Lužická",
+  "kapacita": 100,
+  "zrizovatel": "2",
+  "emaily": [
+   "ms.luzicka@seznam.cz"
+  ],
+  "mista": [
+   "Slavíčkova 954"
+  ],
+  "ruian": [
+   23911441
+  ]
+ },
+ {
+  "redIzo": "600088430",
+  "ico": "71000682",
+  "izo": "102790728",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola, Hradec Králové, M. Horákové 1143",
+  "kratky": "Mateřská škola",
+  "kapacita": 300,
+  "zrizovatel": "2",
+  "emaily": [
+   "msmhorakove@seznam.cz"
+  ],
+  "mista": [
+   "Milady Horákové 1143"
+  ],
+  "ruian": [
+   23814373
+  ]
+ },
+ {
+  "redIzo": "600088448",
+  "ico": "71000666",
+  "izo": "102790736",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola Klíček, Hradec Králové, Urxova 342",
+  "kratky": "Mateřská škola Klíček",
+  "kapacita": 300,
+  "zrizovatel": "2",
+  "emaily": [
+   "info@msklicekhk.cz"
+  ],
+  "mista": [
+   "Urxova 342"
+  ],
+  "ruian": [
+   23916648
+  ]
+ },
+ {
+  "redIzo": "600088456",
+  "ico": "71000640",
+  "izo": "102790744",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola, Hradec Králové-Věkoše, K Sokolovně 349",
+  "kratky": "Mateřská škola",
+  "kapacita": 280,
+  "zrizovatel": "2",
+  "emaily": [
+   "vekose.ms@volny.cz"
+  ],
+  "mista": [
+   "K Sokolovně 349"
+  ],
+  "ruian": [
+   23927828
+  ]
+ },
+ {
+  "redIzo": "600088537",
+  "ico": "62694987",
+  "izo": "045980497",
+  "druh": "ZŠ",
+  "nazev": "Základní škola, Hradec Králové, Štefánikova 566",
+  "kratky": "Základní škola",
+  "kapacita": 1050,
+  "zrizovatel": "2",
+  "emaily": [
+   "skola@zsstefanikovahk.cz",
+   "polda@zsstefanikovahk.cz"
+  ],
+  "mista": [
+   "Štefánikova 566"
+  ],
+  "ruian": [
+   23930560
+  ]
+ },
+ {
+  "redIzo": "600088537",
+  "ico": "62694987",
+  "izo": "102778442",
+  "druh": "jídelna",
+  "nazev": "Základní škola, Hradec Králové, Štefánikova 566",
+  "kratky": "Základní škola",
+  "kapacita": 1200,
+  "zrizovatel": "2",
+  "emaily": [
+   "skola@zsstefanikovahk.cz",
+   "polda@zsstefanikovahk.cz"
+  ],
+  "mista": [
+   "Štefánikova 566"
+  ],
+  "ruian": [
+   23930560
+  ]
+ },
+ {
+  "redIzo": "600088545",
+  "ico": "62695177",
+  "izo": "045980501",
+  "druh": "ZŠ",
+  "nazev": "Základní škola, Hradec Králové, M. Horákové 258",
+  "kratky": "Základní škola",
+  "kapacita": 800,
+  "zrizovatel": "2",
+  "emaily": [
+   "petr@zshorakhk..cz",
+   "skola@zshorakhk.cz"
+  ],
+  "mista": [
+   "Milady Horákové 258"
+  ],
+  "ruian": [
+   23915803
+  ]
+ },
+ {
+  "redIzo": "600088545",
+  "ico": "62695177",
+  "izo": "102778752",
+  "druh": "jídelna",
+  "nazev": "Základní škola, Hradec Králové, M. Horákové 258",
+  "kratky": "Základní škola",
+  "kapacita": 1100,
+  "zrizovatel": "2",
+  "emaily": [
+   "petr@zshorakhk..cz",
+   "skola@zshorakhk.cz"
+  ],
+  "mista": [
+   "Milady Horákové 258"
+  ],
+  "ruian": [
+   23915803
+  ]
+ },
+ {
+  "redIzo": "600088561",
+  "ico": "49333852",
+  "izo": "049333852",
+  "druh": "ZŠ",
+  "nazev": "Základní škola, Hradec Králové, Bezručova 1468",
+  "kratky": "Základní škola",
+  "kapacita": 720,
+  "zrizovatel": "2",
+  "emaily": [
+   "skola@bezrucka.cz",
+   "obr@bezrucka.cz"
+  ],
+  "mista": [
+   "Bezručova 1468"
+  ],
+  "ruian": [
+   23897694
+  ]
+ },
+ {
+  "redIzo": "600088561",
+  "ico": "49333852",
+  "izo": "102778451",
+  "druh": "jídelna",
+  "nazev": "Základní škola, Hradec Králové, Bezručova 1468",
+  "kratky": "Základní škola",
+  "kapacita": 1350,
+  "zrizovatel": "2",
+  "emaily": [
+   "skola@bezrucka.cz",
+   "obr@bezrucka.cz"
+  ],
+  "mista": [
+   "Bezručova 1468"
+  ],
+  "ruian": [
+   23897694
+  ]
+ },
+ {
+  "redIzo": "600088570",
+  "ico": "62060422",
+  "izo": "062060422",
+  "druh": "ZŠ",
+  "nazev": "Základní škola SEVER, Hradec Králové, Lužická 1208",
+  "kratky": "Základní škola SEVER",
+  "kapacita": 600,
+  "zrizovatel": "2",
+  "emaily": [
+   "info@zssever.cz",
+   "milan.kucera@zssever.cz"
+  ],
+  "mista": [
+   "Lužická 1208"
+  ],
+  "ruian": [
+   23875399
+  ]
+ },
+ {
+  "redIzo": "600088570",
+  "ico": "62060422",
+  "izo": "102778558",
+  "druh": "jídelna",
+  "nazev": "Základní škola SEVER, Hradec Králové, Lužická 1208",
+  "kratky": "Základní škola SEVER",
+  "kapacita": 870,
+  "zrizovatel": "2",
+  "emaily": [
+   "info@zssever.cz",
+   "milan.kucera@zssever.cz"
+  ],
+  "mista": [
+   "Lužická 1208"
+  ],
+  "ruian": [
+   23875399
+  ]
+ },
+ {
+  "redIzo": "600088626",
+  "ico": "70886105",
+  "izo": "102040834",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Malšova Lhota, Lhotecká 39",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 90,
+  "zrizovatel": "2",
+  "emaily": [
+   "iva.trojnova@zs-malsovalhota.cz"
+  ],
+  "mista": [
+   "Lhotecká 39"
+  ],
+  "ruian": [
+   23830492
+  ]
+ },
+ {
+  "redIzo": "600088626",
+  "ico": "70886105",
+  "izo": "108007723",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Malšova Lhota, Lhotecká 39",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 141,
+  "zrizovatel": "2",
+  "emaily": [
+   "iva.trojnova@zs-malsovalhota.cz"
+  ],
+  "mista": [
+   "Lhotecká 39"
+  ],
+  "ruian": [
+   23830492
+  ]
+ },
+ {
+  "redIzo": "600088804",
+  "ico": "70886083",
+  "izo": "102066671",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola Pohádka, Hradec Králové, Mandysova 1434",
+  "kratky": "Základní škola a Mateřská škola Pohádka",
+  "kapacita": 540,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditel@mandyska.cz",
+   "skola@mandyska.cz"
+  ],
+  "mista": [
+   "Mandysova 1434"
+  ],
+  "ruian": [
+   23817283
+  ]
+ },
+ {
+  "redIzo": "600088804",
+  "ico": "70886083",
+  "izo": "102778469",
+  "druh": "jídelna",
+  "nazev": "Základní škola a Mateřská škola Pohádka, Hradec Králové, Mandysova 1434",
+  "kratky": "Základní škola a Mateřská škola Pohádka",
+  "kapacita": 850,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditel@mandyska.cz",
+   "skola@mandyska.cz"
+  ],
+  "mista": [
+   "Mandysova 1434"
+  ],
+  "ruian": [
+   23817283
+  ]
+ },
+ {
+  "redIzo": "600088804",
+  "ico": "70886083",
+  "izo": "168101751",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola Pohádka, Hradec Králové, Mandysova 1434",
+  "kratky": "Základní škola a Mateřská škola Pohádka",
+  "kapacita": 150,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditel@mandyska.cz",
+   "skola@mandyska.cz"
+  ],
+  "mista": [
+   "Mandysova 1434"
+  ],
+  "ruian": [
+   23817283
+  ]
+ },
+ {
+  "redIzo": "600088812",
+  "ico": "69172366",
+  "izo": "102066680",
+  "druh": "ZŠ",
+  "nazev": "Základní škola, Hradec Králové, Habrmanova 130",
+  "kratky": "Základní škola",
+  "kapacita": 500,
+  "zrizovatel": "2",
+  "emaily": [
+   "simek@habrmanova.cz",
+   "skola@habrmanova.cz"
+  ],
+  "mista": [
+   "Habrmanova 130"
+  ],
+  "ruian": [
+   23884495
+  ]
+ },
+ {
+  "redIzo": "600088812",
+  "ico": "69172366",
+  "izo": "102040974",
+  "druh": "jídelna",
+  "nazev": "Základní škola, Hradec Králové, Habrmanova 130",
+  "kratky": "Základní škola",
+  "kapacita": 600,
+  "zrizovatel": "2",
+  "emaily": [
+   "simek@habrmanova.cz",
+   "skola@habrmanova.cz"
+  ],
+  "mista": [
+   "Nerudova 186"
+  ],
+  "ruian": [
+   23885017
+  ]
+ },
+ {
+  "redIzo": "600088821",
+  "ico": "70886091",
+  "izo": "102066744",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Kukleny, Pražská 198",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 450,
+  "zrizovatel": "2",
+  "emaily": [
+   "zskukleny@zskukleny.cz",
+   "zskukleny@zskukleny.cz"
+  ],
+  "mista": [
+   "Pražská třída 198",
+   "Pražská třída 1",
+   "Pražská třída 138"
+  ],
+  "ruian": [
+   23824409,
+   23822520,
+   23823810
+  ]
+ },
+ {
+  "redIzo": "600088821",
+  "ico": "70886091",
+  "izo": "102778485",
+  "druh": "jídelna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Kukleny, Pražská 198",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 600,
+  "zrizovatel": "2",
+  "emaily": [
+   "zskukleny@zskukleny.cz",
+   "zskukleny@zskukleny.cz"
+  ],
+  "mista": [
+   "Pražská třída 1"
+  ],
+  "ruian": [
+   23822520
+  ]
+ },
+ {
+  "redIzo": "600088821",
+  "ico": "70886091",
+  "izo": "102778957",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Kukleny, Pražská 198",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 125,
+  "zrizovatel": "2",
+  "emaily": [
+   "zskukleny@zskukleny.cz",
+   "zskukleny@zskukleny.cz"
+  ],
+  "mista": [
+   "Ořechová 62",
+   "Markova 870"
+  ],
+  "ruian": [
+   23836971,
+   40492036
+  ]
+ },
+ {
+  "redIzo": "600088839",
+  "ico": "62694774",
+  "izo": "102066787",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové, Jiráskovo nám. 1166",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 450,
+  "zrizovatel": "2",
+  "emaily": [
+   "skola@zsjirasek.cz"
+  ],
+  "mista": [
+   "Jiráskovo náměstí 1166"
+  ],
+  "ruian": [
+   23894679
+  ]
+ },
+ {
+  "redIzo": "600088839",
+  "ico": "62694774",
+  "izo": "150069936",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové, Jiráskovo nám. 1166",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 520,
+  "zrizovatel": "2",
+  "emaily": [
+   "skola@zsjirasek.cz"
+  ],
+  "mista": [
+   "Poštovní 38",
+   "Jiráskovo náměstí 1166"
+  ],
+  "ruian": [
+   23801662,
+   23894679
+  ]
+ },
+ {
+  "redIzo": "600088847",
+  "ico": "69172480",
+  "izo": "102066809",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola, Nový Hradec Králové, Pešinova 146",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 330,
+  "zrizovatel": "2",
+  "emaily": [
+   "zsnhk@zsnovyhk.cz",
+   "cech@zsnovyhk.cz"
+  ],
+  "mista": [
+   "Pešinova 146"
+  ],
+  "ruian": [
+   23804602
+  ]
+ },
+ {
+  "redIzo": "600088847",
+  "ico": "69172480",
+  "izo": "102778493",
+  "druh": "jídelna",
+  "nazev": "Základní škola a Mateřská škola, Nový Hradec Králové, Pešinova 146",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 350,
+  "zrizovatel": "2",
+  "emaily": [
+   "zsnhk@zsnovyhk.cz",
+   "cech@zsnovyhk.cz"
+  ],
+  "mista": [
+   "Svatováclavské náměstí 765"
+  ],
+  "ruian": [
+   23810599
+  ]
+ },
+ {
+  "redIzo": "600088847",
+  "ico": "69172480",
+  "izo": "102778931",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola, Nový Hradec Králové, Pešinova 146",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 62,
+  "zrizovatel": "2",
+  "emaily": [
+   "zsnhk@zsnovyhk.cz",
+   "cech@zsnovyhk.cz"
+  ],
+  "mista": [
+   "Na Biřičce 1263"
+  ],
+  "ruian": [
+   23815574
+  ]
+ },
+ {
+  "redIzo": "600088855",
+  "ico": "69172382",
+  "izo": "102066841",
+  "druh": "ZŠ",
+  "nazev": "Masarykova základní škola a Mateřská škola, Hradec Králové - Plotiště, P. Jilemnického 420",
+  "kratky": "Masarykova ZŠ a MŠ",
+  "kapacita": 300,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditelka@zsplotiste.cz",
+   "zastupce@zsplotiste.cz"
+  ],
+  "mista": [
+   "Petra Jilemnického 420",
+   "Petra Jilemnického 160"
+  ],
+  "ruian": [
+   23842547,
+   23840340
+  ]
+ },
+ {
+  "redIzo": "600088855",
+  "ico": "69172382",
+  "izo": "150074549",
+  "druh": "výdejna",
+  "nazev": "Masarykova základní škola a Mateřská škola, Hradec Králové - Plotiště, P. Jilemnického 420",
+  "kratky": "Masarykova ZŠ a MŠ",
+  "kapacita": 540,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditelka@zsplotiste.cz",
+   "zastupce@zsplotiste.cz"
+  ],
+  "mista": [
+   "Petra Jilemnického 160",
+   "Pobřežní 230",
+   "Petra Jilemnického 420"
+  ],
+  "ruian": [
+   23840340,
+   23835087,
+   23842547
+  ]
+ },
+ {
+  "redIzo": "600088863",
+  "ico": "62693123",
+  "izo": "102066868",
+  "druh": "ZŠ",
+  "nazev": "Základní škola, Hradec Králové - Pouchov, K Sokolovně 452",
+  "kratky": "Základní škola",
+  "kapacita": 450,
+  "zrizovatel": "2",
+  "emaily": [
+   "zspouchov@zspouchov.cz",
+   "otcenasek@zspouchov.cz"
+  ],
+  "mista": [
+   "K Sokolovně 452"
+  ],
+  "ruian": [
+   23923661
+  ]
+ },
+ {
+  "redIzo": "600088863",
+  "ico": "62693123",
+  "izo": "102778523",
+  "druh": "jídelna",
+  "nazev": "Základní škola, Hradec Králové - Pouchov, K Sokolovně 452",
+  "kratky": "Základní škola",
+  "kapacita": 800,
+  "zrizovatel": "2",
+  "emaily": [
+   "zspouchov@zspouchov.cz",
+   "otcenasek@zspouchov.cz"
+  ],
+  "mista": [
+   "K Sokolovně 452"
+  ],
+  "ruian": [
+   23923661
+  ]
+ },
+ {
+  "redIzo": "600088871",
+  "ico": "62692755",
+  "izo": "102066876",
+  "druh": "ZŠ",
+  "nazev": "Základní škola, Hradec Králové, tř. SNP 694",
+  "kratky": "Základní škola",
+  "kapacita": 770,
+  "zrizovatel": "2",
+  "emaily": [
+   "bartos@edu-zssnp.cz",
+   "sykorova@edu-zssnp.cz"
+  ],
+  "mista": [
+   "třída SNP 694"
+  ],
+  "ruian": [
+   23908840
+  ]
+ },
+ {
+  "redIzo": "600088871",
+  "ico": "62692755",
+  "izo": "102778531",
+  "druh": "jídelna",
+  "nazev": "Základní škola, Hradec Králové, tř. SNP 694",
+  "kratky": "Základní škola",
+  "kapacita": 1200,
+  "zrizovatel": "2",
+  "emaily": [
+   "bartos@edu-zssnp.cz",
+   "sykorova@edu-zssnp.cz"
+  ],
+  "mista": [
+   "třída SNP 694"
+  ],
+  "ruian": [
+   23908840
+  ]
+ },
+ {
+  "redIzo": "600088880",
+  "ico": "70886075",
+  "izo": "102066981",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Svobodné Dvory, Spojovací 66",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 340,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditelna@zssvobodnedvory.cz"
+  ],
+  "mista": [
+   "Spojovací 66"
+  ],
+  "ruian": [
+   23857510
+  ]
+ },
+ {
+  "redIzo": "600088880",
+  "ico": "70886075",
+  "izo": "102778566",
+  "druh": "jídelna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Svobodné Dvory, Spojovací 66",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 700,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditelna@zssvobodnedvory.cz"
+  ],
+  "mista": [
+   "Spojovací 66"
+  ],
+  "ruian": [
+   23857510
+  ]
+ },
+ {
+  "redIzo": "600088880",
+  "ico": "70886075",
+  "izo": "150071850",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové - Svobodné Dvory, Spojovací 66",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 125,
+  "zrizovatel": "2",
+  "emaily": [
+   "reditelna@zssvobodnedvory.cz"
+  ],
+  "mista": [
+   "K Meteoru 751",
+   "K Dolíkám 121"
+  ],
+  "ruian": [
+   74121588,
+   23858044
+  ]
+ },
+ {
+  "redIzo": "600088898",
+  "ico": "62694863",
+  "izo": "102078017",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové, Štefcova 1092",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 790,
+  "zrizovatel": "2",
+  "emaily": [
+   "hlavka@stefcova.cz",
+   "zs@stefcova.cz"
+  ],
+  "mista": [
+   "Štefcova 1092"
+  ],
+  "ruian": [
+   23813865
+  ]
+ },
+ {
+  "redIzo": "600088898",
+  "ico": "62694863",
+  "izo": "102778574",
+  "druh": "jídelna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové, Štefcova 1092",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 1500,
+  "zrizovatel": "2",
+  "emaily": [
+   "hlavka@stefcova.cz",
+   "zs@stefcova.cz"
+  ],
+  "mista": [
+   "Štefcova 1092"
+  ],
+  "ruian": [
+   23813865
+  ]
+ },
+ {
+  "redIzo": "600088898",
+  "ico": "62694863",
+  "izo": "108007812",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové, Štefcova 1092",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 180,
+  "zrizovatel": "2",
+  "emaily": [
+   "hlavka@stefcova.cz",
+   "zs@stefcova.cz"
+  ],
+  "mista": [
+   "Štefcova 1128",
+   "Mrštíkova 752"
+  ],
+  "ruian": [
+   23814225,
+   23810467
+  ]
+ },
+ {
+  "redIzo": "600088901",
+  "ico": "70886113",
+  "izo": "102078033",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové, Úprkova 1",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 500,
+  "zrizovatel": "2",
+  "emaily": [
+   "lehky@zsuprkova.cz",
+   "chrobokova@zsuprkova.cz"
+  ],
+  "mista": [
+   "Úprkova 1"
+  ],
+  "ruian": [
+   23875674
+  ]
+ },
+ {
+  "redIzo": "600088901",
+  "ico": "70886113",
+  "izo": "117100021",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola, Hradec Králové, Úprkova 1",
+  "kratky": "Základní škola a Mateřská škola",
+  "kapacita": 640,
+  "zrizovatel": "2",
+  "emaily": [
+   "lehky@zsuprkova.cz",
+   "chrobokova@zsuprkova.cz"
+  ],
+  "mista": [
+   "Holubova 792",
+   "Štefcova 1125",
+   "Úprkova 1"
+  ],
+  "ruian": [
+   72942584,
+   23814195,
+   23875674
+  ]
+ },
+ {
+  "redIzo": "600170764",
+  "ico": "00175790",
+  "izo": "000175790",
+  "druh": "SŠ",
+  "nazev": "Střední odborná škola a Střední odborné učiliště, Hradec Králové, Vocelova 1338",
+  "kratky": "SOŠ a SOU",
+  "kapacita": 800,
+  "zrizovatel": "7",
+  "emaily": [
+   "sekretariat@sosasou-vocelova.cz"
+  ],
+  "mista": [
+   "Vážní 1098",
+   "Jana Krušinky 1637",
+   "Vocelova 1338"
+  ],
+  "ruian": [
+   26548143,
+   23899379,
+   23896396
+  ]
+ },
+ {
+  "redIzo": "600170764",
+  "ico": "00175790",
+  "izo": "150003064",
+  "druh": "jídelna",
+  "nazev": "Střední odborná škola a Střední odborné učiliště, Hradec Králové, Vocelova 1338",
+  "kratky": "SOŠ a SOU",
+  "kapacita": 800,
+  "zrizovatel": "7",
+  "emaily": [
+   "sekretariat@sosasou-vocelova.cz"
+  ],
+  "mista": [
+   "Vocelova 1338"
+  ],
+  "ruian": [
+   23896396
+  ]
+ },
+ {
+  "redIzo": "600170764",
+  "ico": "00175790",
+  "izo": "181115166",
+  "druh": "výdejna",
+  "nazev": "Střední odborná škola a Střední odborné učiliště, Hradec Králové, Vocelova 1338",
+  "kratky": "SOŠ a SOU",
+  "kapacita": 100,
+  "zrizovatel": "7",
+  "emaily": [
+   "sekretariat@sosasou-vocelova.cz"
+  ],
+  "mista": [
+   "Vážní 1098"
+  ],
+  "ruian": [
+   26548143
+  ]
+ },
+ {
+  "redIzo": "650059964",
+  "ico": "75015820",
+  "izo": "150059973",
+  "druh": "ZŠ",
+  "nazev": "Základní škola Sion J. A. Komenského, Hradec Králové",
+  "kratky": "Základní škola Sion J. A. Komenského",
+  "kapacita": 530,
+  "zrizovatel": "5",
+  "emaily": [
+   "zs@sion.cz"
+  ],
+  "mista": [
+   "Hradecká 1151",
+   "Kleinerových 550"
+  ],
+  "ruian": [
+   23874830,
+   23930403
+  ]
+ },
+ {
+  "redIzo": "650059964",
+  "ico": "75015820",
+  "izo": "168100614",
+  "druh": "výdejna",
+  "nazev": "Základní škola Sion J. A. Komenského, Hradec Králové",
+  "kratky": "Základní škola Sion J. A. Komenského",
+  "kapacita": 480,
+  "zrizovatel": "5",
+  "emaily": [
+   "zs@sion.cz"
+  ],
+  "mista": [
+   "Hradecká 1151",
+   "Kleinerových 550"
+  ],
+  "ruian": [
+   23874830,
+   23930403
+  ]
+ },
+ {
+  "redIzo": "651000904",
+  "ico": "75041511",
+  "izo": "151000913",
+  "druh": "ZŠ",
+  "nazev": "Základní škola a Mateřská škola Josefa Gočára, Hradec Králové, Tylovo nábřeží 1140",
+  "kratky": "ZŠ a MŠ Josefa Gočára",
+  "kapacita": 800,
+  "zrizovatel": "2",
+  "emaily": [
+   "sadilek@zsgocarova.cz",
+   "skola@zsgocarova.cz"
+  ],
+  "mista": [
+   "Tylovo nábřeží 690",
+   "Tylovo nábřeží 1140"
+  ],
+  "ruian": [
+   23870281,
+   23874724
+  ]
+ },
+ {
+  "redIzo": "651000904",
+  "ico": "75041511",
+  "izo": "168100550",
+  "druh": "jídelna",
+  "nazev": "Základní škola a Mateřská škola Josefa Gočára, Hradec Králové, Tylovo nábřeží 1140",
+  "kratky": "ZŠ a MŠ Josefa Gočára",
+  "kapacita": 900,
+  "zrizovatel": "2",
+  "emaily": [
+   "sadilek@zsgocarova.cz",
+   "skola@zsgocarova.cz"
+  ],
+  "mista": [
+   "Tylovo nábřeží 691"
+  ],
+  "ruian": [
+   23870290
+  ]
+ },
+ {
+  "redIzo": "651000904",
+  "ico": "75041511",
+  "izo": "168100568",
+  "druh": "výdejna",
+  "nazev": "Základní škola a Mateřská škola Josefa Gočára, Hradec Králové, Tylovo nábřeží 1140",
+  "kratky": "ZŠ a MŠ Josefa Gočára",
+  "kapacita": 120,
+  "zrizovatel": "2",
+  "emaily": [
+   "sadilek@zsgocarova.cz",
+   "skola@zsgocarova.cz"
+  ],
+  "mista": [
+   "Škroupova 693"
+  ],
+  "ruian": [
+   23870311
+  ]
+ },
+ {
+  "redIzo": "668000503",
+  "ico": "71000755",
+  "izo": "102790035",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola Kamarád, Hradec Králové, Veverkova 1495",
+  "kratky": "Mateřská škola Kamarád",
+  "kapacita": 210,
+  "zrizovatel": "2",
+  "emaily": [
+   "skolka.kamarad.hk@gmail.com"
+  ],
+  "mista": [
+   "Hrubínova 1529",
+   "Veverkova 1495"
+  ],
+  "ruian": [
+   23898305,
+   23897961
+  ]
+ },
+ {
+  "redIzo": "668000538",
+  "ico": "71000747",
+  "izo": "102790701",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola Sluníčko, Hradec Králové, Štefánikova 373",
+  "kratky": "Mateřská škola Sluníčko",
+  "kapacita": 400,
+  "zrizovatel": "2",
+  "emaily": [
+   "info@skolkaslunicko.cz"
+  ],
+  "mista": [
+   "Štefánikova 373"
+  ],
+  "ruian": [
+   23928956
+  ]
+ },
+ {
+  "redIzo": "668000538",
+  "ico": "71000747",
+  "izo": "168001161",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola Sluníčko, Hradec Králové, Štefánikova 373",
+  "kratky": "Mateřská škola Sluníčko",
+  "kapacita": 95,
+  "zrizovatel": "2",
+  "emaily": [
+   "info@skolkaslunicko.cz"
+  ],
+  "mista": [
+   "Hradecká 1"
+  ],
+  "ruian": [
+   23913258
+  ]
+ },
+ {
+  "redIzo": "668000554",
+  "ico": "71000712",
+  "izo": "102778884",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola, Hradec Králové, Třebechovická 837",
+  "kratky": "Mateřská škola",
+  "kapacita": 200,
+  "zrizovatel": "2",
+  "emaily": [
+   "mstrebechovicka@gmail.com"
+  ],
+  "mista": [
+   "Třebechovická 837"
+  ],
+  "ruian": [
+   23910275
+  ]
+ },
+ {
+  "redIzo": "668000554",
+  "ico": "71000712",
+  "izo": "168001195",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola, Hradec Králové, Třebechovická 837",
+  "kratky": "Mateřská škola",
+  "kapacita": 70,
+  "zrizovatel": "2",
+  "emaily": [
+   "mstrebechovicka@gmail.com"
+  ],
+  "mista": [
+   "Školní 85"
+  ],
+  "ruian": [
+   23850060
+  ]
+ },
+ {
+  "redIzo": "668000562",
+  "ico": "71000763",
+  "izo": "102778949",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola Čtyřlístek, Hradec Králové, Švendova 1127",
+  "kratky": "Mateřská škola Čtyřlístek",
+  "kapacita": 500,
+  "zrizovatel": "2",
+  "emaily": [
+   "mssvendovahk@seznam.cz"
+  ],
+  "mista": [
+   "Švendova 1127"
+  ],
+  "ruian": [
+   23874589
+  ]
+ },
+ {
+  "redIzo": "668000562",
+  "ico": "71000763",
+  "izo": "181084821",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola Čtyřlístek, Hradec Králové, Švendova 1127",
+  "kratky": "Mateřská škola Čtyřlístek",
+  "kapacita": 150,
+  "zrizovatel": "2",
+  "emaily": [
+   "mssvendovahk@seznam.cz"
+  ],
+  "mista": [
+   "Kotěrova 627"
+  ],
+  "ruian": [
+   23869640
+  ]
+ },
+ {
+  "redIzo": "668000571",
+  "ico": "71000691",
+  "izo": "102790710",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola, Hradec Králové, Kampanova 1488",
+  "kratky": "Mateřská škola",
+  "kapacita": 310,
+  "zrizovatel": "2",
+  "emaily": [
+   "mskampanova@seznam.cz"
+  ],
+  "mista": [
+   "Kampanova 1488"
+  ],
+  "ruian": [
+   23897899
+  ]
+ },
+ {
+  "redIzo": "668000571",
+  "ico": "71000691",
+  "izo": "181003309",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola, Hradec Králové, Kampanova 1488",
+  "kratky": "Mateřská škola",
+  "kapacita": 85,
+  "zrizovatel": "2",
+  "emaily": [
+   "mskampanova@seznam.cz"
+  ],
+  "mista": [
+   "Albertova 767"
+  ],
+  "ruian": [
+   23890711
+  ]
+ },
+ {
+  "redIzo": "668001127",
+  "ico": "71194550",
+  "izo": "168001144",
+  "druh": "jídelna",
+  "nazev": "Mateřská škola Zvoneček, Hradec Králové, Čajkovského 1093",
+  "kratky": "Mateřská škola Zvoneček",
+  "kapacita": 370,
+  "zrizovatel": "2",
+  "emaily": [
+   "mscajkovskeho@volny.cz"
+  ],
+  "mista": [
+   "Čajkovského 1093"
+  ],
+  "ruian": [
+   23813873
+  ]
+ },
+ {
+  "redIzo": "668001127",
+  "ico": "71194550",
+  "izo": "168001152",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola Zvoneček, Hradec Králové, Čajkovského 1093",
+  "kratky": "Mateřská škola Zvoneček",
+  "kapacita": 115,
+  "zrizovatel": "2",
+  "emaily": [
+   "mscajkovskeho@volny.cz"
+  ],
+  "mista": [
+   "Štechova 1327"
+  ],
+  "ruian": [
+   23816210
+  ]
+ },
+ {
+  "redIzo": "668100915",
+  "ico": "75051591",
+  "izo": "168100932",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola Sion, Hradec Králové",
+  "kratky": "Mateřská škola Sion, Hradec Králové",
+  "kapacita": 100,
+  "zrizovatel": "5",
+  "emaily": [
+   "skolka@sion.cz",
+   "ms@sion.cz"
+  ],
+  "mista": [
+   "Na Kotli 1201",
+   "Kleinerových 550"
+  ],
+  "ruian": [
+   23875330,
+   23930403
+  ]
+ },
+ {
+  "redIzo": "691000794",
+  "ico": "71341072",
+  "izo": "045978298",
+  "druh": "SŠ",
+  "nazev": "Biskupské gymnázium, církevní základní škola, mateřská škola a základní umělecká škola Hradec Králové",
+  "kratky": "Biskupské gymnázium, círk. ZŠ, MŠ a ZUŠ",
+  "kapacita": 620,
+  "zrizovatel": "6",
+  "emaily": [
+   "tkopecky@bisgymbb.cz",
+   "skola@bisgymbb.cz"
+  ],
+  "mista": [
+   "Orlické nábřeží 356",
+   "Jana Koziny 560"
+  ],
+  "ruian": [
+   23867078,
+   23868929
+  ]
+ },
+ {
+  "redIzo": "691000794",
+  "ico": "71341072",
+  "izo": "110035810",
+  "druh": "ZŠ",
+  "nazev": "Biskupské gymnázium, církevní základní škola, mateřská škola a základní umělecká škola Hradec Králové",
+  "kratky": "Biskupské gymnázium, círk. ZŠ, MŠ a ZUŠ",
+  "kapacita": 270,
+  "zrizovatel": "6",
+  "emaily": [
+   "tkopecky@bisgymbb.cz",
+   "skola@bisgymbb.cz"
+  ],
+  "mista": [
+   "Na Hradě 90"
+  ],
+  "ruian": [
+   23864583
+  ]
+ },
+ {
+  "redIzo": "691000794",
+  "ico": "71341072",
+  "izo": "150004168",
+  "druh": "výdejna",
+  "nazev": "Biskupské gymnázium, církevní základní škola, mateřská škola a základní umělecká škola Hradec Králové",
+  "kratky": "Biskupské gymnázium, círk. ZŠ, MŠ a ZUŠ",
+  "kapacita": 320,
+  "zrizovatel": "6",
+  "emaily": [
+   "tkopecky@bisgymbb.cz",
+   "skola@bisgymbb.cz"
+  ],
+  "mista": [
+   "Na Hradě 90"
+  ],
+  "ruian": [
+   23864583
+  ]
+ },
+ {
+  "redIzo": "691003815",
+  "ico": "71341455",
+  "izo": "181033631",
+  "druh": "výdejna",
+  "nazev": "Safari Baby Club - mateřská škola",
+  "kratky": "Safari Baby Club - mateřská škola",
+  "kapacita": 40,
+  "zrizovatel": "5",
+  "emaily": [
+   "bucherova@safariclub.cz",
+   "michaela.dankova@safariclub.cz"
+  ],
+  "mista": [
+   "Mrštíkova 1122"
+  ],
+  "ruian": [
+   31080308
+  ]
+ },
+ {
+  "redIzo": "691004048",
+  "ico": "71341501",
+  "izo": "181035618",
+  "druh": "SŠ",
+  "nazev": "Střední škola Sion High School, Hradec Králové",
+  "kratky": "Střední škola Sion High School, Hradec Králové",
+  "kapacita": 480,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@highschool.cz"
+  ],
+  "mista": [
+   "Hradecká 1151"
+  ],
+  "ruian": [
+   23874830
+  ]
+ },
+ {
+  "redIzo": "691004625",
+  "ico": "24304816",
+  "izo": "181041162",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola Antonie s.r.o.",
+  "kratky": "Mateřská škola Antonie s.r.o.",
+  "kapacita": 29,
+  "zrizovatel": "5",
+  "emaily": [
+   "jiri.bezvoda@seznam.cz",
+   "msantonie@seznam.cz"
+  ],
+  "mista": [
+   "Pražská třída 591"
+  ],
+  "ruian": [
+   23828226
+  ]
+ },
+ {
+  "redIzo": "691005770",
+  "ico": "71295054",
+  "izo": "181050421",
+  "druh": "výdejna",
+  "nazev": "Mateřská škola Podzámčí, Hradec Králové, Svatojánská 680/15",
+  "kratky": "Mateřská škola Podzámčí",
+  "kapacita": 125,
+  "zrizovatel": "2",
+  "emaily": [
+   "mspodzamci@mspodzamci.cz"
+  ],
+  "mista": [
+   "Svatojánská 680"
+  ],
+  "ruian": [
+   42530679
+  ]
+ },
+ {
+  "redIzo": "691013225",
+  "ico": "08223033",
+  "izo": "181103982",
+  "druh": "ZŠ",
+  "nazev": "Základní škola Comenius",
+  "kratky": "Základní škola Comenius",
+  "kapacita": 180,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@skolacomenius.cz"
+  ],
+  "mista": [
+   "Jana Masaryka 605",
+   "Víta Nejedlého 573"
+  ],
+  "ruian": [
+   23809019,
+   23907631
+  ]
+ },
+ {
+  "redIzo": "691013225",
+  "ico": "08223033",
+  "izo": "181116049",
+  "druh": "výdejna",
+  "nazev": "Základní škola Comenius",
+  "kratky": "Základní škola Comenius",
+  "kapacita": 250,
+  "zrizovatel": "5",
+  "emaily": [
+   "info@skolacomenius.cz"
+  ],
+  "mista": [
+   "Víta Nejedlého 573"
+  ],
+  "ruian": [
+   23907631
+  ]
+ },
+ {
+  "redIzo": "691016470",
+  "ico": "14156407",
+  "izo": "181133709",
+  "druh": "ZŠ",
+  "nazev": "Základní škola Krok, z. ú.",
+  "kratky": "Základní škola Krok, z. ú.",
+  "kapacita": 64,
+  "zrizovatel": "5",
+  "emaily": [
+   "jiri.tobolka@skolakrok.cz",
+   "lukas.hlousek@skolakrok.cz"
+  ],
+  "mista": [
+   "Šimkova 1224"
+  ],
+  "ruian": [
+   23875534
+  ]
+ },
+ {
+  "redIzo": "691016470",
+  "ico": "14156407",
+  "izo": "181135132",
+  "druh": "výdejna",
+  "nazev": "Základní škola Krok, z. ú.",
+  "kratky": "Základní škola Krok, z. ú.",
+  "kapacita": 64,
+  "zrizovatel": "5",
+  "emaily": [
+   "jiri.tobolka@skolakrok.cz",
+   "lukas.hlousek@skolakrok.cz"
+  ],
+  "mista": [
+   "Šimkova 1224"
+  ],
+  "ruian": [
+   23875534
+  ]
+ },
+ {
+  "redIzo": "691017921",
+  "ico": "21287848",
+  "izo": "181143925",
+  "druh": "ZŠ",
+  "nazev": "ScioŠkola Hradec Králové - základní škola, s.r.o.",
+  "kratky": "ScioŠkola Hradec Králové - ZŠ. s.r.o.",
+  "kapacita": 351,
+  "zrizovatel": "5",
+  "emaily": [
+   "hradec@scioskola.cz"
+  ],
+  "mista": [
+   "Víta Nejedlého 573"
+  ],
+  "ruian": [
+   23907631
+  ]
+ },
+ {
+  "redIzo": "691017921",
+  "ico": "21287848",
+  "izo": "181133407",
+  "druh": "výdejna",
+  "nazev": "ScioŠkola Hradec Králové - základní škola, s.r.o.",
+  "kratky": "ScioŠkola Hradec Králové - ZŠ. s.r.o.",
+  "kapacita": 200,
+  "zrizovatel": "5",
+  "emaily": [
+   "hradec@scioskola.cz"
+  ],
+  "mista": [
+   "Víta Nejedlého 573"
+  ],
+  "ruian": [
+   23907631
+  ]
+ },
+ {
+  "redIzo": "691020264",
+  "ico": "24642622",
+  "izo": "250014564",
+  "druh": "ZŠ",
+  "nazev": "Základní škola Erazim 6, školská právnická osoba",
+  "kratky": "Základní škola Erazim 6, školská právnická osoba",
+  "kapacita": 30,
+  "zrizovatel": "5",
+  "emaily": [
+   "spam@erazim.cz"
+  ],
+  "mista": [
+   "Československé armády 274"
+  ],
+  "ruian": [
+   23866284
+  ]
+ }
+]

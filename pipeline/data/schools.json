@@ -1,0 +1,1366 @@
+[
+ {
+  "redIzo": "691000794",
+  "name": "Biskupské gymnázium, církevní základní škola, mateřská škola a základní umělecká škola Hradec Králové",
+  "short": "Biskupské gymnázium, círk. ZŠ, MŠ a ZUŠ",
+  "domain": "bisgymbb.cz",
+  "types": [
+   "SŠ",
+   "ZŠ"
+  ],
+  "capacity": {
+   "SŠ": 620,
+   "ZŠ": 270
+  },
+  "ruian": 23867078,
+  "id": "bisgym",
+  "system": "bakalari",
+  "url": "https://bisgymbb.bakalari.cz/bakaweb",
+  "public": true,
+  "lat": 50.206305,
+  "lon": 15.833695,
+  "level": "SŠ",
+  "students_est": 756,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 5.5,
+   "futurum": 13.9,
+   "aupark": 14.4,
+   "atrium": 13.2
+  }
+ },
+ {
+  "redIzo": "600011666",
+  "name": "Gymnázium Boženy Němcové, Hradec Králové, Pospíšilova tř. 324",
+  "short": "Gymnázium Boženy Němcové",
+  "domain": "gybon.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 640
+  },
+  "ruian": 23866772,
+  "id": "gbn",
+  "system": "bakalari",
+  "url": "https://gybon.bakalari.cz",
+  "public": true,
+  "lat": 50.212274,
+  "lon": 15.838943,
+  "level": "SŠ",
+  "students_est": 544,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 12.3,
+   "futurum": 15.2,
+   "aupark": 15.4,
+   "atrium": 13.7
+  }
+ },
+ {
+  "redIzo": "600011674",
+  "name": "Gymnázium J. K. Tyla, Hradec Králové, Tylovo nábř. 682",
+  "short": "Gymnázium J. K. Tyla",
+  "domain": "gjkt.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 640
+  },
+  "ruian": 23870192,
+  "id": "gjkt",
+  "system": "bakalari",
+  "url": "https://bakalari.gjkt.cz",
+  "public": true,
+  "lat": 50.208676,
+  "lon": 15.825502,
+  "level": "SŠ",
+  "students_est": 544,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 12.6,
+   "futurum": 16.3,
+   "aupark": 11.9,
+   "atrium": 11.4
+  }
+ },
+ {
+  "redIzo": "600011771",
+  "name": "Hotelová škola Hradec Králové, s.r.o.",
+  "short": "Hotelová škola Hradec Králové, s.r.o.",
+  "domain": "hotelovka.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 480
+  },
+  "ruian": 23866284,
+  "id": "hotelovka",
+  "system": "bakalari",
+  "url": "https://hotelovka.bakalari.cz",
+  "public": true,
+  "lat": 50.211195,
+  "lon": 15.838259,
+  "level": "SŠ",
+  "students_est": 408,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 11.8,
+   "futurum": 14.8,
+   "aupark": 15.2,
+   "atrium": 13.6
+  }
+ },
+ {
+  "redIzo": "600011739",
+  "name": "Obchodní akademie, Střední odborná škola a Jazyková škola s právem státní jazykové zkoušky, Hradec Králové",
+  "short": "OA, SOŠ a JŠ s pr. st. jaz. zk.",
+  "domain": "oahk.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 770
+  },
+  "ruian": 23867159,
+  "id": "oahk",
+  "system": "bakalari",
+  "url": "https://oahk.bakalari.cz",
+  "public": true,
+  "lat": 50.213176,
+  "lon": 15.840819,
+  "level": "SŠ",
+  "students_est": 654,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 12.9,
+   "futurum": 15.4,
+   "aupark": 15.9,
+   "atrium": 14.2
+  }
+ },
+ {
+  "redIzo": "600011798",
+  "name": "Obchodní akademie, Střední pedagogická škola, Vyšší odborná škola a Jazyková škola s právem státní jazykové zkoušky, s.r.o.",
+  "short": "OA, SPgŠ, VOŠ a JŠ s pr. SJZ",
+  "domain": "soavoshk.cz",
+  "types": [
+   "SŠ",
+   "VOŠ"
+  ],
+  "capacity": {
+   "SŠ": 300,
+   "VOŠ": 60
+  },
+  "ruian": 23903635,
+  "id": "soavos",
+  "system": "bakalari",
+  "url": "https://soavoshk.bakalari.cz",
+  "public": true,
+  "lat": 50.218477,
+  "lon": 15.855038,
+  "level": "SŠ",
+  "students_est": 306,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 17.0,
+   "futurum": 17.5,
+   "aupark": 20.1,
+   "atrium": 18.4
+  }
+ },
+ {
+  "redIzo": "600170764",
+  "name": "Střední odborná škola a Střední odborné učiliště, Hradec Králové, Vocelova 1338",
+  "short": "SOŠ a SOU",
+  "domain": "sosasou-vocelova.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 800
+  },
+  "ruian": 26548143,
+  "id": "vocelova",
+  "system": "bakalari",
+  "url": "https://vocelova.bakalari.cz",
+  "public": true,
+  "lat": 50.223846,
+  "lon": 15.860393,
+  "level": "SŠ",
+  "students_est": 680,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 19.8,
+   "futurum": 20.1,
+   "aupark": 22.2,
+   "atrium": 20.5
+  }
+ },
+ {
+  "redIzo": "600011801",
+  "name": "Střední odborná škola veterinární, Hradec Králové-Kukleny, Pražská 68",
+  "short": "Střední odborná škola veterinární",
+  "domain": "sosvet.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 408
+  },
+  "ruian": 23823135,
+  "id": "sosvet",
+  "system": "bakalari",
+  "url": "https://b.sosvet.cz/bakaweb",
+  "public": true,
+  "lat": 50.208933,
+  "lon": 15.802114,
+  "level": "SŠ",
+  "students_est": 347,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 16.9,
+   "futurum": 22.0,
+   "aupark": 12.9,
+   "atrium": 13.0
+  }
+ },
+ {
+  "redIzo": "600011828",
+  "name": "Střední průmyslová škola, Střední odborná škola a Střední odborné učiliště, Hradec Králové",
+  "short": "SPŠ, SOŠ a SOU",
+  "domain": "hradebni.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 1500
+  },
+  "ruian": 23869879,
+  "id": "hradebni",
+  "system": "bakalari",
+  "url": [
+   "https://bakalari.hradebni.cz",
+   "https://bakalari2.hradebni.cz"
+  ],
+  "public": true,
+  "lat": 50.20527,
+  "lon": 15.832271,
+  "level": "SŠ",
+  "students_est": 1275,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 3.7,
+   "futurum": 13.9,
+   "aupark": 14.3,
+   "atrium": 13.2
+  }
+ },
+ {
+  "redIzo": "600011747",
+  "name": "Střední uměleckoprůmyslová škola hudebních nástrojů a nábytku, Hradec Králové, 17. listopadu 1202",
+  "short": "Stř.uměleckoprům.škola hud.nástr. a náb.",
+  "domain": "hnn.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 542
+  },
+  "ruian": 23805196,
+  "id": "supshnn",
+  "system": "bakalari",
+  "url": "https://bakalari.supshk.cz",
+  "public": true,
+  "lat": 50.191829,
+  "lon": 15.849622,
+  "level": "SŠ",
+  "students_est": 461,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 14.8,
+   "futurum": 9.0,
+   "aupark": 21.6,
+   "atrium": 20.8
+  }
+ },
+ {
+  "redIzo": "600011631",
+  "name": "Střední škola a vyšší odborná škola aplikované kybernetiky s.r.o.",
+  "short": "SŠ a VOŠ aplikované kybernetiky s.r.o.",
+  "domain": "ssakhk.cz",
+  "types": [
+   "SŠ",
+   "VOŠ"
+  ],
+  "capacity": {
+   "SŠ": 350,
+   "VOŠ": 250
+  },
+  "ruian": 23874830,
+  "id": "kyberna",
+  "system": "kybernais",
+  "url": "https://sis.ssakhk.cz/TimeTable/",
+  "public": true,
+  "note": "vlastní SIS; veřejné obrázky rozvrhu celé školy",
+  "lat": 50.203776,
+  "lon": 15.834415,
+  "level": "SŠ",
+  "students_est": 510,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 1.9,
+   "futurum": 13.0,
+   "aupark": 15.1,
+   "atrium": 14.1
+  }
+ },
+ {
+  "redIzo": "600024016",
+  "name": "Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549",
+  "short": "VOŠ, SŠ, ZŠ a MŠ",
+  "domain": "neslhk.com",
+  "types": [
+   "SŠ",
+   "VOŠ",
+   "ZŠ"
+  ],
+  "capacity": {
+   "SŠ": 160,
+   "VOŠ": 84,
+   "ZŠ": 302
+  },
+  "ruian": 23930390,
+  "id": "nesl",
+  "system": "bakalari",
+  "url": "https://bakalari.neslhk.com",
+  "public": true,
+  "lat": 50.184098,
+  "lon": 15.837682,
+  "level": "SŠ",
+  "students_est": 464,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 16.4,
+   "futurum": 14.4,
+   "aupark": 22.1,
+   "atrium": 21.8
+  }
+ },
+ {
+  "redIzo": "600023974",
+  "name": "Mateřská škola, Speciální základní škola a Praktická škola, Hradec Králové",
+  "short": "MŠ, Speciální ZŠ a PrŠ",
+  "domain": "specialnihk.cz",
+  "types": [
+   "SŠ",
+   "ZŠ"
+  ],
+  "capacity": {
+   "SŠ": 40,
+   "ZŠ": 366
+  },
+  "ruian": 25249762,
+  "id": "specialni",
+  "system": "?",
+  "public": false,
+  "lat": 50.202238,
+  "lon": 15.833072,
+  "level": "SŠ",
+  "students_est": 345,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 1.6,
+   "futurum": 13.0,
+   "aupark": 15.2,
+   "atrium": 14.3
+  }
+ },
+ {
+  "redIzo": "600023940",
+  "name": "Mateřská škola, základní škola a střední škola Daneta, s.r.o.",
+  "short": "MŠ, ZŠ a SŠ Daneta, s.r.o.",
+  "domain": "daneta.cz",
+  "types": [
+   "SŠ",
+   "ZŠ"
+  ],
+  "capacity": {
+   "SŠ": 44,
+   "ZŠ": 70
+  },
+  "ruian": 23894814,
+  "id": "daneta",
+  "system": "?",
+  "public": false,
+  "lat": 50.210307,
+  "lon": 15.815567,
+  "level": "SŠ",
+  "students_est": 97,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 13.7,
+   "futurum": 18.9,
+   "aupark": 4.8,
+   "atrium": 6.4
+  }
+ },
+ {
+  "redIzo": "600023958",
+  "name": "PROINTEPO - Střední škola, Základní škola a Mateřská škola s.r.o.",
+  "short": "PROINTEPO - SŠ, ZŠ a MŠ s.r.o.",
+  "domain": "prointepo.org",
+  "types": [
+   "SŠ",
+   "ZŠ"
+  ],
+  "capacity": {
+   "SŠ": 12,
+   "ZŠ": 62
+  },
+  "ruian": 23897597,
+  "id": "prointepo",
+  "system": "?",
+  "public": false,
+  "lat": 50.199615,
+  "lon": 15.814155,
+  "level": "SŠ",
+  "students_est": 63,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 13.4,
+   "futurum": 17.7,
+   "aupark": 13.5,
+   "atrium": 14.1
+  }
+ },
+ {
+  "redIzo": "600011615",
+  "name": "První soukromé jazykové gymnázium Hradec Králové spol. s r.o.",
+  "short": "První soukr.jazyk.gymnázium Hradec Král.",
+  "domain": "psjg.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 300
+  },
+  "ruian": 23910658,
+  "id": "psjg",
+  "system": "bakalari",
+  "url": "https://psjg.bakalari.cz/bakaweb",
+  "public": false,
+  "lat": 50.218099,
+  "lon": 15.85465,
+  "level": "SŠ",
+  "students_est": 255,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 16.9,
+   "futurum": 17.3,
+   "aupark": 20.0,
+   "atrium": 18.2
+  }
+ },
+ {
+  "redIzo": "600011658",
+  "name": "Střední průmyslová škola stavební, Hradec Králové, Pospíšilova tř. 787",
+  "short": "SPŠ stavební",
+  "domain": "spsstavhk.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 600
+  },
+  "ruian": 23871253,
+  "id": "spsstav",
+  "system": "edupage",
+  "url": "spsstavhk",
+  "public": false,
+  "note": "EduPage bez zveřejněného rozvrhu",
+  "lat": 50.213739,
+  "lon": 15.842163,
+  "level": "SŠ",
+  "students_est": 510,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 13.3,
+   "futurum": 15.5,
+   "aupark": 16.3,
+   "atrium": 14.6
+  }
+ },
+ {
+  "redIzo": "691004048",
+  "name": "Střední škola Sion High School, Hradec Králové",
+  "short": "Střední škola Sion High School, Hradec Králové",
+  "domain": "highschool.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 480
+  },
+  "ruian": 23874830,
+  "id": "sionhs",
+  "system": "edupage",
+  "url": "sionhs",
+  "public": false,
+  "note": "EduPage bez zveřejněného rozvrhu",
+  "lat": 50.203776,
+  "lon": 15.834415,
+  "level": "SŠ",
+  "students_est": 408,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 1.9,
+   "futurum": 13.0,
+   "aupark": 15.1,
+   "atrium": 14.1
+  }
+ },
+ {
+  "redIzo": "600024024",
+  "name": "Střední škola profesní přípravy, Hradec Králové",
+  "short": "SŠ profesní přípravy, Hradec Králové",
+  "domain": "sspphk.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 400
+  },
+  "ruian": 23875411,
+  "id": "sspp",
+  "system": "bakalari",
+  "url": "https://sspphk.bakalari.cz",
+  "public": false,
+  "lat": 50.202704,
+  "lon": 15.834195,
+  "level": "SŠ",
+  "students_est": 340,
+  "canteen": "jidelna-hradecka",
+  "walk": {
+   "jidelna-hradecka": 1.6,
+   "futurum": 12.8,
+   "aupark": 15.3,
+   "atrium": 14.4
+  }
+ },
+ {
+  "redIzo": "600011712",
+  "name": "Střední škola služeb, obchodu a gastronomie",
+  "short": "SŠ služeb, obchodu a gastronomie",
+  "domain": "sssoghk.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 1200
+  },
+  "ruian": 23919906,
+  "id": "sssog",
+  "system": "?",
+  "public": false,
+  "note": "web školy nedostupný",
+  "lat": 50.231225,
+  "lon": 15.847681,
+  "level": "SŠ",
+  "students_est": 1020,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 20.9,
+   "futurum": 22.9,
+   "aupark": 20.8,
+   "atrium": 19.2
+  }
+ },
+ {
+  "redIzo": "600011623",
+  "name": "Střední škola vizuální tvorby, s.r.o.",
+  "short": "Střední škola vizuální tvorby, s.r.o.",
+  "domain": "vizualskola.cz",
+  "types": [
+   "SŠ"
+  ],
+  "capacity": {
+   "SŠ": 225
+  },
+  "ruian": 23847981,
+  "id": "vizual",
+  "system": "bakalari",
+  "url": "https://vizualskola.bakalari.cz",
+  "public": false,
+  "lat": 50.256106,
+  "lon": 15.854915,
+  "level": "SŠ",
+  "students_est": 191,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 31.8,
+   "futurum": 33.7,
+   "aupark": 30.4,
+   "atrium": 29.1
+  }
+ },
+ {
+  "redIzo": "600019772",
+  "name": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Hradec Králové, Komenského 234",
+  "short": "VOŠ zdravotnická a Střední zdrav. škola",
+  "domain": "zshk.cz",
+  "types": [
+   "SŠ",
+   "VOŠ"
+  ],
+  "capacity": {
+   "SŠ": 660,
+   "VOŠ": 440
+  },
+  "ruian": 23865920,
+  "id": "szs",
+  "system": "bakalari",
+  "url": "https://ibakalari.zshk.cz",
+  "public": false,
+  "lat": 50.208908,
+  "lon": 15.836739,
+  "level": "SŠ",
+  "students_est": 935,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 10.8,
+   "futurum": 14.2,
+   "aupark": 14.9,
+   "atrium": 13.4
+  }
+ },
+ {
+  "redIzo": "600088855",
+  "name": "Masarykova základní škola a Mateřská škola, Hradec Králové - Plotiště, P. Jilemnického 420",
+  "short": "Masarykova ZŠ a MŠ",
+  "domain": "zsplotiste.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 300
+  },
+  "ruian": 23842547,
+  "id": "zs-plotiste",
+  "system": "bakalari",
+  "url": "https://bakalari.zsplotiste.eu",
+  "public": true,
+  "lat": 50.225379,
+  "lon": 15.804325,
+  "level": "ZŠ",
+  "students_est": 255,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 20.5,
+   "futurum": 25.5,
+   "aupark": 14.1,
+   "atrium": 14.5
+  }
+ },
+ {
+  "redIzo": "691013225",
+  "name": "Základní škola Comenius",
+  "short": "Základní škola Comenius",
+  "domain": "skolacomenius.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 180
+  },
+  "ruian": 23809019,
+  "id": "zs-comenius",
+  "system": "edupage",
+  "url": "skolacomenius",
+  "public": true,
+  "lat": 50.19568,
+  "lon": 15.845704,
+  "level": "ZŠ",
+  "students_est": 153,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 12.8,
+   "futurum": 4.3,
+   "aupark": 19.7,
+   "atrium": 18.8
+  }
+ },
+ {
+  "redIzo": "600088570",
+  "name": "Základní škola SEVER, Hradec Králové, Lužická 1208",
+  "short": "Základní škola SEVER",
+  "domain": "zssever.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 600
+  },
+  "ruian": 23875399,
+  "id": "zs-sever",
+  "system": "bakalari",
+  "url": "https://bakalari.zssever.cz",
+  "public": true,
+  "lat": 50.216826,
+  "lon": 15.847688,
+  "level": "ZŠ",
+  "students_est": 510,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 15.2,
+   "futurum": 16.6,
+   "aupark": 18.0,
+   "atrium": 16.2
+  }
+ },
+ {
+  "redIzo": "651000904",
+  "name": "Základní škola a Mateřská škola Josefa Gočára, Hradec Králové, Tylovo nábřeží 1140",
+  "short": "ZŠ a MŠ Josefa Gočára",
+  "domain": "zsgocarova.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 800
+  },
+  "ruian": 23870281,
+  "id": "zs-gocarova",
+  "system": "bakalari",
+  "url": "https://zsgocarova.bakalari.cz",
+  "public": true,
+  "lat": 50.208426,
+  "lon": 15.824773,
+  "level": "ZŠ",
+  "students_est": 680,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 12.9,
+   "futurum": 16.3,
+   "aupark": 11.8,
+   "atrium": 11.2
+  }
+ },
+ {
+  "redIzo": "600088804",
+  "name": "Základní škola a Mateřská škola Pohádka, Hradec Králové, Mandysova 1434",
+  "short": "Základní škola a Mateřská škola Pohádka",
+  "domain": "mandyska.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 540
+  },
+  "ruian": 23817283,
+  "id": "zs-mandysova",
+  "system": "bakalari",
+  "url": "https://bakalari.mandyska.cz",
+  "public": true,
+  "lat": 50.194447,
+  "lon": 15.84251,
+  "level": "ZŠ",
+  "students_est": 459,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 12.6,
+   "futurum": 8.4,
+   "aupark": 19.4,
+   "atrium": 18.6
+  }
+ },
+ {
+  "redIzo": "600088839",
+  "name": "Základní škola a Mateřská škola, Hradec Králové, Jiráskovo nám. 1166",
+  "short": "Základní škola a Mateřská škola",
+  "domain": "zsjirasek.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 450
+  },
+  "ruian": 23894679,
+  "id": "zs-jirasek",
+  "system": "bakalari",
+  "url": "https://zsjirasek.bakalari.cz",
+  "public": true,
+  "lat": 50.205903,
+  "lon": 15.810701,
+  "level": "ZŠ",
+  "students_est": 382,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 14.3,
+   "futurum": 19.3,
+   "aupark": 11.2,
+   "atrium": 11.9
+  }
+ },
+ {
+  "redIzo": "600088901",
+  "name": "Základní škola a Mateřská škola, Hradec Králové, Úprkova 1",
+  "short": "Základní škola a Mateřská škola",
+  "domain": "zsuprkova.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 500
+  },
+  "ruian": 23875674,
+  "id": "zs-uprkova",
+  "system": "bakalari",
+  "url": "https://zsuprkova.bakalari.cz",
+  "public": true,
+  "lat": 50.204311,
+  "lon": 15.854049,
+  "level": "ZŠ",
+  "students_est": 425,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 13.9,
+   "futurum": 13.9,
+   "aupark": 20.1,
+   "atrium": 18.6
+  }
+ },
+ {
+  "redIzo": "600088847",
+  "name": "Základní škola a Mateřská škola, Nový Hradec Králové, Pešinova 146",
+  "short": "Základní škola a Mateřská škola",
+  "domain": "zsnovyhk.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 330
+  },
+  "ruian": 23804602,
+  "id": "zs-novyhk",
+  "system": "bakalari",
+  "url": "https://zsnovyhk.bakalari.cz",
+  "public": true,
+  "lat": 50.177364,
+  "lon": 15.85631,
+  "level": "ZŠ",
+  "students_est": 280,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 21.0,
+   "futurum": 16.8,
+   "aupark": 27.5,
+   "atrium": 26.9
+  }
+ },
+ {
+  "redIzo": "600088863",
+  "name": "Základní škola, Hradec Králové - Pouchov, K Sokolovně 452",
+  "short": "Základní škola",
+  "domain": "zspouchov.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 450
+  },
+  "ruian": 23923661,
+  "id": "zs-pouchov",
+  "system": "bakalari",
+  "url": "https://bakalari.zspouchov.cz",
+  "public": true,
+  "lat": 50.227848,
+  "lon": 15.841996,
+  "level": "ZŠ",
+  "students_est": 382,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 19.0,
+   "futurum": 21.5,
+   "aupark": 18.6,
+   "atrium": 17.0
+  }
+ },
+ {
+  "redIzo": "600088561",
+  "name": "Základní škola, Hradec Králové, Bezručova 1468",
+  "short": "Základní škola",
+  "domain": "bezrucka.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 720
+  },
+  "ruian": 23897694,
+  "id": "zs-bezrucova",
+  "system": "bakalari",
+  "url": "https://bezrucka.bakalari.cz/bakaweb",
+  "public": true,
+  "lat": 50.20362,
+  "lon": 15.818795,
+  "level": "ZŠ",
+  "students_est": 612,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 11.9,
+   "futurum": 16.9,
+   "aupark": 12.1,
+   "atrium": 12.3
+  }
+ },
+ {
+  "redIzo": "600088812",
+  "name": "Základní škola, Hradec Králové, Habrmanova 130",
+  "short": "Základní škola",
+  "domain": "habrmanova.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 500
+  },
+  "ruian": 23884495,
+  "id": "zs-habrmanova",
+  "system": "bakalari",
+  "url": "https://bakalari.habrmanova.cz/bakaweb",
+  "public": true,
+  "lat": 50.210849,
+  "lon": 15.812482,
+  "level": "ZŠ",
+  "students_est": 425,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 14.6,
+   "futurum": 19.8,
+   "aupark": 2.4,
+   "atrium": 8.1
+  }
+ },
+ {
+  "redIzo": "600088545",
+  "name": "Základní škola, Hradec Králové, M. Horákové 258",
+  "short": "Základní škola",
+  "domain": "zshorakhk.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 800
+  },
+  "ruian": 23915803,
+  "id": "zs-horakove",
+  "system": "bakalari",
+  "url": "https://bakalari.zsmhhk.cz",
+  "public": true,
+  "lat": 50.184908,
+  "lon": 15.84457,
+  "level": "ZŠ",
+  "students_est": 680,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 16.6,
+   "futurum": 13.4,
+   "aupark": 22.9,
+   "atrium": 22.4
+  }
+ },
+ {
+  "redIzo": "600088871",
+  "name": "Základní škola, Hradec Králové, tř. SNP 694",
+  "short": "Základní škola",
+  "domain": "edu-zssnp.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 770
+  },
+  "ruian": 23908840,
+  "id": "zs-snp",
+  "system": "bakalari",
+  "url": "https://bakalari.zssnphk.cz",
+  "public": true,
+  "lat": 50.218984,
+  "lon": 15.856277,
+  "level": "ZŠ",
+  "students_est": 654,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 17.4,
+   "futurum": 17.8,
+   "aupark": 20.5,
+   "atrium": 18.8
+  }
+ },
+ {
+  "redIzo": "600088537",
+  "name": "Základní škola, Hradec Králové, Štefánikova 566",
+  "short": "Základní škola",
+  "domain": "zsstefanikovahk.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 1050
+  },
+  "ruian": 23930560,
+  "id": "zs-stefanikova",
+  "system": "bakalari",
+  "url": "https://bakalari.zsstefanikovahk.cz",
+  "public": true,
+  "lat": 50.18559,
+  "lon": 15.837862,
+  "level": "ZŠ",
+  "students_est": 892,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 15.8,
+   "futurum": 13.8,
+   "aupark": 21.6,
+   "atrium": 21.3
+  }
+ },
+ {
+  "redIzo": "600029611",
+  "name": "Dětský diagnostický ústav, středisko výchovné péče, základní škola a školní jídelna, Hradec Králové, Říčařova 277",
+  "short": "Dětský diagnostický ústav, SVP, ZŠ a ŠJ",
+  "domain": "ddu-hk.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 60
+  },
+  "ruian": 23903066,
+  "id": "ddu",
+  "system": "-",
+  "public": false,
+  "note": "diagnostický ústav – nesledujeme",
+  "lat": 50.216409,
+  "lon": 15.855804,
+  "level": "ZŠ",
+  "students_est": 51,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 16.6,
+   "futurum": 16.6,
+   "aupark": 20.2,
+   "atrium": 18.4
+  }
+ },
+ {
+  "redIzo": "691017921",
+  "name": "ScioŠkola Hradec Králové - základní škola, s.r.o.",
+  "short": "ScioŠkola Hradec Králové - ZŠ. s.r.o.",
+  "domain": "scioskola.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 351
+  },
+  "ruian": 23907631,
+  "id": "zs-scio",
+  "system": "?",
+  "public": false,
+  "lat": 50.210814,
+  "lon": 15.849923,
+  "level": "ZŠ",
+  "students_est": 298,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 13.8,
+   "futurum": 14.0,
+   "aupark": 18.4,
+   "atrium": 16.8
+  }
+ },
+ {
+  "redIzo": "691020264",
+  "name": "Základní škola Erazim 6, školská právnická osoba",
+  "short": "Základní škola Erazim 6, školská právnická osoba",
+  "domain": "erazim.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 30
+  },
+  "ruian": 23866284,
+  "id": "zs-erazim",
+  "system": "?",
+  "public": false,
+  "lat": 50.211195,
+  "lon": 15.838259,
+  "level": "ZŠ",
+  "students_est": 26,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 11.8,
+   "futurum": 14.8,
+   "aupark": 15.2,
+   "atrium": 13.6
+  }
+ },
+ {
+  "redIzo": "691016470",
+  "name": "Základní škola Krok, z. ú.",
+  "short": "Základní škola Krok, z. ú.",
+  "domain": "skolakrok.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 64
+  },
+  "ruian": 23875534,
+  "id": "zs-krok",
+  "system": "?",
+  "public": false,
+  "lat": 50.213004,
+  "lon": 15.836111,
+  "level": "ZŠ",
+  "students_est": 54,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 12.4,
+   "futurum": 15.8,
+   "aupark": 14.6,
+   "atrium": 12.9
+  }
+ },
+ {
+  "redIzo": "650059964",
+  "name": "Základní škola Sion J. A. Komenského, Hradec Králové",
+  "short": "Základní škola Sion J. A. Komenského",
+  "domain": "sion.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 530
+  },
+  "ruian": 23874830,
+  "id": "zs-sion",
+  "system": "edupage",
+  "url": "zssion",
+  "public": false,
+  "note": "EduPage bez zveřejněného rozvrhu",
+  "lat": 50.203776,
+  "lon": 15.834415,
+  "level": "ZŠ",
+  "students_est": 450,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 1.9,
+   "futurum": 13.0,
+   "aupark": 15.1,
+   "atrium": 14.1
+  }
+ },
+ {
+  "redIzo": "600001466",
+  "name": "Základní škola TALENT Hradec Králové s.r.o.",
+  "short": "Základní škola TALENT Hradec Králové s.r.o.",
+  "domain": "skolytalent.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 180
+  },
+  "ruian": 23896353,
+  "id": "zs-talent",
+  "system": "?",
+  "public": false,
+  "note": "web školy je napadený (spam)",
+  "lat": 50.217765,
+  "lon": 15.815322,
+  "level": "ZŠ",
+  "students_est": 153,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 16.0,
+   "futurum": 21.0,
+   "aupark": 10.1,
+   "atrium": 8.3
+  }
+ },
+ {
+  "redIzo": "600023915",
+  "name": "Základní škola a Mateřská škola při Fakultní nemocnici, Hradec Králové, Sokolská 581",
+  "short": "ZŠ a MŠ při Fakultní nemocnici",
+  "domain": "volny.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 60
+  },
+  "ruian": 23808772,
+  "id": "zs-fn",
+  "system": "-",
+  "public": false,
+  "note": "škola při nemocnici – nesledujeme",
+  "lat": 50.200399,
+  "lon": 15.826937,
+  "level": "ZŠ",
+  "students_est": 51,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 8.2,
+   "futurum": 14.3,
+   "aupark": 14.5,
+   "atrium": 14.1
+  }
+ },
+ {
+  "redIzo": "600088821",
+  "name": "Základní škola a Mateřská škola, Hradec Králové - Kukleny, Pražská 198",
+  "short": "Základní škola a Mateřská škola",
+  "domain": "zskukleny.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 450
+  },
+  "ruian": 23824409,
+  "id": "zs-kukleny",
+  "system": "bakalari",
+  "url": "https://zskukleny.bakalari.cz/bakaweb",
+  "public": false,
+  "lat": 50.207296,
+  "lon": 15.797943,
+  "level": "ZŠ",
+  "students_est": 382,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 17.9,
+   "futurum": 22.9,
+   "aupark": 12.6,
+   "atrium": 14.3
+  }
+ },
+ {
+  "redIzo": "600088626",
+  "name": "Základní škola a Mateřská škola, Hradec Králové - Malšova Lhota, Lhotecká 39",
+  "short": "Základní škola a Mateřská škola",
+  "domain": "zs-malsovalhota.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 90
+  },
+  "ruian": 23830492,
+  "id": "zs-malsovalhota",
+  "system": "?",
+  "public": false,
+  "note": "rozvrh jen na webu školy",
+  "lat": 50.208542,
+  "lon": 15.884964,
+  "level": "ZŠ",
+  "students_est": 76,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 22.6,
+   "futurum": 19.2,
+   "aupark": 28.2,
+   "atrium": 26.6
+  }
+ },
+ {
+  "redIzo": "600088880",
+  "name": "Základní škola a Mateřská škola, Hradec Králové - Svobodné Dvory, Spojovací 66",
+  "short": "Základní škola a Mateřská škola",
+  "domain": "zssvobodnedvory.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 340
+  },
+  "ruian": 23857510,
+  "id": "zs-svobodnedvory",
+  "system": "edupage",
+  "url": "zssvobodnedvory",
+  "public": false,
+  "note": "EduPage má zveřejněný jen rozvrh 2018/19 (zastaralý)",
+  "lat": 50.222984,
+  "lon": 15.779873,
+  "level": "ZŠ",
+  "students_est": 289,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 25.1,
+   "futurum": 30.3,
+   "aupark": 18.2,
+   "atrium": 19.5
+  }
+ },
+ {
+  "redIzo": "600088898",
+  "name": "Základní škola a Mateřská škola, Hradec Králové, Štefcova 1092",
+  "short": "Základní škola a Mateřská škola",
+  "domain": "stefcova.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 790
+  },
+  "ruian": 23813865,
+  "id": "zs-stefcova",
+  "system": "edupage",
+  "url": "stefcova",
+  "public": false,
+  "note": "EduPage bez zveřejněného rozvrhu",
+  "lat": 50.199669,
+  "lon": 15.855357,
+  "level": "ZŠ",
+  "students_est": 672,
+  "canteen": "own",
+  "walk": {
+   "jidelna-hradecka": 14.4,
+   "futurum": 8.5,
+   "aupark": 21.1,
+   "atrium": 19.9
+  }
+ },
+ {
+  "redIzo": "600024636",
+  "name": "Základní škola speciální a praktická škola Diakonie ČCE Vrchlabí",
+  "short": "ZŠ speciální a prakt. škola Diakonie ČCE Vrchlabí",
+  "domain": "seznam.cz",
+  "types": [
+   "ZŠ"
+  ],
+  "capacity": {
+   "ZŠ": 105
+  },
+  "ruian": 23874830,
+  "id": "zs-diakonie",
+  "system": "?",
+  "public": false,
+  "lat": 50.203776,
+  "lon": 15.834415,
+  "level": "ZŠ",
+  "students_est": 89,
+  "canteen": null,
+  "walk": {
+   "jidelna-hradecka": 1.9,
+   "futurum": 13.0,
+   "aupark": 15.1,
+   "atrium": 14.1
+  }
+ }
+]
